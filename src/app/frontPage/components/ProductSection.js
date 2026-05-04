@@ -109,10 +109,10 @@ const ProductSection = () => {
     <div className="my-32">
       <section className="products bg-pri-600 mt-32 py-32">
         <div className="section-wrap" ref={productsRef}>
-          <div ref={productsTitleRef} className="title-section flex flex-col justify-center items-center w-[60%] mb-12 mx-auto text-center">
+          <div ref={productsTitleRef} className="title-section flex flex-col items-start justify-start w-[60%] mb-12 ml-auto">
             <div className="sub-title">Our Product Portfolio</div>
             <h2 className="mt-6 mb-4 text-white">Global Healthcare Solutions Across Diverse Segments</h2>
-            <p className="text-white/80 lead mb-6">Delivering globally trusted healthcare, wellness, and pharmaceutical solutions across diverse therapeutic and consumer segments.</p>
+            <p className="text-white/80 lead mb-6 text-left">Delivering globally trusted healthcare, wellness, and pharmaceutical solutions across diverse therapeutic and consumer segments.</p>
 
             <div className="btn-wrap">
               <TransitionLink href="/product" className="btn btn-link-white">
