@@ -1,0 +1,259 @@
+@use "./functions" as *;
+
+body{
+  color: $black-600;
+}
+
+.container {
+  &-fluid {
+    width: 100%;
+    margin: 0 auto;
+
+    @include lg {
+      width: 90%;
+    }
+  }
+}
+
+.wrapper {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.section-wrap{
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero {
+  height: calc(100vh - 70px);
+  position: relative;
+
+  .outer,
+  .inner {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  .inner {
+    padding: 0 0 0 5vw;
+  }
+
+  .bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    top: 0;
+    left: 0;
+    z-index: 1;
+
+    &::after{
+      content:"";
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba( $black, 0.6 );
+      z-index: -1;
+    }
+  }
+
+  .content {
+    z-index: 10;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    @include lg {
+      max-width: 900px;
+    }
+
+    h1{
+      color: $white;
+      @include fluid-type(40px, 80px);
+      margin-bottom: 24px;
+      letter-spacing: -0.03em;
+      overflow: hidden;
+
+      div{
+        line-height: 1;
+      }
+    }
+
+    p {
+      font-size: 22px;
+      line-height: 1.5;
+      color: $black-100;
+      max-width: 760px;
+      margin-bottom: 8px;
+    }
+
+    .btn{
+      backdrop-filter: blur(10px);
+    }
+  }
+
+  .slider-controls{
+    position: absolute;
+    z-index: 10;
+    bottom: 30px;
+    right: 30px;
+    display: flex;
+    flex: row;
+    gap: 16px;
+
+    & > button{
+      background: rgba($white, 0);
+      border: solid 1px rgba($white, 0.5);
+      backdrop-filter: blur(10px);
+      color: #fff;
+      padding: 6px 16px;
+      cursor: pointer;
+      border-radius: 24px;
+      outline: none;
+      transition: all 0.5s ease;
+
+      &:hover{
+        background: rgba($white, 0.3);
+        border: solid 1px rgba($white, 0);
+      }
+    }
+  }
+}
+
+.about {
+  align-items: center;
+  
+  &__imageWrapper {
+    overflow: hidden;
+    height: 500px;
+    background: #111;
+  }
+
+  &__imageMask {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+
+  &__imageMask img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: translateY(100%);
+  }
+
+  &__content {
+    h2 {
+      font-size: 2.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    p {
+      margin-bottom: 1rem;
+      line-height: 1.6;
+      opacity: 0.8;
+    }
+  }
+}
+
+.stat-wrapper{
+
+  .stat{
+    padding: 40px 0;
+    background: $black-100;
+
+    &:last-child{
+      border-right: none;
+    }
+
+    .digit {
+      height: 1em;
+      overflow: hidden;
+      font-size: 72px;
+      font-weight: 500;
+    }
+
+    .sequence {
+      display: flex;
+      flex-direction: column;
+      will-change: transform;
+    }
+
+    .sequence span {
+      height: 1em;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .suffix{
+      font-size: 32px;
+      margin-left: 6px;
+      margin-top: 8px;
+      font-weight: bold;
+    }
+
+    p{
+      margin-top: 16px;
+      font-size: 13px;
+      color: $black-700;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+  }
+
+}
+
+.products-block{
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.title-section{
+  position: sticky;
+  top: 140px;
+}
+
+.product-cards{
+  margin-top: 40px;
+  position: relative;
+  z-index: 10;
+
+  &:nth-child(2){
+    margin-top: 120px;
+  }
+
+  .product-card{
+    background: $white;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 8px 16px -12px rgba($black, 0.8);
+
+    img{
+      height: 200px;
+      width: 100%;
+      object-fit: cover;
+      object-position: bottom;
+    }
+
+    &-content{
+      padding: 24px;
+    }
+
+    h4{
+      font-size: 24px;
+      font-weight: 600;
+      color: $black;
+    }
+  }
+}

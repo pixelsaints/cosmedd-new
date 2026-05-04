@@ -1,0 +1,61 @@
+@use './functions' as *;
+
+h1{
+  @include fluid-type(40px, 72px);
+  line-height: 1.16;
+}
+
+h2{
+  @include fluid-type(32px, 48px);
+  line-height: 1.2;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+}
+
+h3{
+  @include fluid-type(26px, 40px);
+  line-height: 1.18;
+  letter-spacing: -0.01em;
+}
+
+h4{
+  @include fluid-type(24px, 30px);
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+}
+
+h5{
+  @include fluid-type(18px, 24px);
+  line-height: 1.4;
+}
+
+h6{
+  @include fluid-type(16px, 20px);
+  line-height: 1.5;
+}
+
+p{
+  font-size: 16px;
+  line-height: 1.6;
+
+  &.lead{
+    font-size: 18px;
+    line-height: 1.7;
+    font-weight: 600;
+  }
+}
+
+.sub-title{
+  position: relative;
+  color: $pri-500;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 12px;
+  overflow: hidden;
+  background: $pri-100;
+  width: fit-content;
+  padding: 4px 12px;
+  position: relative;
+  border-radius: 24px;
+  opacity: 0.8;
+}

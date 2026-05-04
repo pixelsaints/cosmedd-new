@@ -1,0 +1,101 @@
+@use 'sass:math';
+@use './vars' as *;
+
+// em conversion
+
+@function em($pixels, $context: $browser-context) {
+  @return math.div($pixels, $context) * 1em;
+}
+
+// rem convesion
+
+@function rem($px, $base: 16px) {
+  @return math.div($px, $base) * 1rem;
+}
+
+// fluid type
+
+@mixin fluid-type($min-size, // px
+  $max-size, // px
+  $min-vw: 375px,
+  $max-vw: 1440px) {
+  font-size: clamp(#{rem($min-size)},
+    #{rem($min-size)} + (#{rem($max-size - $min-size)} * ((100vw - #{$min-vw}) / (#{$max-vw - $min-vw}))),
+    #{rem($max-size)});
+}
+
+// Gradient
+
+@function linearGradient($deg, $color1, $color2) {
+  @return linear-gradient($deg, $color1 0%, $color2 100%);
+}
+
+// Text Gradient
+
+@mixin textGradient {
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+// Hover
+
+@mixin hover {
+  &:hover {
+    @content;
+  }
+}
+
+// Hover/Focus/Active
+
+@mixin hfa {
+
+  &:hover,
+  &:focus,
+  &:active {
+    @content;
+  }
+}
+
+// Focus/Active
+@mixin fa {
+
+  &:focus,
+  &:active {
+    @content;
+  }
+}
+
+// Small devices
+@mixin sm {
+  @media (min-width: #{$screen-sm}) {
+    @content;
+  }
+}
+
+// Medium devices
+@mixin md {
+  @media (min-width: #{$screen-md}) {
+    @content;
+  }
+}
+
+// Large devices
+@mixin lg {
+  @media (min-width: #{$screen-lg}) {
+    @content;
+  }
+}
+
+// Extra large devices
+@mixin xl {
+  @media (min-width: #{$screen-xl}) {
+    @content;
+  }
+}
+
+// Extra large devices
+@mixin xxl {
+  @media (min-width: #{$screen-xxl}) {
+    @content;
+  }
+}
