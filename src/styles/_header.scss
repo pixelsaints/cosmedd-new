@@ -92,6 +92,11 @@
   background-color: #ffffff;
   z-index: 100;
   font-family: $font-base;
+  display: none;
+
+  @include lg{
+    display: flex;
+  }
 
   &-inner {
     width: 100%;
@@ -255,7 +260,8 @@
 
 
 .footer {
-  max-width: 90%;
+  position: relative;
+  max-width: 87.8%;
   margin: 0 auto;
   background: #0b0f0e;
   color: #e8f0ee;

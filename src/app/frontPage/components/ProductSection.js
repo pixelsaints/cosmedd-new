@@ -49,6 +49,7 @@ const ProductSection = () => {
         .from(productsTitleRef.current.querySelector(".sub-title"), {
           y: 40,
           rotate: 6,
+          filter: "blur(8px)",
           opacity: 0,
           duration: 0.7,
           stagger: 0.06,
@@ -57,17 +58,11 @@ const ProductSection = () => {
         .from(productTitle.words, {
           y: 40,
           rotate: 6,
+          filter: "blur(8px)",
           opacity: 0,
           duration: 0.7,
           stagger: 0.06,
           ease: "power3.out",
-        }, "-=0.6")
-        .from(productSubTitle.lines, {
-          opacity: 0,
-          y: 30,
-          duration: 0.6,
-          stagger: 0.08,
-          ease: "power2.out",
         }, "-=0.6")
         .from(productsTitleRef.current.querySelector(".btn-wrap"), {
           y: 40,
@@ -75,6 +70,7 @@ const ProductSection = () => {
           opacity: 0,
           duration: 0.7,
           stagger: 0.06,
+          filter: "blur(8px)",
           ease: "power3.out",
         }, "-=0.6");
 
@@ -85,7 +81,7 @@ const ProductSection = () => {
         gsap.from(item, {
           opacity: 0,
           y: 80,
-          rotate: 8,
+          filter: "blur(8px)",
           duration: 0.8,
           delay: i * 0.05,
           ease: "power4.out",
@@ -106,13 +102,12 @@ const ProductSection = () => {
   }, []);
 
   return (
-    <div className="my-32">
-      <section className="products bg-pri-600 mt-32 py-32">
-        <div className="section-wrap" ref={productsRef}>
-          <div ref={productsTitleRef} className="title-section flex flex-col items-start justify-start w-[60%] mb-12 ml-auto">
+    <>
+      <div className="products bg-pri-600 py-20 lg:mt-32 lg:py-32">
+        <div className="section-wrap overflow-clip px-4" ref={productsRef}>
+          <div ref={productsTitleRef} className="title-section flex flex-col items-start justify-start lg:w-[60%] mb-12">
             <div className="sub-title">Our Product Portfolio</div>
-            <h2 className="mt-6 mb-4 text-white">Global Healthcare Solutions Across Diverse Segments</h2>
-            <p className="text-white/80 lead mb-6 text-left">Delivering globally trusted healthcare, wellness, and pharmaceutical solutions across diverse therapeutic and consumer segments.</p>
+            <h2 className="mt-6 mb-6 text-white">Global Healthcare Solutions Across Diverse Segments</h2>
 
             <div className="btn-wrap">
               <TransitionLink href="/product" className="btn btn-link-white">
@@ -121,9 +116,64 @@ const ProductSection = () => {
               </TransitionLink>
             </div>
           </div>
-          <div ref={productsBlockRef} className="products-block grid grid-cols-3 gap-8 justify-between items-stretch ">
+          <div ref={productsBlockRef} className="products-block grid lg:grid-cols-3 lg:gap-8 justify-between items-stretch ">
 
-            <div className="product-cards flex flex-col gap-10">
+            <div className="product-cards flex flex-col gap-8 lg:gap-10">
+
+              <div className="product-card">
+                <img src="/images/nutraceuticals-probiotics.webp" alt="" />
+                <div className="product-card-content">
+                  <h4 className="mb-3">Nutraceuticals & Probiotics</h4>
+                  <p>Science-driven nutritional supplements promoting immunity, gut health, and overall wellness.</p>
+                </div>
+              </div>
+
+              <div className="product-card">
+                <img src="/images/cosmeceuticals.webp" alt="" />
+                <div className="product-card-content">
+                  <h4 className="mb-3">Cosmeceuticals</h4>
+                  <p>Innovative skincare and beauty formulations combining cosmetic excellence with therapeutic benefits.</p>
+                </div>
+              </div>
+
+              <div className="product-card">
+                <img src="/images/mens-womens-care.webp" alt="" />
+                <div className="product-card-content">
+                  <h4 className="mb-3">Men's & Women's Care</h4>
+                  <p>Specialized healthcare products addressing gender-specific wellness and personal care needs.</p>
+                </div>
+              </div>
+
+            </div>
+
+            <div className="product-cards flex flex-col gap-8 lg:gap-10">
+
+              <div className="product-card">
+                <img src="/images/medical-devices.webp" alt="" />
+                <div className="product-card-content">
+                  <h4 className="mb-3">Medical Devices</h4>
+                  <p>Essential medical equipment and consumables supporting clinical and healthcare operations</p>
+                </div>
+              </div>
+
+              <div className="product-card">
+                <img src="/images/essential-oils.webp" alt="" />
+                <div className="product-card-content">
+                  <h4 className="mb-3">Essential Oils</h4>
+                  <p>Pure botanical extracts serving wellness, food, fragrance, and therapeutic industries.</p>
+                </div>
+              </div>
+
+              <div className="product-card">
+                <img src="/images/veterinary-solutions.webp" alt="" />
+                <div className="product-card-content">
+                  <h4 className="mb-3">Veterinary Solutions</h4>
+                  <p>Comprehensive animal healthcare products for nutrition, wellness, and treatment support.</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="product-cards flex flex-col gap-8 lg:gap-10">
 
               <div className="product-card">
                 <img src="/images/pharmaceutical-generics.webp" alt="" />
@@ -150,66 +200,13 @@ const ProductSection = () => {
               </div>
 
             </div>
-
-            <div className="product-cards flex flex-col gap-10">
-
-              <div className="product-card">
-                <img src="/images/nutraceuticals-probiotics.webp" alt="" />
-                <div className="product-card-content">
-                  <h4 className="mb-3">Nutraceuticals & Probiotics</h4>
-                  <p>Science-driven nutritional supplements promoting immunity, gut health, and overall wellness.</p>
-                </div>
-              </div>
-
-              <div className="product-card">
-                <img src="/images/cosmeceuticals.webp" alt="" />
-                <div className="product-card-content">
-                  <h4 className="mb-3">Cosmeceuticals</h4>
-                  <p>Innovative skincare and beauty formulations combining cosmetic excellence with therapeutic benefits.</p>
-                </div>
-              </div>
-
-              <div className="product-card">
-                <img src="/images/men-s-women-s-care.webp" alt="" />
-                <div className="product-card-content">
-                  <h4 className="mb-3">Men's & Women's Care</h4>
-                  <p>Specialized healthcare products addressing gender-specific wellness and personal care needs.</p>
-                </div>
-              </div>
-
-            </div>
-
-            <div className="product-cards flex flex-col gap-10">
-
-              <div className="product-card">
-                <img src="/images/medical-devices.webp" alt="" />
-                <div className="product-card-content">
-                  <h4 className="mb-3">Medical Devices</h4>
-                  <p>Essential medical equipment and consumables supporting clinical and healthcare operations</p>
-                </div>
-              </div>
-
-              <div className="product-card">
-                <img src="/images/essential-oils.webp" alt="" />
-                <div className="product-card-content">
-                  <h4 className="mb-3">Essential Oils</h4>
-                  <p>Pure botanical extracts serving wellness, food, fragrance, and therapeutic industries.</p>
-                </div>
-              </div>
-
-              <div className="product-card">
-                <img src="/images/veterinary-solutions.webp" alt="" />
-                <div className="product-card-content">
-                  <h4 className="mb-3">Veterinary Solutions</h4>
-                  <p>Comprehensive animal healthcare products for nutrition, wellness, and treatment support.</p>
-                </div>
-              </div>
-
-            </div>
           </div>
         </div>
-      </section>
-    </div>
+        <div className="image-bg">
+          <img src="/images/logo-bg.svg" alt="" />
+        </div>
+      </div>
+    </>
   )
 }
 

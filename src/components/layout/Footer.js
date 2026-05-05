@@ -2,16 +2,14 @@ export default function Footer() {
   return (
     <footer className="footer">
 
-      {/* 1. Brand Statement */}
-      <div className="footer__top">
+      {/* <div className="footer__top">
         <h2>Cosmedd</h2>
         <p>
           Precision-led healthcare solutions designed for clarity, trust, and better outcomes.
         </p>
       </div>
 
-      {/* 2. Core Grid */}
-      <div className="footer__grid">
+      <div className="grid lg:grid-cols-3 gap-6 mb-6">
 
         <div className="footer__col">
           <h4>Services</h4>
@@ -49,18 +47,10 @@ export default function Footer() {
 
       </div>
 
-      {/* 3. Info Strip */}
-      <div className="footer__info">
-        <span>ISO Certified Processes</span>
-        <span>Data Protected Care Systems</span>
-        <span>HIPAA-style Compliance Standards</span>
-      </div>
-
-      {/* 4. Bottom Bar */}
       <div className="footer__bottom">
         <p>© 2026 Cosmedd. All rights reserved.</p>
         <p>Healthcare clarity through structured systems.</p>
-      </div>
+      </div> */}
 
     </footer>
   )

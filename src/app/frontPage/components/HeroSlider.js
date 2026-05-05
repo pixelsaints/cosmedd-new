@@ -4,6 +4,7 @@ import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import SplitType from "split-type";
 import TransitionLink from "@/components/transitions/TransitionLink";
+import { slides } from "../data"
 
 export default function HeroSlider() {
   const sliderRef = useRef(null);
@@ -171,10 +172,7 @@ export default function HeroSlider() {
         >
           <div className="outer w-full h-full overflow-hidden">
             <div className="inner w-full h-full flex items-center">
-              <div
-                className="bg absolute inset-0 bg-cover bg-center scale-105"
-                style={{ backgroundImage: `url(${slide.image})` }}
-              >
+              <div className="bg absolute inset-0 bg-cover bg-center scale-105" style={{ backgroundImage: `url(${slide.image})` }}>
               </div>
 
               <div className="relative content">
@@ -186,14 +184,14 @@ export default function HeroSlider() {
                   {slide.desc}
                 </p>
 
-                <div className="buttons mt-8 flex gap-4">
+                <div className="buttons mt-8 flex gap-3 lg:gap-4 w-full">
                   <TransitionLink href={slide.primaryUrl} className="btn btn-primary">
                     <span data-title={slide.primary}>
                       {slide.primary}
                     </span>
                   </TransitionLink>
 
-                  <TransitionLink href={slide.secondaryUrl}  className="btn btn-outline">
+                  <TransitionLink href={slide.secondaryUrl} className="btn btn-outline">
                     <span data-title={slide.secondary}>
                       {slide.secondary}
                     </span>
@@ -228,43 +226,3 @@ export default function HeroSlider() {
     </div>
   );
 }
-
-// Slide Content
-const slides = [
-  {
-    title: "Better Health for Everyday Living",
-    desc: "Helping people live healthier lives with safe, simple, and effective healthcare products for everyday use worldwide.",
-    primary: "Explore Products",
-    secondary: "Become a Partner",
-    primaryUrl: "/products",
-    secondaryUrl: "/contact",
-    image: "/images/better-health.webp",
-  },
-  {
-    title: "Expanding Global Presence In Healthcare",
-    desc: "Serving clients across Asia and CIS regions while growing into new markets with strong local partnerships worldwide.",
-    primary: "Quality Standards",
-    secondary: "Learn More",
-    primaryUrl: "/quality-compliance",
-    secondaryUrl: "/about",
-    image: "/images/worldwide-expansion.webp",
-  },
-  {
-    title: "Proven Quality Across Every Product Line",
-    desc: "We ensure high standards by working with trusted manufacturers and delivering consistent quality across all product categories.",
-    primary: "Explore Products",
-    secondary: "Contact Us",
-    primaryUrl: "/products",
-    secondaryUrl: "/contact",
-    image: "/images/quality-slide.webp",
-  },
-  {
-    title: "Reliable Sourcing Solutions Worldwide",
-    desc: "We source and supply a wide range of healthcare products from trusted global partners with efficient delivery.",
-    primary: "Our Presence",
-    secondary: "Start Partnership",
-    primaryUrl: "/about",
-    secondaryUrl: "/contact",
-    image: "/images/sourcing-solutions.jpg",
-  },
-];

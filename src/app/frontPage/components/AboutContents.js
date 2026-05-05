@@ -136,38 +136,38 @@ const AboutContents = () => {
   }, []);
 
   return (
-    <section className="my-32">
+    <>
       <div ref={sectionRef} className="about section-wrap">
-        <div className="flex flex-row items-center justify-between">
-          <div className="w-[45%]">
-            <div className="flex flex-row gap-6">
-              <div ref={imageLeft} className="w-1/2 flex flex-col gap-6">
+        <div className="flex sm:flex-col lg:flex-row items-center justify-between">
+          <div className="lg:w-[45%] mb-12 lg:mb-0">
+            <div className="flex flex-row gap-4">
+              <div ref={imageLeft} className="w-1/2 flex flex-col gap-4">
                 <img
-                  className="mask-img-media lg:h-[24em] object-cover w-full rounded-xl"
+                  className="mask-img-media lg:h-[20em] h-[10em] object-cover w-full rounded-xl"
                   src="/images/lab-jar.webp"
                   alt="Cosmedd"
                 />
                 <img
-                  className="mask-img-media lg:h-[12em] object-cover w-[90%] rounded-xl self-end"
-                  src="/images/scientific-Precision.webp"
-                  alt="Cosmedd"
-                />
-              </div>
-              <div ref={imageRight} className="w-1/2 flex flex-col gap-6 pt-8">
-                <img
-                  className="mask-img-media lg:h-[12em] object-cover w-[90%] rounded-xl self-start"
+                  className="mask-img-media h-[14em] object-cover lg:w-[90%] rounded-xl self-end"
                   src="/images/scientist-laboratory.webp"
                   alt="Cosmedd"
                 />
+              </div>
+              <div ref={imageRight} className="w-1/2 flex flex-col gap-4 lg:pt-8">
                 <img
-                  className="mask-img-media lg:h-[24em] object-cover w-full rounded-xl"
+                  className="mask-img-media h-[14em] object-cover lg:w-[90%] rounded-xl self-start"
+                  src="/images/precision-medicine-image.webp"
+                  alt="Cosmedd"
+                />
+                <img
+                  className="mask-img-media lg:h-[20em] h-[10em] object-cover w-full rounded-xl"
                   src="/images/cosmedd-laboratory.webp"
                   alt="Cosmedd"
                 />
               </div>
             </div>
           </div>
-          <div className="w-[50%]">
+          <div className="lg:w-[50%]">
             <div className="flex flex-col" ref={textRef}>
               <div className="sub-title mb-3 fade-up">About Cosmedd</div>
 
@@ -175,12 +175,10 @@ const AboutContents = () => {
 
               <p className="mb-4 lead">We build intuitive, scalable digital healthcare experiences that connect patients, providers, and systems seamlessly.</p>
 
-              <p className="mb-4 desc">Established in 2015, Cosmedd Healthcare is an export-oriented company based in India. We specialize in sourcing and manufacturing healthcare and wellness products for clients across Southeast Asia and the CIS region, including Russia.</p>
-
-              <p className="mb-6 desc">We believe healthcare technology should not feel complex. It should feel human. Every system we design is built to improve understanding, reduce confusion, and make care more connected across every touchpoint.</p>
+              <p className="mb-6 desc">Established in 2015, Cosmedd Healthcare is an export-oriented company based in India. We specialize in sourcing and manufacturing healthcare and wellness products for clients across Southeast Asia and the CIS region, including Russia.</p>
 
               <div className="btn-wrap">
-                <TransitionLink href="/about" className="btn btn-black-outline btn-small">
+                <TransitionLink href="/about" className="btn btn-link btn-small">
                   <span data-title="Learn More">Learn More </span>
                   <ArrowRight size={16} absoluteStrokeWidth />
                 </TransitionLink>
@@ -189,8 +187,8 @@ const AboutContents = () => {
           </div>
         </div>
 
-        <div ref={counterRef} className="grid grid-cols-3 gap-6 stat-wrapper mt-24 items-center">
-          <div>
+        <div ref={counterRef} className="grid lg:grid-cols-3 gap-6 stat-wrapper mt-24 items-center">
+          <div className="mb-8 lg:mb-0">
             <div className="sub-title mb-3">Cosmedd by the numbers</div>
             <h3 className="-mb-1 font-medium">The Cosmedd Impact</h3>
           </div>
@@ -219,7 +217,7 @@ const AboutContents = () => {
           </div>
         </div>
       </div>
-    </section>
+    </>
   );
 };
 

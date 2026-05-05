@@ -10,6 +10,7 @@
   padding: 10px 28px;
   transition: all 0.5s ease;
   background: $black;
+  color: $white;
   font-weight: 400;
   letter-spacing: 0.04em;
   border-radius: 32px;
@@ -27,6 +28,7 @@
     opacity: 1;
     font-weight: 700;
     color: $white;
+    text-align: center;
 
     &:after {
       content: attr(data-title);
