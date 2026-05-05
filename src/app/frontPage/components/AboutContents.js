@@ -138,7 +138,7 @@ const AboutContents = () => {
   return (
     <>
       <div ref={sectionRef} className="about section-wrap">
-        <div className="flex sm:flex-col lg:flex-row items-center justify-between">
+        <div className="flex flex-col lg:flex-row items-center justify-between">
           <div className="lg:w-[45%] mb-12 lg:mb-0">
             <div className="flex flex-row gap-4">
               <div ref={imageLeft} className="w-1/2 flex flex-col gap-4">

@@ -9,33 +9,20 @@ import SplitType from "split-type";
 import { productData } from "../data";
 import ProductCard from "@/components/layout/ProductCard";
 
+gsap.registerPlugin(ScrollTrigger);
+
 const ProductSection = () => {
   const productsRef = useRef(null);
   const productsTitleRef = useRef(null);
   const productsBlockRef = useRef(null);
 
   useLayoutEffect(() => {
+    let productTitle;
+
     const ctx = gsap.context(() => {
-
-      // Fade title while cards scroll
-      gsap.to(productsTitleRef.current, {
-        opacity: 0.1,
-        ease: "none",
-        scrollTrigger: {
-          trigger: productsBlockRef.current,
-          start: "top 70%",
-          end: "top top",
-          scrub: true,
-        },
-      });
-
       // Split title
-      const productTitle = new SplitType(
+      productTitle = new SplitType(
         productsTitleRef.current.querySelector("h2"), { types: "words", }
-      );
-
-      const productSubTitle = new SplitType(
-        productsTitleRef.current.querySelector("p"), { types: "lines" }
       );
 
       // Intro animation
@@ -100,19 +87,23 @@ const ProductSection = () => {
 
     }, productsRef);
 
-    return () => ctx.revert();
+    return () => {
+      ctx.revert();
+      productTitle?.revert();
+      ScrollTrigger.refresh();
+    };
   }, []);
 
   return (
     <>
-      <div className="products bg-pri-600 py-20 lg:mt-32 lg:py-32">
+      <div className="products">
         <div className="section-wrap overflow-clip px-4" ref={productsRef}>
           <div ref={productsTitleRef} className="title-section flex flex-col items-start justify-start lg:w-[60%] ml-auto mb-12">
             <div className="sub-title">Our Product Portfolio</div>
             <h2 className="mt-6 mb-6 text-white">Global Healthcare Solutions Across Diverse Segments</h2>
 
             <div className="btn-wrap">
-              <TransitionLink href="/product" className="btn btn-link-white">
+              <TransitionLink href="/products" className="btn btn-link-white">
                 <span data-title="Explore Range">Explore Range</span>
                 <ArrowRight size={20} absoluteStrokeWidth />
               </TransitionLink>
