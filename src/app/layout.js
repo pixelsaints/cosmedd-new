@@ -55,8 +55,8 @@ export default function RootLayout({ children }) {
         <Header />
         <main className="wrapper">
           {children}
-        </main>  
-        <Footer />
+          <Footer />
+        </main>
       </body>
     </html>
   );

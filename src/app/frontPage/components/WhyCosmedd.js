@@ -152,4 +152,3 @@ const WhyCosmedd = () => {
 }
 
 export default WhyCosmedd;
-
