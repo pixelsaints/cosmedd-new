@@ -115,9 +115,9 @@ const AboutContents = () => {
         gsap.from(item, {
           opacity: 0,
           y: 80,
-          rotate: 8,
+          // filter: "blur(10px)",
           duration: 0.8,
-          delay: i * 0.05,
+          delay: i * 0.5,
           ease: "power4.out",
           scrollTrigger: {
             trigger: item,
@@ -190,7 +190,7 @@ const AboutContents = () => {
         <div ref={counterRef} className="grid lg:grid-cols-3 gap-6 stat-wrapper mt-24 items-center">
           <div className="mb-8 lg:mb-0">
             <div className="sub-title mb-3">Cosmedd by the numbers</div>
-            <h3 className="-mb-1 font-medium">The Cosmedd Impact</h3>
+            <h3 className="-mb-1 font-medium">The Cosmedd Impact In Numbers</h3>
           </div>
           <Counter
             value="15"

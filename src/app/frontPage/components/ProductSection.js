@@ -6,6 +6,8 @@ import ScrollTrigger from "gsap/ScrollTrigger";
 import { ArrowRight } from "lucide-react";
 import TransitionLink from "@/components/transitions/TransitionLink";
 import SplitType from "split-type";
+import { productData } from "../data";
+import ProductCard from "@/components/layout/ProductCard";
 
 const ProductSection = () => {
   const productsRef = useRef(null);
@@ -105,7 +107,7 @@ const ProductSection = () => {
     <>
       <div className="products bg-pri-600 py-20 lg:mt-32 lg:py-32">
         <div className="section-wrap overflow-clip px-4" ref={productsRef}>
-          <div ref={productsTitleRef} className="title-section flex flex-col items-start justify-start lg:w-[60%] mb-12">
+          <div ref={productsTitleRef} className="title-section flex flex-col items-start justify-start lg:w-[60%] ml-auto mb-12">
             <div className="sub-title">Our Product Portfolio</div>
             <h2 className="mt-6 mb-6 text-white">Global Healthcare Solutions Across Diverse Segments</h2>
 
@@ -119,86 +121,21 @@ const ProductSection = () => {
           <div ref={productsBlockRef} className="products-block grid lg:grid-cols-3 lg:gap-8 justify-between items-stretch ">
 
             <div className="product-cards flex flex-col gap-8 lg:gap-10">
-
-              <div className="product-card">
-                <img src="/images/nutraceuticals-probiotics.webp" alt="" />
-                <div className="product-card-content">
-                  <h4 className="mb-3">Nutraceuticals & Probiotics</h4>
-                  <p>Science-driven nutritional supplements promoting immunity, gut health, and overall wellness.</p>
-                </div>
-              </div>
-
-              <div className="product-card">
-                <img src="/images/cosmeceuticals.webp" alt="" />
-                <div className="product-card-content">
-                  <h4 className="mb-3">Cosmeceuticals</h4>
-                  <p>Innovative skincare and beauty formulations combining cosmetic excellence with therapeutic benefits.</p>
-                </div>
-              </div>
-
-              <div className="product-card">
-                <img src="/images/mens-womens-care.webp" alt="" />
-                <div className="product-card-content">
-                  <h4 className="mb-3">Men's & Women's Care</h4>
-                  <p>Specialized healthcare products addressing gender-specific wellness and personal care needs.</p>
-                </div>
-              </div>
-
+              {productData.slice(0, 3).map((item) => (
+                <ProductCard key={item.number} {...item} />
+              ))}
             </div>
 
             <div className="product-cards flex flex-col gap-8 lg:gap-10">
-
-              <div className="product-card">
-                <img src="/images/medical-devices.webp" alt="" />
-                <div className="product-card-content">
-                  <h4 className="mb-3">Medical Devices</h4>
-                  <p>Essential medical equipment and consumables supporting clinical and healthcare operations</p>
-                </div>
-              </div>
-
-              <div className="product-card">
-                <img src="/images/essential-oils.webp" alt="" />
-                <div className="product-card-content">
-                  <h4 className="mb-3">Essential Oils</h4>
-                  <p>Pure botanical extracts serving wellness, food, fragrance, and therapeutic industries.</p>
-                </div>
-              </div>
-
-              <div className="product-card">
-                <img src="/images/veterinary-solutions.webp" alt="" />
-                <div className="product-card-content">
-                  <h4 className="mb-3">Veterinary Solutions</h4>
-                  <p>Comprehensive animal healthcare products for nutrition, wellness, and treatment support.</p>
-                </div>
-              </div>
+              {productData.slice(3, 6).map((item) => (
+                <ProductCard key={item.number} {...item} />
+              ))}
             </div>
 
             <div className="product-cards flex flex-col gap-8 lg:gap-10">
-
-              <div className="product-card">
-                <img src="/images/pharmaceutical-generics.webp" alt="" />
-                <div className="product-card-content">
-                  <h4 className="mb-3">Pharmaceutical Generics</h4>
-                  <p>Reliable pharmaceutical formulations for chronic, acute, and specialized therapeutic healthcare needs globally.</p>
-                </div>
-              </div>
-
-              <div className="product-card">
-                <img src="/images/apis-excipients.webp" alt="" />
-                <div className="product-card-content">
-                  <h4 className="mb-3">APIs & Excipients</h4>
-                  <p>High-quality active ingredients and excipients sourced for dependable pharmaceutical manufacturing applications.</p>
-                </div>
-              </div>
-
-              <div className="product-card">
-                <img src="/images/herbal-natural-medicines.webp" alt="" />
-                <div className="product-card-content">
-                  <h4 className="mb-3">Herbal & Natural Medicines</h4>
-                  <p>Natural healthcare solutions supporting preventive wellness and effective therapeutic care.</p>
-                </div>
-              </div>
-
+              {productData.slice(6, 9).map((item) => (
+                <ProductCard key={item.number} {...item} />
+              ))}
             </div>
           </div>
         </div>

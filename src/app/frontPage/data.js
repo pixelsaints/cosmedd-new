@@ -120,3 +120,62 @@ export const whyCosmeddData = {
     }
   ],
 };
+
+export const productData = [
+  {
+    number: "1",
+    title: "Pharmaceutical Generics",
+    desc: "Reliable pharmaceutical formulations for chronic, acute, and specialized therapeutic healthcare needs globally.",
+    icon: "/images/pharmaceutical-generics.webp",
+  },
+  {
+    number: "2",
+    title: "APIs & Excipients",
+    desc: "High-quality active ingredients and excipients sourced for dependable pharmaceutical manufacturing applications.",
+    icon: "/images/apis-excipients.webp",
+  },
+  {
+    number: "3",
+    title: "Herbal & Natural Medicines",
+    desc: "Natural healthcare solutions supporting preventive wellness and effective therapeutic care.",
+    icon: "/images/herbal-natural-medicines.webp",
+  },
+  {
+    number: "4",
+    title: "Nutraceuticals & Probiotics",
+    desc: "Science-driven nutritional supplements promoting immunity, gut health, and overall wellness.",
+    icon: "/images/nutraceuticals-probiotics.webp",
+  },
+  {
+    number: "5",
+    title: "Cosmeceuticals",
+    desc: "Innovative skincare and beauty formulations combining cosmetic excellence with therapeutic benefits.",
+    icon: "/images/cosmeceuticals.webp",
+  },
+  {
+    number: "6",
+    title: "Men's & Women's Care",
+    desc: "Specialized healthcare products addressing gender-specific wellness and personal care needs.",
+    icon: "/images/mens-womens-care.webp",
+  },
+  {
+    number: "7",
+    title: "Medical Devices",
+    desc: "Essential medical equipment and consumables supporting clinical and healthcare operations",
+    icon: "/images/medical-devices.webp",
+  },
+  {
+    number: "8",
+    title: "Essential Oils",
+    desc: "Pure botanical extracts serving wellness, food, fragrance, and therapeutic industries.",
+    icon: "/images/essential-oils.webp",
+  },
+  {
+    number: "9",
+    title: "Veterinary Solutions",
+    desc: "Comprehensive animal healthcare products for nutrition, wellness, and treatment support.",
+    icon: "/images/veterinary-solutions.webp",
+  },
+
+
+]
