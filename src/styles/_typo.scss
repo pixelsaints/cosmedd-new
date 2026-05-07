@@ -1,36 +1,61 @@
 @use './functions' as *;
-
 h1{
-  @include fluid-type(40px, 72px);
   line-height: 1.16;
 }
 
 h2{
-  @include fluid-type(32px, 48px);
-  line-height: 1.2;
   font-weight: 500;
   letter-spacing: -0.02em;
+  font-size: 32px;
+  line-height: 1.2;
+
+  @include md{
+    font-size: 40px;
+  }
+
+  @include lg{
+    font-size: 48px;
+  }
+
+  @include xl{
+    font-size: 52px;
+  }
 }
 
 h3{
-  @include fluid-type(26px, 40px);
-  line-height: 1.18;
-  letter-spacing: -0.01em;
+  font-size: 32px;
+  font-weight: normal;
+  line-height: 1.3;
+  letter-spacing: -0.03em;
+
+  @include md{
+    font-size: 40px;
+  }
 }
 
 h4{
-  @include fluid-type(24px, 30px);
+  font-size: 24px;
   line-height: 1.25;
   letter-spacing: -0.01em;
+
+  @include md{
+    font-size: 28px;
+  }
+
+  @include lg{
+    font-size: 32px;
+    font-weight: 500;
+  }
 }
 
 h5{
-  @include fluid-type(18px, 24px);
+  font-size: 24px;
+  letter-spacing: -0.04em;
   line-height: 1.4;
+  color: $black;
 }
 
 h6{
-  @include fluid-type(16px, 20px);
   line-height: 1.5;
 }
 
@@ -41,14 +66,13 @@ p{
   &.lead{
     font-size: 18px;
     line-height: 1.7;
-    font-weight: 600;
   }
 }
 
 .sub-title{
   position: relative;
   color: $pri-500;
-  font-weight: bold;
+  font-weight: 500;
   text-transform: uppercase;
   font-size: 12px;
   overflow: hidden;

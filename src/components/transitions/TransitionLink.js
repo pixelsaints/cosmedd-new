@@ -9,7 +9,7 @@ export default function TransitionLink({ href, children, ...props }) {
   const pathname = usePathname();
 
   const handleClick = (e) => {
-    // ✅ allow new tab / middle click
+    // allow new tab / middle click
     if (
       e.metaKey ||
       e.ctrlKey ||
@@ -20,13 +20,13 @@ export default function TransitionLink({ href, children, ...props }) {
       return;
     }
 
-    // ✅ prevent default navigation
+    // prevent default navigation
     e.preventDefault();
 
-    // ✅ ignore same route
+    // ignore same route
     if (href === pathname) return;
 
-    // ✅ prevent spam clicks
+    // prevent spam clicks
     if (gsap.isTweening(".page-mask")) return;
 
     const tl = gsap.timeline({

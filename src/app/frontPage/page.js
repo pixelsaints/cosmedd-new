@@ -1,5 +1,7 @@
 import AboutContents from "./components/AboutContents";
+import GlobalPresence from "./components/GlobalPresence";
 import HeroSlider from "./components/HeroSlider";
+import IndServed from "./components/IndServed";
 import ProductSection from "./components/ProductSection";
 import WhyCosmedd from "./components/WhyCosmedd";
 
@@ -16,10 +18,11 @@ export default function FrontPage() {
       <section className="why-cosmedd">
         <WhyCosmedd />
       </section>
-      <section className="global-presence">
-        <div className="section-wrap">
-
-        </div>
+      <section className="global-presence py-20 lg:py-32 bg-slate-100">
+        <GlobalPresence />
+      </section>
+      <section className="ind-served py-20 lg:py-32">
+        <IndServed />
       </section>
     </>
   )

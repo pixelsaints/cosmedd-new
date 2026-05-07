@@ -20,10 +20,25 @@ const ProductSection = () => {
     let productTitle;
 
     const ctx = gsap.context(() => {
+
+      if (!productsTitleRef.current) return;
+
       // Split title
       productTitle = new SplitType(
         productsTitleRef.current.querySelector("h2"), { types: "words", }
       );
+
+      // Fade title while cards scroll
+      gsap.to(productsTitleRef.current, {
+        opacity: 0.1,
+        ease: "none",
+        scrollTrigger: {
+          trigger: productsBlockRef.current,
+          start: "top 70%",
+          end: "top top",
+          scrub: true,
+        },
+      });
 
       // Intro animation
       const introTL = gsap.timeline({
@@ -64,6 +79,7 @@ const ProductSection = () => {
         }, "-=0.6");
 
       const cards = productsBlockRef.current.querySelectorAll(".product-card");
+      if (!cards?.length) return;
 
       // Cards
       cards.forEach((item, i) => {

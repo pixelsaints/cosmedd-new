@@ -176,7 +176,7 @@ export default function HeroSlider() {
               </div>
 
               <div className="relative content">
-                <h1 className="heading">
+                <h1 className="heading lg:w-[95%]">
                   {slide.title}
                 </h1>
 

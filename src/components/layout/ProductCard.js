@@ -3,7 +3,7 @@ const ProductCard = ({ number, title, desc, icon }) => {
     <div className="product-card">
       <img src={icon} alt={title} />
       <div className="product-card-content">
-        <h4 className="mb-3">{title}</h4>
+        <h5 className="mb-3 font-semibold">{title}</h5>
         <p>{desc}</p>
       </div>
     </div>

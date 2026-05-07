@@ -11,11 +11,12 @@ export default function Header() {
     { name: "Products", href: "/products" },
     { name: "Quality & Compliance", href: "/quality-compliance" },
     { name: "Why Choose Us", href: "/why-choose-us" },
+    { name: "Global Presence", href: "/global-presence" },
   ];
 
   return (
     <>
-      <header  id="site-header">
+      <header id="site-header">
         <div className="container-fluid mx-auto flex justify-between items-center header">
 
           {/* Logo */}
@@ -37,8 +38,8 @@ export default function Header() {
                     <span
                       data-title={item.name}
                       className={`${pathname === item.href
-                          ? "text-white"
-                          : "text-white/60 hover:text-white"
+                        ? "text-white"
+                        : "text-white/60 hover:text-white"
                         }`}
                     >
                       {item.name}

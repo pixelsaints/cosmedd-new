@@ -171,9 +171,9 @@ const AboutContents = () => {
             <div className="flex flex-col" ref={textRef}>
               <div className="sub-title mb-3 fade-up">About Cosmedd</div>
 
-              <h2 className="mb-4 title-animate text-black">Simplifying complexity in modern healthcare systems</h2>
+              <h2 className="mb-4 title-animate text-black">Simplifying Complexity in Modern Healthcare</h2>
 
-              <p className="mb-4 lead">We build intuitive, scalable digital healthcare experiences that connect patients, providers, and systems seamlessly.</p>
+              <p className="mb-4 lead">We build intuitive, scalable healthcare experiences that connect patients, providers, and systems seamlessly.</p>
 
               <p className="mb-6 desc">Established in 2015, Cosmedd Healthcare is an export-oriented company based in India. We specialize in sourcing and manufacturing healthcare and wellness products for clients across Southeast Asia and the CIS region, including Russia.</p>
 

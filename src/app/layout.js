@@ -1,4 +1,4 @@
-import { DM_Sans } from "next/font/google";
+import { Onest } from "next/font/google";
 import "@/styles/globals.css";
 import "@/styles/style.scss";
 import Header from "@/components/layout/Header";
@@ -7,7 +7,7 @@ import PageMask from "@/components/transitions/PageMask";
 import PageEnter from "@/components/transitions/PageEnter";
 
 
-const dmSans = DM_Sans({
+const dmSans = Onest({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
   variable: "--font-sans",

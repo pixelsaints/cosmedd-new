@@ -3,27 +3,27 @@ export const slides = [
   {
     title: "Better Health for Everyday Living",
     desc: "Helping people live healthier lives with safe, simple, and effective healthcare products for everyday use worldwide.",
-    primary: "Explore Products",
-    secondary: "Become a Partner",
-    primaryUrl: "/products",
+    primary: "Our Products",
+    secondary: "Contact Us",
+    primaryUrl: "/about",
     secondaryUrl: "/contact",
     image: "/images/better-health.webp",
   },
   {
     title: "Expanding Global Presence In Healthcare",
     desc: "Serving clients across Asia and CIS regions while growing into new markets with strong local partnerships worldwide.",
-    primary: "Quality Standards",
-    secondary: "Learn More",
+    primary: "About Us",
+    secondary: "Contact Us",
     primaryUrl: "/quality-compliance",
-    secondaryUrl: "/about",
+    secondaryUrl: "/contact",
     image: "/images/worldwide-expansion.webp",
   },
   {
     title: "Proven Quality Across Every Product Line",
     desc: "We ensure high standards by working with trusted manufacturers and delivering consistent quality across all product categories.",
-    primary: "Explore Products",
+    primary: "Quality Standards",
     secondary: "Contact Us",
-    primaryUrl: "/products",
+    primaryUrl: "/quality-compliance",
     secondaryUrl: "/contact",
     image: "/images/quality-slide.webp",
   },
@@ -121,6 +121,7 @@ export const whyCosmeddData = {
   ],
 };
 
+
 export const productData = [
   {
     number: "1",
@@ -179,3 +180,43 @@ export const productData = [
 
 
 ]
+
+export const indData = [
+  {
+    number: "1",
+    title: "Pharmaceutical Distributors",
+    desc: "Reliable sourcing solutions supporting seamless pharmaceutical distribution across regional and global healthcare markets.",
+    icon: "/images/pharmaceutical-generics.webp",
+  },
+  {
+    number: "2",
+    title: "Healthcare Institutions",
+    desc: "Quality healthcare products designed to support hospitals, clinics, and medical service providers worldwide.",
+    icon: "/images/apis-excipients.webp",
+  },
+  {
+    number: "3",
+    title: "Retail & Consumer Brands",
+    desc: "Private - label and branded healthcare solutions tailored for competitive retail and consumer wellness markets.",
+    icon: "/images/herbal-natural-medicines.webp",
+  },
+  {
+    number: "4",
+    title: "Import & Export Partners",
+    desc: "Strategic sourcing partnerships ensuring compliant international trade and seamless healthcare product distribution.",
+    icon: "/images/nutraceuticals-probiotics.webp",
+  },
+  {
+    number: "5",
+    title: "Wellness Companies",
+    desc: "Innovative skincare and beauty formulations combining cosmetic excellence with therapeutic benefits.",
+    icon: "/images/cosmeceuticals.webp",
+  },
+  {
+    number: "6",
+    title: "Veterinary Businesses",
+    desc: "Trusted animal healthcare products supporting nutrition, wellness, and treatment needs across veterinary markets.",
+    icon: "/images/mens-womens-care.webp",
+  }
+]
+
