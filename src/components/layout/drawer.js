@@ -9,6 +9,16 @@ export default function CatalogDrawer({ isOpen, onClose }) {
   const overlayRef = useRef(null);
 
   useEffect(() => {
+
+    gsap.set(drawerRef.current, {
+      x: "100%",
+    });
+
+    gsap.set(overlayRef.current, {
+      opacity: 0,
+      pointerEvents: "none",
+    });
+
     if (isOpen) {
       gsap.to(overlayRef.current, {
         opacity: 1,

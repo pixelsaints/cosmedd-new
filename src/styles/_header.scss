@@ -302,6 +302,7 @@
   height: 100vh;
   display: flex;
   flex-direction: column;
+  opacity: 0;
 
   &-overlay{
     background: rgba($black, 0.8);
@@ -312,6 +313,7 @@
     left: 0;
     top: 0;
     z-index: 9998;
+    padding: 0;
   }
 
   &-top{
