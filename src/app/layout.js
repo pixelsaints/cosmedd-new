@@ -14,7 +14,7 @@ const dmSans = Onest({
 });
 
 export const metadata = {
-  metadataBase: new URL("https://cosmedd.com"),
+  metadataBase: new URL("https://cosmedd.netlify.app/"),
 
   title: "Cosmedd Healthcare | Global Pharmaceutical & Wellness Export Solutions",
   description: "Cosmedd Healthcare is a global export-oriented company delivering pharmaceutical formulations, nutraceuticals, APIs, medical devices, and wellness solutions worldwide.",
@@ -22,7 +22,7 @@ export const metadata = {
   openGraph: {
     title: "Cosmedd Healthcare | Global Healthcare Export Solutions",
     description: "Trusted sourcing and export of pharmaceutical, nutraceutical, wellness, and healthcare products across global markets.",
-    url: "https://cosmedd.com",
+    url: "https://cosmedd.netlify.app/",
     siteName: "Cosmedd",
     images: [
       {
