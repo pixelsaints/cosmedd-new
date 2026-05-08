@@ -53,7 +53,7 @@ export default function Header() {
             <button className="ham-btn" />
 
             {/* CTA */}
-            <div className="cta">
+            <div className="cta-btn">
               <TransitionLink href="/contact" className="btn btn-small">
                 <span data-title="Contact Us">Contact Us</span>
               </TransitionLink>

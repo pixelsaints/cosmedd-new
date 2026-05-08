@@ -186,37 +186,43 @@ export const indData = [
     number: "1",
     title: "Pharmaceutical Distributors",
     desc: "Reliable sourcing solutions supporting seamless pharmaceutical distribution across regional and global healthcare markets.",
-    icon: "/images/pharmaceutical-generics.webp",
+    icon: "/images/pharmaceutical_distributors.webp",
+    iconSvg: "/icons/drug.svg"
   },
   {
     number: "2",
     title: "Healthcare Institutions",
     desc: "Quality healthcare products designed to support hospitals, clinics, and medical service providers worldwide.",
-    icon: "/images/apis-excipients.webp",
+    icon: "/images/healthcare_institutions.webp",
+    iconSvg: "/icons/hospital.svg"
   },
   {
     number: "3",
     title: "Retail & Consumer Brands",
     desc: "Private - label and branded healthcare solutions tailored for competitive retail and consumer wellness markets.",
-    icon: "/images/herbal-natural-medicines.webp",
+    icon: "/images/retail_consumer_brands.webp",
+    iconSvg: "/icons/skin-care.svg"
   },
   {
     number: "4",
     title: "Import & Export Partners",
     desc: "Strategic sourcing partnerships ensuring compliant international trade and seamless healthcare product distribution.",
-    icon: "/images/nutraceuticals-probiotics.webp",
+    icon: "/images/import_export_partners.webp",
+    iconSvg: "/icons/logistics.svg"
   },
   {
     number: "5",
     title: "Wellness Companies",
     desc: "Innovative skincare and beauty formulations combining cosmetic excellence with therapeutic benefits.",
-    icon: "/images/cosmeceuticals.webp",
+    icon: "/images/wellness_companies.webp",
+    iconSvg: "/icons/company.svg"
   },
   {
     number: "6",
     title: "Veterinary Businesses",
     desc: "Trusted animal healthcare products supporting nutrition, wellness, and treatment needs across veterinary markets.",
-    icon: "/images/mens-womens-care.webp",
+    icon: "/images/veterinary_businesses.webp",
+    iconSvg: "/icons/veterinary.svg"
   }
 ]
 

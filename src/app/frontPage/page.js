@@ -1,3 +1,4 @@
+import Cta from "@/components/layout/Cta";
 import AboutContents from "./components/AboutContents";
 import GlobalPresence from "./components/GlobalPresence";
 import HeroSlider from "./components/HeroSlider";
@@ -21,8 +22,11 @@ export default function FrontPage() {
       <section className="global-presence py-20 lg:py-32 bg-slate-100">
         <GlobalPresence />
       </section>
-      <section className="ind-served py-20 lg:py-32">
+      <section className="ind-served py-20 lg:py-32 bg-pri-50">
         <IndServed />
+      </section>
+      <section>
+        <Cta />
       </section>
     </>
   )

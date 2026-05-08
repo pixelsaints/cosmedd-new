@@ -283,76 +283,85 @@
   margin: 0 auto;
   background: #0b0f0e;
   color: #e8f0ee;
-  padding: 32px 20px;
+  padding: 32px 20px 0;
   width: 100%;
 
   @include lg{
-    padding: 32px 5vw;
+    padding: 32px 5vw 0;
+  }
+}
+
+.drawer{
+  position: fixed;
+  top: 0;
+  right: 0;
+  background: #fff;
+  z-index: 9999;
+  width: 100%;
+  max-width: 400px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+
+  &-overlay{
+    background: rgba($black, 0.8);
+    backdrop-filter: blur(10px);
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    left: 0;
+    top: 0;
+    z-index: 9998;
   }
 
-  &__top {
-    max-width: 600px;
-    margin-bottom: 5rem;
+  &-top{
+    padding: 16px 24px;
+    background: $pri-100;
+    margin-bottom: 32px;
 
-    h2 {
-      font-size: 2.5rem;
-      letter-spacing: 0.5px;
-    }
-
-    p {
-      margin-top: 1rem;
-      opacity: 0.7;
-      line-height: 1.6;
+    h3{
+      font-size: 18px;
+      color: $black;
+      font-weight: 600;
     }
   }
 
-  &__grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 3rem;
-    margin-bottom: 4rem;
-  }
+  &-content{
+    padding: 0 24px;
 
-  &__col {
-    h4 {
-      font-size: 0.9rem;
-      opacity: 0.6;
-      margin-bottom: 1rem;
-      text-transform: uppercase;
-    }
+    .input {
+      width: 100%;
+      padding: 12px 16px;
+      border: 1px solid rgba($black-400, 0.4);
+      border-radius: 12px;
+      background: #fff;
+      font-size: 15px;
+      transition: all 0.3s ease;
 
-    ul {
-      list-style: none;
+      &::placeholder{
+        color: $black-700;
+        transition: all 0.3s ease;
+      }
+  
+      &:focus {
+        outline: none;
+        border-color: #e65a3a;
+        box-shadow: 0 0 0 4px rgba(230, 90, 58, 0.08);
 
-      li {
-        margin-bottom: 0.6rem;
-        opacity: 0.85;
-        cursor: default;
+        &::placeholder{
+          color: transparent;
+        }
       }
     }
 
-    p {
-      margin-bottom: 0.5rem;
-      opacity: 0.85;
+    button{
+      width: 100%;
+      text-align: center;
+      justify-content: center;
     }
-  }
-
-  &__info {
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
-    flex-wrap: wrap;
-    font-size: 0.85rem;
-    opacity: 0.6;
-    margin-bottom: 3rem;
-  }
-
-  &__bottom {
-    display: flex;
-    justify-content: space-between;
-    font-size: 0.8rem;
-    opacity: 0.5;
-    border-top: 1px solid rgba(255, 255, 255, 0.08);
-    padding-top: 2rem;
+  
+    textarea {
+      resize: none;
+    }
   }
 }
