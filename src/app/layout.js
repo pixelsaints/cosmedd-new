@@ -16,17 +16,17 @@ const dmSans = Onest({
 export const metadata = {
   metadataBase: new URL("https://cosmedd.com"),
 
-  title: "Home | Cosmedd",
-  description: "Advanced skincare solutions",
+  title: "Cosmedd Healthcare | Global Pharmaceutical & Wellness Export Solutions",
+  description: "Cosmedd Healthcare is a global export-oriented company delivering pharmaceutical formulations, nutraceuticals, APIs, medical devices, and wellness solutions worldwide.",
 
   openGraph: {
-    title: "Cosmedd",
-    description: "Modern skincare solutions",
+    title: "Cosmedd Healthcare | Global Healthcare Export Solutions",
+    description: "Trusted sourcing and export of pharmaceutical, nutraceutical, wellness, and healthcare products across global markets.",
     url: "https://cosmedd.com",
     siteName: "Cosmedd",
     images: [
       {
-        url: "/og-image.jpg",
+        url: "/images/ogg-image.png",
         width: 1200,
         height: 630,
       },
@@ -37,8 +37,8 @@ export const metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Cosmedd",
-    description: "Modern skincare solutions",
-    images: ["/og-image.jpg"],
+    description: "Trusted sourcing and export of pharmaceutical, nutraceutical, wellness, and healthcare products across global markets.",
+    images: ["/images/ogg-image.png"],
   },
 };
 
