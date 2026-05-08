@@ -8,6 +8,7 @@ import Lottie from "lottie-react";
 import { ArrowRight } from "lucide-react";
 import TransitionLink from "@/components/transitions/TransitionLink"
 import globeAnimation from "../globe.json";
+import { reveal } from "@/lib/animations";
 
 
 export default function GlobalPresence() {
@@ -17,10 +18,12 @@ export default function GlobalPresence() {
   const globeContentRef = useRef(null);
 
   useLayoutEffect(() => {
+
+    const mm = gsap.matchMedia();
+
     const ctx = gsap.context(() => {
 
       const globeTitle = new SplitType(globeTitleRef.current.querySelector("h2"), { types: "words", });
-
       const globeTitleDesc = new SplitType(globeTitleRef.current.querySelector("p.lead"), { types: "lines", });
 
       const globeInto = gsap.timeline({
@@ -33,137 +36,149 @@ export default function GlobalPresence() {
 
       globeInto
         .from(globeTitleRef.current.querySelector(".sub-title"), {
-          y: 40,
-          rotate: 6,
-          filter: "blur(8px)",
-          opacity: 0,
-          duration: 0.7,
-          stagger: 0.06,
-          ease: "power3.out",
+          ...reveal
         })
         .from(globeTitle.words, {
-          y: 40,
-          rotate: 6,
-          filter: "blur(8px)",
-          opacity: 0,
-          duration: 0.7,
-          stagger: 0.06,
-          ease: "power3.out",
+          ...reveal,
+          stagger: 0.04
         }, "-=0.6")
         .from(globeTitleDesc.lines, {
-          y: 40,
-          rotate: 6,
-          filter: "blur(8px)",
-          opacity: 0,
-          duration: 0.7,
-          stagger: 0.06,
-          ease: "power3.out",
+          ...reveal,
+          stagger: 0.04
         }, "-=0.6")
         .from(globeTitleRef.current.querySelector(".btn-wrap"), {
-          y: 40,
-          rotate: 6,
-          opacity: 0,
-          duration: 0.7,
-          stagger: 0.06,
-          filter: "blur(8px)",
-          ease: "power3.out",
+          ...reveal,
+          stagger: 0.04
         }, "-=0.6");
 
-      // Top Left
-      gsap.from(".top-left", {
-        x: 100,
-        scale: 0.8,
-        opacity: 0,
-        scrollTrigger: {
-          trigger: globeContentRef.current,
-          start: "top 80%",
-          end: "top 30%",
-          scrub: true
-        }
+      mm.add("(min-width: 1024px)", () => {
+
+        // Top Left
+        gsap.from(".top-left", {
+          x: 100,
+          scale: 0.8,
+          opacity: 0,
+          scrollTrigger: {
+            trigger: globeContentRef.current,
+            start: "top 80%",
+            end: "top 30%",
+            scrub: true
+          }
+        });
+
+        // Middle Left
+        gsap.from(".middle-left", {
+          x: 100,
+          scale: 0.8,
+          opacity: 0,
+          scrollTrigger: {
+            trigger: globeContentRef.current,
+            start: "top 80%",
+            end: "top 30%",
+            scrub: true
+          }
+        });
+
+        // Bottom Left
+        gsap.from(".bottom-left", {
+          y: -160,
+          scale: 0.8,
+          opacity: 0,
+          scrollTrigger: {
+            trigger: globeContentRef.current,
+            start: "top 80%",
+            end: "top 30%",
+            scrub: true
+          }
+        });
+
+        // Top Right
+        gsap.from(".top-right", {
+          x: -100,
+          opacity: 0,
+          scale: 0.8,
+          scrollTrigger: {
+            trigger: globeContentRef.current,
+            start: "top 80%",
+            end: "top 30%",
+            scrub: true
+          }
+        });
+
+        // Middle Right
+        gsap.from(".middle-right", {
+          x: -100,
+          opacity: 0,
+          scale: 0.8,
+          scrollTrigger: {
+            trigger: globeContentRef.current,
+            start: "top 80%",
+            end: "top 30%",
+            scrub: true
+          }
+        });
+
+        // Bottom Right
+        gsap.from(".bottom-right", {
+          x: -160,
+          opacity: 0,
+          scale: 0.8,
+          scrollTrigger: {
+            trigger: globeContentRef.current,
+            start: "top 80%",
+            end: "top 30%",
+            scrub: true
+          }
+        });
+
+        // Globe
+        gsap.from(".globe", {
+          scale: 0.6,
+          opacity: 0,
+          rotate: -20,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: globeContentRef.current,
+            start: "top 80%",
+            end: "top 40%",
+            scrub: true
+          }
+        });
       });
 
-      // Middle Left
-      gsap.from(".middle-left", {
-        x: 100,
-        scale: 0.8,
-        opacity: 0,
-        scrollTrigger: {
-          trigger: globeContentRef.current,
-          start: "top 80%",
-          end: "top 30%",
-          scrub: true
-        }
-      });
+      mm.add("(max-width: 1023px)", () => {
+        gsap.from(".location", {
+          ...reveal,
+          y: 60,
+          scale: 0.9,
+          stagger: 0.2,
+          scrollTrigger: {
+            trigger: globeContentRef.current,
+            start: "top 85%",
+            toggleActions: "play none none reverse",
+          }
+        });
 
-      // Bottom Left
-      gsap.from(".bottom-left", {
-        y: -160,
-        scale: 0.8,
-        opacity: 0,
-        scrollTrigger: {
-          trigger: globeContentRef.current,
-          start: "top 80%",
-          end: "top 30%",
-          scrub: true
-        }
-      });
-
-      // Top Right
-      gsap.from(".top-right", {
-        x: -100,
-        opacity: 0,
-        scale: 0.8,
-        scrollTrigger: {
-          trigger: globeContentRef.current,
-          start: "top 80%",
-          end: "top 30%",
-          scrub: true
-        }
-      });
-
-      // Middle Right
-      gsap.from(".middle-right", {
-        x: -100,
-        opacity: 0,
-        scale: 0.8,
-        scrollTrigger: {
-          trigger: globeContentRef.current,
-          start: "top 80%",
-          end: "top 30%",
-          scrub: true
-        }
-      });
-
-      // Bottom Right
-      gsap.from(".bottom-right", {
-        x: -160,
-        opacity: 0,
-        scale: 0.8,
-        scrollTrigger: {
-          trigger: globeContentRef.current,
-          start: "top 80%",
-          end: "top 30%",
-          scrub: true
-        }
-      });
-
-      // Globe
-      gsap.from(".globe", {
-        scale: 0.6,
-        opacity: 0,
-        rotate: -20,
-        ease: "power3.out",
-        scrollTrigger: {
-          trigger: globeContentRef.current,
-          start: "top 80%",
-          end: "top 40%",
-          scrub: true
-        }
+        gsap.from(".globe", {
+          scale: 0.7,
+          opacity: 0,
+          rotate: -10,
+          duration: 1,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: globeContentRef.current,
+            start: "top 85%",
+            toggleActions: "play none none reverse",
+          }
+        });
       });
 
     }, globeRef);
 
-    return () => ctx.revert();
+    return () => {
+      mm.revert();
+      ctx.revert()
+    };
   }, []);
 
   return (
@@ -180,50 +195,95 @@ export default function GlobalPresence() {
           </TransitionLink>
         </div>
       </div>
-      <div className="hiden lg:flex flex-row gap-8 items-center mt-[4em]" ref={globeContentRef}>
-        <div className="col w-[35%] flex flex-col items-center justify-center">
-          <div className="location top-left flex flex-col self-end">
-            <div className="icon">
-              <img src="/icons/russia.svg" alt="" />
+      <div ref={globeContentRef}>
+        <div className="hidden lg:flex flex-row gap-8 items-center mt-[4em]" >
+          <div className="col w-[35%] flex flex-col items-center justify-center">
+            <div className="location top-left flex flex-col self-end">
+              <div className="icon">
+                <img src="/icons/russia.svg" alt="" />
+              </div>
+              <h5 className="p-6 text-center font-bold" >Russia & CIS Region</h5>
             </div>
-            <h5 className="p-6 text-center font-bold" >Russia & CIS Region</h5>
+            <div className="location middle-left flex flex-col self-start">
+              <div className="icon">
+                <img src="/icons/vietnam.svg" alt="" />
+              </div>
+              <h5 className="p-6 text-center font-bold" >Vietnam</h5>
+            </div>
+            <div className="location bottom-left flex flex-col self-end">
+              <div className="icon">
+                <img src="/icons/myanmar.svg" alt="" />
+              </div>
+              <h5 className="p-6 text-center font-bold" >Myanmar</h5>
+            </div>
           </div>
-          <div className="location middle-left flex flex-col self-start">
-            <div className="icon">
-              <img src="/icons/vietnam.svg" alt="" />
+          <div className="w-[40%] left-col lottie-anime">
+            <div className="globe">
+              <Lottie animationData={globeAnimation} loop className="w-full scale-[3]" />
             </div>
-            <h5 className="p-6 text-center font-bold" >Vietnam</h5>
           </div>
-          <div className="location bottom-left flex flex-col self-end">
-            <div className="icon">
-              <img src="/icons/myanmar.svg" alt="" />
+          <div className="col w-[35%] flex flex-col items-center justify-center">
+            <div className="location top-right flex flex-col self-start">
+              <div className="icon">
+                <img src="/icons/philippines.svg" alt="" />
+              </div>
+              <h5 className="p-6 text-center font-bold" >Philippines</h5>
             </div>
-            <h5 className="p-6 text-center font-bold" >Myanmar</h5>
+            <div className="location middle-right flex flex-col self-end">
+              <div className="icon">
+                <img src="/icons/thailand.svg" alt="" />
+              </div>
+              <h5 className="p-6 text-center font-bold" >Thailand</h5>
+            </div>
+            <div className="location bottom-right flex flex-col self-start">
+              <div className="icon">
+                <img src="/icons/africa.svg" alt="" />
+              </div>
+              <h5 className="p-6 text-center font-bold" >Africa & Middle East</h5>
+            </div>
           </div>
         </div>
-        <div className="w-[40%] left-col lottie-anime">
+        <div className="flex flex-col lg:hidden">
           <div className="globe">
-            <Lottie animationData={globeAnimation} loop className="w-full scale-[3]" />
+            <Lottie animationData={globeAnimation} loop className="w-full scale-[1.6] mt-24" />
           </div>
-        </div>
-        <div className="col w-[35%] flex flex-col items-center justify-center">
-          <div className="location top-right flex flex-col self-start">
-            <div className="icon">
-              <img src="/icons/philippines.svg" alt="" />
+          <div className="grid grid-cols-2 lg:hidden gap-4 px-4 -mt-10">
+            <div className="location top-left flex flex-col self-end">
+              <div className="icon">
+                <img src="/icons/russia.svg" alt="" />
+              </div>
+              <h5 className="p-6 text-center font-bold" >Russia & CIS Region</h5>
             </div>
-            <h5 className="p-6 text-center font-bold" >Philippines</h5>
-          </div>
-          <div className="location middle-right flex flex-col self-end">
-            <div className="icon">
-              <img src="/icons/thailand.svg" alt="" />
+            <div className="location middle-left flex flex-col self-start">
+              <div className="icon">
+                <img src="/icons/vietnam.svg" alt="" />
+              </div>
+              <h5 className="p-6 text-center font-bold" >Vietnam</h5>
             </div>
-            <h5 className="p-6 text-center font-bold" >Thailand</h5>
-          </div>
-          <div className="location bottom-right flex flex-col self-start">
-            <div className="icon">
-              <img src="/icons/africa.svg" alt="" />
+            <div className="location bottom-left flex flex-col self-end">
+              <div className="icon">
+                <img src="/icons/myanmar.svg" alt="" />
+              </div>
+              <h5 className="p-6 text-center font-bold" >Myanmar</h5>
             </div>
-            <h5 className="p-6 text-center font-bold" >Africa & Middle East</h5>
+            <div className="location top-right flex flex-col self-start">
+              <div className="icon">
+                <img src="/icons/philippines.svg" alt="" />
+              </div>
+              <h5 className="p-6 text-center font-bold" >Philippines</h5>
+            </div>
+            <div className="location middle-right flex flex-col self-end">
+              <div className="icon">
+                <img src="/icons/thailand.svg" alt="" />
+              </div>
+              <h5 className="p-6 text-center font-bold" >Thailand</h5>
+            </div>
+            <div className="location bottom-right flex flex-col self-start">
+              <div className="icon">
+                <img src="/icons/africa.svg" alt="" />
+              </div>
+              <h5 className="p-6 text-center font-bold" >Africa & Middle East</h5>
+            </div>
           </div>
         </div>
       </div>

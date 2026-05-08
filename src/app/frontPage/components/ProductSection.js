@@ -8,6 +8,7 @@ import TransitionLink from "@/components/transitions/TransitionLink";
 import SplitType from "split-type";
 import { productData } from "../data";
 import ProductCard from "@/components/layout/ProductCard";
+import { reveal, fadeUp } from "@/lib/animations";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -51,31 +52,16 @@ const ProductSection = () => {
 
       introTL
         .from(productsTitleRef.current.querySelector(".sub-title"), {
-          y: 40,
-          rotate: 6,
-          filter: "blur(8px)",
-          opacity: 0,
-          duration: 0.7,
+          ...reveal,
           stagger: 0.06,
-          ease: "power3.out",
         })
         .from(productTitle.words, {
-          y: 40,
-          rotate: 6,
-          filter: "blur(8px)",
-          opacity: 0,
-          duration: 0.7,
+          ...reveal,
           stagger: 0.06,
-          ease: "power3.out",
         }, "-=0.6")
         .from(productsTitleRef.current.querySelector(".btn-wrap"), {
-          y: 40,
-          rotate: 6,
-          opacity: 0,
-          duration: 0.7,
+          ...reveal,
           stagger: 0.06,
-          filter: "blur(8px)",
-          ease: "power3.out",
         }, "-=0.6");
 
       const cards = productsBlockRef.current.querySelectorAll(".product-card");
@@ -84,12 +70,7 @@ const ProductSection = () => {
       // Cards
       cards.forEach((item, i) => {
         gsap.from(item, {
-          opacity: 0,
-          y: 80,
-          filter: "blur(8px)",
-          duration: 0.8,
-          delay: i * 0.05,
-          ease: "power4.out",
+          ...fadeUp,
           scrollTrigger: {
             trigger: item,
             start: "top 85%",

@@ -7,42 +7,42 @@ import { X } from "lucide-react";
 export default function CatalogDrawer({ isOpen, onClose }) {
   const drawerRef = useRef(null);
   const overlayRef = useRef(null);
+  const tl = useRef(null);
 
   useEffect(() => {
-
-    gsap.set(drawerRef.current, {
-      x: "100%",
-    });
-
+    gsap.set(drawerRef.current, { x: "100%" });
     gsap.set(overlayRef.current, {
       opacity: 0,
       pointerEvents: "none",
     });
 
-    if (isOpen) {
-      gsap.to(overlayRef.current, {
+    tl.current = gsap.timeline({ paused: true });
+
+    tl.current
+      .to(overlayRef.current, {
         opacity: 1,
         pointerEvents: "auto",
         duration: 0.3,
-      });
+      })
+      .to(
+        drawerRef.current,
+        {
+          x: 0,
+          opacity: 1,
+          duration: 0.7,
+          ease: "power4.out",
+        },
+        0
+      );
+  }, []);
 
-      gsap.to(drawerRef.current, {
-        x: 0,
-        duration: 0.6,
-        ease: "power4.out",
-      });
+  useEffect(() => {
+    if (!tl.current) return;
+
+    if (isOpen) {
+      tl.current.play();
     } else {
-      gsap.to(overlayRef.current, {
-        opacity: 0,
-        pointerEvents: "none",
-        duration: 0.3,
-      });
-
-      gsap.to(drawerRef.current, {
-        x: "100%",
-        duration: 0.5,
-        ease: "power4.inOut",
-      });
+      tl.current.reverse();
     }
   }, [isOpen]);
 
@@ -60,7 +60,7 @@ export default function CatalogDrawer({ isOpen, onClose }) {
       >
         <div className="drawer-top flex flex-row justify-between">
           <h3>Request Product Catalog</h3>
-          <button onClick={onClose}><X /></button>
+          <button className=" cursor-pointer " onClick={onClose}><X /></button>
         </div>
         <div className="drawer-content">
           <form className="flex flex-col gap-4">

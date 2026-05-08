@@ -3,11 +3,13 @@
 import { useRef, useLayoutEffect } from "react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination } from 'swiper/modules';
 import SplitType from "split-type";
 import WhyCard from "@/components/layout/WhyCard";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Pagination } from 'swiper/modules';
 import { whyCosmeddData } from "../data";
+import { reveal, fadeUp } from "@/lib/animations";
+
 import "swiper/css";
 import "swiper/css/pagination";
 
@@ -16,6 +18,7 @@ const WhyCosmedd = () => {
   const whySection = useRef(null);
   const whySectionTitleRef = useRef(null);
   const whySectionCards = useRef(null);
+  const whySwiper = useRef(null);
 
   useLayoutEffect(() => {
     const ctx = gsap.context(() => {
@@ -36,28 +39,16 @@ const WhyCosmedd = () => {
 
       introTL
         .from(whySectionTitleRef.current.querySelector(".sub-title"), {
-          y: 40,
-          opacity: 0,
-          duration: 0.7,
-          filter: "blur(8px)",
+          ...reveal,
           stagger: 0.06,
-          ease: "power3.out",
         })
         .from(productTitle.words, {
-          y: 40,
-          filter: "blur(8px)",
-          opacity: 0,
-          duration: 0.7,
+          ...reveal,
           stagger: 0.06,
-          ease: "power3.out",
         }, "-=0.3")
         .from(whySectionTitleRef.current.querySelector("img"), {
-          y: 40,
-          opacity: 0,
-          duration: 0.7,
-          filter: "blur(16px)",
+          ...reveal,
           stagger: 0.06,
-          ease: "power3.out",
         }, "-=0.3");
 
       const cards = whySectionCards.current.querySelectorAll(".why-card");
@@ -65,13 +56,8 @@ const WhyCosmedd = () => {
       // Cards
       cards.forEach((item, i) => {
         gsap.from(item, {
-          opacity: 0,
-          y: 80,
-          filter: "blur(8px)",
-          // rotate: 8,
-          duration: 0.8,
+          ...fadeUp,
           delay: i * 0.05,
-          ease: "power4.out",
           scrollTrigger: {
             trigger: item,
             start: "top 85%",
@@ -80,6 +66,19 @@ const WhyCosmedd = () => {
           },
         });
       });
+      // why-swiper
+
+      const swiperRef = whySwiper.current.querySelector(".why-swiper")
+
+      gsap.from(swiperRef, {
+        ...fadeUp,
+        scrollTrigger: {
+          trigger: whySwiper.current,
+          start: "top 85%",
+          toggleActions: "play none none reverse",
+        },
+      })
+
 
       ScrollTrigger.refresh();
 
@@ -129,19 +128,21 @@ const WhyCosmedd = () => {
             </div>
 
             {/* Mobile Swiper */}
-            <div className="block lg:hidden">
-              <Swiper
-                modules={[Pagination]}
-                spaceBetween={20}
-                slidesPerView={1.1}
-                pagination={{ clickable: true }}
-              >
-                {whyCosmeddData.slider.map((item) => (
-                  <SwiperSlide key={item.number}>
-                    <WhyCard {...item} />
-                  </SwiperSlide>
-                ))}
-              </Swiper>
+            <div className="block lg:hidden" ref={whySwiper}>
+              <div className="why-swiper">
+                <Swiper
+                  modules={[Pagination]}
+                  spaceBetween={20}
+                  slidesPerView={1.1}
+                  pagination={{ clickable: true }}
+                >
+                  {whyCosmeddData.slider.map((item) => (
+                    <SwiperSlide key={item.number}>
+                      <WhyCard {...item} />
+                    </SwiperSlide>
+                  ))}
+                </Swiper>
+              </div>
             </div>
 
           </div>

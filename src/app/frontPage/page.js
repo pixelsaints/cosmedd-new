@@ -6,6 +6,8 @@ import IndServed from "./components/IndServed";
 import ProductSection from "./components/ProductSection";
 import WhyCosmedd from "./components/WhyCosmedd";
 
+
+
 export default function FrontPage() {
   return (
     <>

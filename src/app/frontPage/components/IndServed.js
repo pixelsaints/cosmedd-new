@@ -7,9 +7,13 @@ import SplitType from "split-type";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import { indData } from "../data";
+import { reveal, fadeUp } from "@/lib/animations";
 import "swiper/css";
 import "swiper/css/pagination";
-import { indData } from "../data";
+
+gsap.registerPlugin(ScrollTrigger);
+
 
 export default function IndServed() {
   const indServedRef = useRef(null);
@@ -18,6 +22,9 @@ export default function IndServed() {
 
   useLayoutEffect(() => {
     const ctx = gsap.context(() => {
+
+      if (!indServedTitleRef.current) return;
+
 
       const indTitle = new SplitType(indServedTitleRef.current.querySelector("h2"), { types: "words", });
       const indTitleDesc = new SplitType(indServedTitleRef.current.querySelector("p.lead"), { types: "lines", });
@@ -32,41 +39,20 @@ export default function IndServed() {
 
       indInto
         .from(indServedTitleRef.current.querySelector(".sub-title"), {
-          y: 40,
-          rotate: 6,
-          filter: "blur(8px)",
-          opacity: 0,
-          duration: 0.7,
+          ...reveal,
           stagger: 0.06,
-          ease: "power3.out",
         })
         .from(indTitle.words, {
-          y: 40,
-          rotate: 6,
-          filter: "blur(8px)",
-          opacity: 0,
-          duration: 0.7,
+          ...reveal,
           stagger: 0.06,
-          ease: "power3.out",
         }, "-=0.6")
         .from(indTitleDesc.lines, {
-          y: 40,
-          rotate: 6,
-          filter: "blur(8px)",
-          opacity: 0,
-          duration: 0.7,
+          ...reveal,
           stagger: 0.06,
-          ease: "power3.out",
         }, "-=0.6");
 
       gsap.from(indServedContentRef.current, {
-        y: 40,
-        filter: "blur(8px)",
-        opacity: 0,
-        duration: 0.7,
-        stagger: 0.06,
-        ease: "power3.out",
-
+        ...fadeUp,
         scrollTrigger: {
           trigger: indServedContentRef.current,
           start: "top 80%",
@@ -90,11 +76,11 @@ export default function IndServed() {
         </div>
       </div>
 
-      <div className="relative ind-swiper w-full pl-10" ref={indServedContentRef}>
+      <div className="relative ind-swiper w-full px-4 lg:pl-10" ref={indServedContentRef}>
         <Swiper
           modules={[Navigation, Pagination]}
           spaceBetween={20}
-          slidesPerView={3.4}
+          slidesPerView={1.2}
           loop={true}
           parallax={true}
           navigation={{
@@ -112,8 +98,12 @@ export default function IndServed() {
             pauseOnMouseEnter: true,
           }}
           breakpoints={{
-            640: { slidesPerView: 1.2, },
-            1024: { slidesPerView: 3.4 }
+            640: {
+              slidesPerView: 1.8,
+            },
+            1024: {
+              slidesPerView: 3.4,
+            },
           }}
         >
           {

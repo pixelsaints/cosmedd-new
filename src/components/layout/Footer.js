@@ -4,24 +4,79 @@ export default function Footer() {
   return (
     <>
       <footer className="footer">
-        {/* <div className="footer-top flex flex-col lg:flex-row lg:justify-between border-b border-white/20 pb-8">
+
+        {/* 1. Brand Statement */}
+        <div className="footer__top w-full flex flex-col lg:flex-row lg:items-center lg:justify-between">
           <div className="logo">
             <TransitionLink href="/">
-              <img
-                src="/images/logo.svg"
-                alt="COSMEDD - Healthcare LLP"
-              />
+              <img src="/images/logo-white.svg" alt="Cosmedd" />
             </TransitionLink>
-            <p className="mt-6 text-white/70">Advanced skincare solutions</p>
           </div>
-          <div className="social-links">
-
+          <div className="desc ml-auto lg:w-[50%] mt-8 lg:mt-0">
+            <div className="">Cosmedd Healthcare delivers pharmaceutical formulations, nutraceuticals, APIs, medical devices, and wellness export solutions worldwide.</div>
           </div>
-        </div> */}
-
-        <div className="copy-right text-center p-4">
-          <div className="text-white/60 text-[14px]">© 2026 Cosmedd Healthcare. All Rights Reserved.</div>
         </div>
+
+        {/* 2. Core Grid */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 mt-6 gap-8">
+          <div className="footer__col">
+            <h4>Company</h4>
+            <ul className="flex flex-col divide-y divide-white/10 gap-3">
+              <li><TransitionLink href="/">Home</TransitionLink></li>
+              <li><TransitionLink href="/about">About Cosmedd</TransitionLink></li>
+              <li><TransitionLink href="/quality-compliance">Quality & Compliance</TransitionLink></li>
+              <li><TransitionLink href="/why-choose-us">Why Choose Us</TransitionLink></li>
+              <li><TransitionLink href="/global-presence">Global Presence</TransitionLink></li>
+            </ul>
+          </div>
+
+          <div className="footer__col">
+            <h4>Products</h4>
+            <ul className="flex flex-col divide-y divide-white/10 gap-3">
+              <li><TransitionLink href="/products">Pharmaceutical Generics</TransitionLink></li>
+              <li><TransitionLink href="/products">APIs & Excipients</TransitionLink></li>
+              <li><TransitionLink href="/products">Herbal & Natural Medicines</TransitionLink></li>
+              <li><TransitionLink href="/products">Nutraceuticals & Probiotics</TransitionLink></li>
+              <li><TransitionLink href="/products">View All Products</TransitionLink></li>
+            </ul>
+          </div>
+
+          <div className="footer__col">
+            <h4>Lets Connect</h4>
+            <ul className="flex flex-col divide-y divide-white/10 gap-3">
+              <li><a href="#" target="_blank">Facebook</a></li>
+              <li><a href="#" target="_blank">X (Twitter)</a></li>
+              <li><a href="#" target="_blank">LinkedIn</a></li>
+              <li><a href="#" target="_blank">Instagram</a></li>
+            </ul>
+          </div>
+
+          <div className="footer__col">
+            <h4>Contact</h4>
+            <div className="flex flex-col divide-y divide-white/10 gap-3">
+              <a href="mailto:info@cosmedd.com" className="text-white/70 hover:text-white transition pb-2">info@cosmedd.com</a>
+              <a href="tel:+918049529579" className="text-white/70 hover:text-white transition pb-2">+91 80 495 29579</a>
+              <p className="text-white/70">No. 84, 3rd Floor, Vishwa Parva Mansion
+                21st Main, Banashankari II Stage
+                Bangalore - 560070 INDIA</p>
+            </div>
+          </div>
+
+        </div>
+
+        {/* 3. Info Strip */}
+        <div className="flex flex-col lg:flex-row justify-center py-4 text-white/50 gap-4 lg:gap-8 border-t border-b border-white/10 my-8">
+          <span>ISO Certified Processes</span>
+          <span>Data Protected Care Systems</span>
+          <span>HIPAA-style Compliance Standards</span>
+        </div>
+
+        {/* 4. Bottom Bar */}
+        <div className="footer__bottom flex flex-col lg:flex-row justify-between pb-6 text-white/60">
+          <p>© 2026 Cosmedd. All rights reserved.</p>
+          <p>Healthcare clarity through structured systems.</p>
+        </div>
+
       </footer>
     </>
   )

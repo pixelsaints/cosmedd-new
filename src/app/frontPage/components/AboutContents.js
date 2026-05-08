@@ -7,6 +7,7 @@ import Counter from "@/components/ui/counter";
 import { ArrowRight } from "lucide-react";
 import TransitionLink from "@/components/transitions/TransitionLink";
 import SplitType from "split-type";
+import { reveal, fadeUp } from "@/lib/animations";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -31,23 +32,15 @@ const AboutContents = () => {
         },
       });
 
-      tl.from(imageLeft.current, {
-        yPercent: -15,
-        opacity: 0,
-        filter: "blur(10px)",
-        duration: 1,
-        ease: "power3.out",
-      }).from(
-        imageRight.current,
-        {
-          yPercent: 15,
-          opacity: 0,
-          filter: "blur(10px)",
-          duration: 1,
-          ease: "power3.out",
-        },
-        "-=0.8"
-      );
+      tl
+        .from(imageLeft.current, {
+          ...reveal,
+          stagger: 0.4
+        })
+        .from(imageRight.current, {
+          ...reveal,
+          stagger: 0.4
+        }, "-=0.8");
 
       // Text animation
       const titleAnimate = new SplitType(".title-animate", {
@@ -70,39 +63,22 @@ const AboutContents = () => {
 
       tlText
         .from(subTitle, {
-          y: 40,
-          rotate: 8,
-          opacity: 0,
-          duration: 0.6,
-          ease: "power4.out",
+          ...reveal,
         })
         .from(titleAnimate.words, {
-          y: 40,
-          rotate: 8,
-          opacity: 0,
-          duration: 0.6,
-          ease: "power4.out",
+          ...reveal,
           stagger: 0.1,
         }, "-=0.6")
         .from(leadText.lines, {
-          y: 40,
-          opacity: 0,
-          duration: 0.6,
-          ease: "power4.out",
+          ...reveal,
           stagger: 0.1,
         }, "-=0.4")
         .from(des, {
-          y: 40,
-          opacity: 0,
-          duration: 0.6,
-          ease: "power4.out",
+          ...reveal,
           stagger: 0.1,
         }, "-=0.4")
         .from(btnAbout, {
-          y: 40,
-          opacity: 0,
-          duration: 0.6,
-          ease: "power4.out",
+          ...reveal,
           stagger: 0.1,
         }, "-=0.4");
 
@@ -113,12 +89,8 @@ const AboutContents = () => {
 
       startCards.forEach((item, i) => {
         gsap.from(item, {
-          opacity: 0,
-          y: 80,
-          // filter: "blur(10px)",
-          duration: 0.8,
+          ...reveal,
           delay: i * 0.5,
-          ease: "power4.out",
           scrollTrigger: {
             trigger: item,
             start: "top 85%",
