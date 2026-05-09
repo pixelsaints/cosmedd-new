@@ -1,9 +1,22 @@
 "use client";
 import { usePathname } from "next/navigation";
+import { useState, useRef, useLayoutEffect, useEffect } from "react";
+import gsap from "gsap";
+import { Mail, PhoneCall } from "lucide-react";
 import TransitionLink from "@/components/transitions/TransitionLink";
+import CatalogDrawer from "@/components/layout/drawer";
 
 export default function Header() {
   const pathname = usePathname();
+
+  const menuRef = useRef(null);
+  const menuTL = useRef(null);
+
+  const [isOpen, setIsOpen] = useState(false);
+  const [menuActive, setMenuActive] = useState(false);
+
+  const openDrawer = () => setIsOpen(true);
+  const closeDrawer = () => setIsOpen(false);
 
   const nav = [
     { name: "Home", href: "/" },
@@ -14,12 +27,61 @@ export default function Header() {
     { name: "Global Presence", href: "/global-presence" },
   ];
 
+  useLayoutEffect(() => {
+    if (!menuRef.current) return;
+
+    gsap.set(menuRef.current, {
+      x: "-100%",
+    });
+
+    menuTL.current = gsap.timeline({ paused: true });
+
+    menuTL.current
+      .to(menuRef.current, {
+        x: 0,
+        duration: 0.55,
+        ease: "power3.inOut",
+        pointerEvents: "auto"
+      })
+
+      .from(".mobile-menu li", {
+        y: 40,
+        opacity: 0,
+        stagger: 0.08,
+        duration: 0.5,
+        ease: "power3.out",
+      }, "+=0.1")
+
+      .from(".mobile-menu-footer > span", {
+        y: 20,
+        opacity: 0,
+        stagger: 0.08,
+        duration: 0.35,
+        ease: "power3.out",
+      }, "-=0.1");
+
+    return () => {
+      menuTL.current?.kill();
+    };
+  }, []);
+
+  useEffect(() => {
+    if (!menuTL.current) return;
+
+    if (menuActive) {
+      document.body.style.overflow = "hidden";
+      menuTL.current.play();
+    } else {
+      menuTL.current.reverse();
+      document.body.style.overflow = "";
+    }
+  }, [menuActive]);
+
   return (
     <>
       <header id="site-header">
         <div className="container-fluid mx-auto flex justify-between items-center header">
 
-          {/* Logo */}
           <div className="logo">
             <TransitionLink href="/">
               <img
@@ -49,9 +111,6 @@ export default function Header() {
               ))}
             </ul>
 
-            {/* Hamburger */}
-            <button className="ham-btn" />
-
             {/* CTA */}
             <div className="cta-btn">
               <TransitionLink href="/contact" className="btn btn-small">
@@ -59,6 +118,12 @@ export default function Header() {
               </TransitionLink>
             </div>
           </nav>
+
+          <button className={`hamburger ${menuActive ? "is-active" : ""}`} onClick={() => setMenuActive(!menuActive)}>
+            <span className="line"></span>
+            <span className="line"></span>
+            <span className="line"></span>
+          </button>
         </div>
       </header>
 
@@ -106,7 +171,51 @@ export default function Header() {
         </div>
       </div>
 
+      <div ref={menuRef} className="mobile-menu-wrapper">
+        <div className="mobile-menu-content">
+          <ul className="mobile-menu flex flex-col">
+            {nav.map((item) => (
+              <li key={item.href}>
+                <TransitionLink href={item.href} className="menu-link">
+                  <span
+                    data-title={item.name}
+                    className={`${pathname === item.href
+                      ? "text-white"
+                      : "text-white/60 hover:text-white"
+                      }`}
+                  >
+                    {item.name}
+                  </span>
+                </TransitionLink>
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div className="mobile-menu-footer">
+          <span>
+            <TransitionLink href="/contact" className="btn btn-primary btn-small">
+              <span data-title="Become A Partner">Become A Partner</span>
+            </TransitionLink>
+          </span>
+          <span>
+            <button
+              onClick={openDrawer}
+              className="btn btn-small btn-outline"
+            >
+              <span data-title="Request Catalog">
+                Request Catalog
+              </span>
+            </button>
+          </span>
+        </div>
+      </div>
+
       <div id="top"></div>
+
+      <CatalogDrawer
+        isOpen={isOpen}
+        onClose={closeDrawer}
+      />
     </>
   );
 }

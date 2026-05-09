@@ -30,9 +30,6 @@ export default function Cta() {
 
     const ctaButtons = ctaRef.current.querySelector('.buttons');
 
-    console.log(ctaButtons);
-
-
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: ctaRef.current,

@@ -144,7 +144,6 @@ const WhyCosmedd = () => {
                 </Swiper>
               </div>
             </div>
-
           </div>
         </div>
       </div>
