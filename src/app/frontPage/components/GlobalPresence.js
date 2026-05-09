@@ -183,10 +183,10 @@ export default function GlobalPresence() {
 
   return (
     <div className="section-wrap" ref={globeRef}>
-      <div ref={globeTitleRef} className="flex flex-col items-center justify-start lg:w-[60%] mx-auto">
+      <div ref={globeTitleRef} className="flex flex-col items-center justify-start lg:w-[75%] mx-auto">
         <div className="sub-title">Our Global Presence</div>
         <h2 className="mt-6 mb-3 text-black text-center">Expanding Healthcare Access Across Global Markets</h2>
-        <p className="text-black/70 lead text-center mb-6">Delivering trusted healthcare and wellness solutions across Southeast Asia, CIS regions, and emerging international markets.</p>
+        <p className="text-black/70 lead text-center mb-6 lg:w-[70%]">Delivering trusted healthcare and wellness solutions across Southeast Asia, CIS regions, and emerging international markets.</p>
 
         <div className="btn-wrap">
           <TransitionLink href="/global-presence" className="btn btn-link-white">

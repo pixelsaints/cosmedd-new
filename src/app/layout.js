@@ -5,6 +5,8 @@ import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import PageMask from "@/components/transitions/PageMask";
 import PageEnter from "@/components/transitions/PageEnter";
+import CatalogDrawer from "@/components/layout/CatalogDrawer";
+import { DrawerProvider } from "@/context/DrawerContext";
 
 
 const dmSans = Onest({
@@ -50,13 +52,15 @@ export default function RootLayout({ children }) {
       data-scroll-behavior="smooth"
     >
       <body className="font-sans">
-        <PageMask />
-        <PageEnter />
-        <Header />
-        <main className="wrapper">
-          {children}
-          <Footer />
-        </main>
+        <DrawerProvider>
+          <PageEnter />
+          <Header />
+          <main className="wrapper">
+            {children}
+            <Footer />
+          </main>
+          <CatalogDrawer />
+        </DrawerProvider>
       </body>
     </html>
   );

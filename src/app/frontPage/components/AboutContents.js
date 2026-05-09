@@ -21,8 +21,6 @@ const AboutContents = () => {
   useLayoutEffect(() => {
     const ctx = gsap.context(() => {
 
-      // About Animation
-
       // Image animations
       const tl = gsap.timeline({
         scrollTrigger: {

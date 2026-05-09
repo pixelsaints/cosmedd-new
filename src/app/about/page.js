@@ -1,17 +1,70 @@
+"use client"
+
+import Cta from "@/components/layout/Cta";
 import PageHeader from "@/components/layout/PageHeader";
+import Counter from "@/components/ui/counter";
+import WhyCosmedd from "../frontPage/components/WhyCosmedd";
 
 
 export default function About() {
   return (
     <>
       <PageHeader
-        title="About Cosmedd"
-        description="Delivering globally trusted healthcare and wellness solutions through innovation, quality, and strategic partnerships."
-        bgImage="/images/slider-2.jpg"
+        title="Driven By Care, Powered By Global Partnerships"
+        description="Since 2015, Cosmedd Healthcare has been delivering trusted pharmaceutical and wellness sourcing solutions across international markets through quality, reliability, and lasting partnerships."
+        bgImage="/images/worldwide-expansion.webp"
         currentPage="About"
       />
 
-      {/* page content */}
+      <section className="about-intro py-20 lg:py-28">
+        <div className="section-wrap">
+          <div className="flex flex-col items-center">
+            <div className="images-left relative">
+
+            </div>
+            <div className="sec-title">
+              <div className="sub-title mb-6">CosMedd Story</div>
+              <h2>Our Journey In Global Healthcare</h2>
+              <p></p>
+            </div>
+          </div>
+        </div>
+
+        <div className="section-wrap">
+          <div className="grid lg:grid-cols-4 gap-6 stat-wrapper mt-24 items-center">
+            <Counter
+              value="15"
+              suffix="+"
+              title="Years of pharma expertise"
+            />
+            <Counter
+              value="24"
+              suffix="+"
+              title="Countries Served Globally"
+            />
+            <Counter
+              value="98"
+              suffix="%"
+              title="Projects delivered on schedule"
+            />
+            <Counter
+              value="100"
+              suffix="%"
+              title="Regulatory-compliant integrations"
+            />
+          </div>
+        </div>
+      </section>
+
+      <section className="py-28">
+        <img className="w-full" src="/temp/values.png" alt="" />
+      </section>
+
+      <div className="why-cosmedd">
+        <WhyCosmedd />
+      </div>
+
+      <Cta />
     </>
   );
 }

@@ -1,18 +1,15 @@
 "use client"
 
-import { useState, useRef, useLayoutEffect } from "react";
+import { useRef, useLayoutEffect } from "react";
 import gsap from "gsap";
 import SplitType from "split-type";
 import TransitionLink from "@/components/transitions/TransitionLink"
-import CatalogDrawer from "./drawer"
-import { reveal, fadeUp } from "@/lib/animations";
+import { reveal } from "@/lib/animations";
+import { useDrawer } from "@/context/DrawerContext";
 
 export default function Cta() {
-  const [isOpen, setIsOpen] = useState(false);
 
-  const openDrawer = () => setIsOpen(true);
-  const closeDrawer = () => setIsOpen(false);
-
+  const { openDrawer } = useDrawer();
   const ctaRef = useRef(null);
 
   useLayoutEffect(() => {
@@ -78,10 +75,6 @@ export default function Cta() {
           </div>
         </div>
       </div>
-      <CatalogDrawer
-        isOpen={isOpen}
-        onClose={closeDrawer}
-      />
     </>
   )
 }

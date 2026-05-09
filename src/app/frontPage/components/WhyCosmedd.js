@@ -45,11 +45,11 @@ const WhyCosmedd = () => {
         .from(productTitle.words, {
           ...reveal,
           stagger: 0.06,
-        }, "-=0.3")
+        }, "-=0.8")
         .from(whySectionTitleRef.current.querySelector("img"), {
           ...reveal,
           stagger: 0.06,
-        }, "-=0.3");
+        }, "-=0.6");
 
       const cards = whySectionCards.current.querySelectorAll(".why-card");
 
@@ -86,8 +86,6 @@ const WhyCosmedd = () => {
 
     return () => ctx.revert();
   }, []);
-
-
 
   return (
     <>

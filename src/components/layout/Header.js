@@ -2,21 +2,19 @@
 import { usePathname } from "next/navigation";
 import { useState, useRef, useLayoutEffect, useEffect } from "react";
 import gsap from "gsap";
-import { Mail, PhoneCall } from "lucide-react";
+import { useDrawer } from "@/context/DrawerContext";
 import TransitionLink from "@/components/transitions/TransitionLink";
-import CatalogDrawer from "@/components/layout/drawer";
 
 export default function Header() {
+
+  const { openDrawer } = useDrawer();
+
   const pathname = usePathname();
 
   const menuRef = useRef(null);
   const menuTL = useRef(null);
 
-  const [isOpen, setIsOpen] = useState(false);
   const [menuActive, setMenuActive] = useState(false);
-
-  const openDrawer = () => setIsOpen(true);
-  const closeDrawer = () => setIsOpen(false);
 
   const nav = [
     { name: "Home", href: "/" },
@@ -222,11 +220,6 @@ export default function Header() {
       </div>
 
       <div id="top"></div>
-
-      <CatalogDrawer
-        isOpen={isOpen}
-        onClose={closeDrawer}
-      />
     </>
   );
 }
