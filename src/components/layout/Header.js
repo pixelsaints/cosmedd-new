@@ -77,6 +77,10 @@ export default function Header() {
     }
   }, [menuActive]);
 
+  useEffect(() => {
+    setMenuActive(false);
+  }, [pathname]);
+
   return (
     <>
       <header id="site-header">
@@ -96,7 +100,14 @@ export default function Header() {
             <ul className="menu flex flex-row">
               {nav.map((item) => (
                 <li key={item.href}>
-                  <TransitionLink href={item.href} className="menu-link">
+                  <TransitionLink
+                    href={item.href}
+                    className="menu-link"
+                    onClick={() => {
+                      setMenuActive(false);
+                      gsap.set(menuRef.current, { x: "100%" });
+                    }}
+                  >
                     <span
                       data-title={item.name}
                       className={`${pathname === item.href

@@ -10,15 +10,19 @@ export default function PageEnter() {
   useEffect(() => {
     window.scrollTo(0, 0);
 
-    const tl = gsap.timeline();
-
-    // ENTER (like Barba enter)
-    tl.to(".page-mask", {
-      scaleY: 0,
-      transformOrigin: "top",
-      duration: 0.8,
-      ease: "power3.inOut",
-    });
+    gsap.fromTo(
+      "main",
+      {
+        opacity: 0,
+        y: 20,
+      },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 1,
+        ease: "power2.out",
+      }
+    );
   }, [pathname]);
 
   return null;

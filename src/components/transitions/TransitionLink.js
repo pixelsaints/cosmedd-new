@@ -4,12 +4,16 @@ import Link from "next/link";
 import { useRouter, usePathname } from "next/navigation";
 import { gsap } from "gsap";
 
-export default function TransitionLink({ href, children, ...props }) {
+export default function TransitionLink({
+  href,
+  children,
+  onClick,
+  ...props
+}) {
   const router = useRouter();
   const pathname = usePathname();
 
   const handleClick = (e) => {
-    // allow new tab / middle click
     if (
       e.metaKey ||
       e.ctrlKey ||
@@ -20,14 +24,15 @@ export default function TransitionLink({ href, children, ...props }) {
       return;
     }
 
-    // prevent default navigation
     e.preventDefault();
 
-    // ignore same route
     if (href === pathname) return;
-
-    // prevent spam clicks
     if (gsap.isTweening(".page-mask")) return;
+
+    // run custom click logic first
+    if (onClick) {
+      onClick(e);
+    }
 
     const tl = gsap.timeline({
       onComplete: () => {
@@ -35,17 +40,23 @@ export default function TransitionLink({ href, children, ...props }) {
       },
     });
 
-    // LEAVE animation
-    tl.to(".page-mask", {
-      scaleY: 1,
-      transformOrigin: "bottom",
-      duration: 0.8,
-      ease: "power4.inOut",
+    // tl.to(".page-mask", {
+    //   scaleY: 1,
+    //   transformOrigin: "bottom",
+    //   duration: 0.8,
+    //   ease: "power4.inOut",
+    // });
+
+    tl.to("main", {
+      opacity: 0,
+      y: 20,
+      duration: 0.35,
+      ease: "power2.out",
     });
   };
 
   return (
-    <Link href={href} onClick={handleClick} {...props}>
+    <Link href={href} onClick={handleClick} {...props} >
       {children}
     </Link>
   );
