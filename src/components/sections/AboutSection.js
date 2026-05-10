@@ -7,11 +7,14 @@ import Counter from "@/components/ui/counter";
 import { ArrowRight } from "lucide-react";
 import TransitionLink from "@/components/transitions/TransitionLink";
 import SplitType from "split-type";
-import { reveal, fadeUp } from "@/lib/animations";
+import {
+  reveal
+
+} from "@/lib/animations";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const AboutContents = () => {
+const AboutSection = () => {
   const sectionRef = useRef(null);
   const textRef = useRef(null);
   const imageLeft = useRef(null);
@@ -191,4 +194,4 @@ const AboutContents = () => {
   );
 };
 
-export default AboutContents;
+export default AboutSection;

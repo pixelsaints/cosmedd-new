@@ -7,7 +7,7 @@ import SplitType from "split-type";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import { indData } from "../data";
+import { indData } from "@/data/homeContent";
 import { reveal, fadeUp } from "@/lib/animations";
 import "swiper/css";
 import "swiper/css/pagination";
@@ -15,7 +15,7 @@ import "swiper/css/pagination";
 gsap.registerPlugin(ScrollTrigger);
 
 
-export default function IndServed() {
+export default function IndustriesSection() {
   const indServedRef = useRef(null);
   const indServedTitleRef = useRef(null);
   const indServedContentRef = useRef(null);

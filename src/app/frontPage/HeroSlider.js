@@ -4,7 +4,7 @@ import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import SplitType from "split-type";
 import TransitionLink from "@/components/transitions/TransitionLink";
-import { slides } from "../data"
+import { slides } from "@/data/homeContent"
 
 export default function HeroSlider() {
   const sliderRef = useRef(null);

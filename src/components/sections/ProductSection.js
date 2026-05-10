@@ -6,8 +6,8 @@ import ScrollTrigger from "gsap/ScrollTrigger";
 import { ArrowRight } from "lucide-react";
 import TransitionLink from "@/components/transitions/TransitionLink";
 import SplitType from "split-type";
-import { productData } from "../data";
-import ProductCard from "@/components/layout/ProductCard";
+import { productData } from "@/data/homeContent";
+import ProductCard from "@/components/ui/ProductCard";
 import { reveal, fadeUp } from "@/lib/animations";
 
 gsap.registerPlugin(ScrollTrigger);

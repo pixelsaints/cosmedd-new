@@ -84,7 +84,7 @@ export default function Header() {
       <header id="site-header">
         <div className="container-fluid mx-auto flex justify-between items-center header">
 
-          <div className="logo">
+          <div className="logo w-[9em]">
             <TransitionLink href="/">
               <img
                 src="/images/logo.svg"
@@ -94,7 +94,7 @@ export default function Header() {
           </div>
 
           {/* Menu */}
-          <nav className="menu-wrapper flex items-center">
+          <nav className="menu-wrapper flex items-center ">
             <ul className="menu flex flex-row">
               {nav.map((item) => (
                 <li key={item.href}>
@@ -119,14 +119,14 @@ export default function Header() {
                 </li>
               ))}
             </ul>
-
-            {/* CTA */}
-            <div className="cta-btn">
-              <TransitionLink href="/contact" className="btn btn-small">
-                <span data-title="Contact Us">Contact Us</span>
-              </TransitionLink>
-            </div>
           </nav>
+
+          {/* CTA */}
+          <div className="cta-btn w-[9em]">
+            <TransitionLink href="/contact" className="btn btn-small">
+              <span data-title="Contact Us">Contact Us</span>
+            </TransitionLink>
+          </div>
 
           <button className={`hamburger ${menuActive ? "is-active" : ""}`} onClick={() => setMenuActive(!menuActive)}>
             <span className="line"></span>

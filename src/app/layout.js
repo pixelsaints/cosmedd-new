@@ -5,7 +5,7 @@ import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import PageMask from "@/components/transitions/PageMask";
 import PageEnter from "@/components/transitions/PageEnter";
-import CatalogDrawer from "@/components/layout/CatalogDrawer";
+import CatalogDrawer from "@/components/ui/CatalogDrawer";
 import { DrawerProvider } from "@/context/DrawerContext";
 
 

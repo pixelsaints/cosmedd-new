@@ -1,10 +1,10 @@
-import Cta from "@/components/layout/Cta";
-import AboutContents from "./components/AboutContents";
-import GlobalPresence from "./components/GlobalPresence";
-import HeroSlider from "./components/HeroSlider";
-import IndServed from "./components/IndServed";
-import ProductSection from "./components/ProductSection";
-import WhyCosmedd from "./components/WhyCosmedd";
+import HeroSlider from "./HeroSlider";
+import AboutSection from "@/components/sections/AboutSection";
+import ProductSection from "@/components/sections/ProductSection";
+import WhyUsSection from "@/components/sections/WhyUsSection";
+import GlobalSection from "@/components/sections/GlobalSection";
+import IndustriesSection from "@/components/sections/IndustriesSection";
+import CtaSection from "@/components/sections/CtaSection";
 
 
 
@@ -13,22 +13,22 @@ export default function FrontPage() {
     <>
       <HeroSlider />
       <section className="my-20 lg:my-32">
-        <AboutContents />
+        <AboutSection />
       </section>
       <section className="bg-pri-50 py-20 lg:mt-32 lg:py-32">
         <ProductSection />
       </section>
       <section className="why-cosmedd">
-        <WhyCosmedd />
+        <WhyUsSection />
       </section>
       <section className="global-presence py-20 lg:py-32 bg-white">
-        <GlobalPresence />
+        <GlobalSection />
       </section>
       <section className="ind-served py-20 lg:py-32 bg-pri-50">
-        <IndServed />
+        <IndustriesSection />
       </section>
       <section>
-        <Cta />
+        <CtaSection />
       </section>
     </>
   )

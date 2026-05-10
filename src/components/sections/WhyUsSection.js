@@ -4,17 +4,17 @@ import { useRef, useLayoutEffect } from "react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import SplitType from "split-type";
-import WhyCard from "@/components/layout/WhyCard";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from 'swiper/modules';
-import { whyCosmeddData } from "../data";
 import { reveal, fadeUp } from "@/lib/animations";
+import { whyCosmeddData } from "@/data/homeContent";
+import WhyCard from "@/components/ui/WhyCard";
 
 import "swiper/css";
 import "swiper/css/pagination";
 
 
-const WhyCosmedd = () => {
+const WhyUsSection = () => {
   const whySection = useRef(null);
   const whySectionTitleRef = useRef(null);
   const whySectionCards = useRef(null);
@@ -149,4 +149,4 @@ const WhyCosmedd = () => {
   )
 }
 
-export default WhyCosmedd;
+export default WhyUsSection;

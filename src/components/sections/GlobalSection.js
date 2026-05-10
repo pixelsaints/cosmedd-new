@@ -7,11 +7,11 @@ import SplitType from "split-type";
 import Lottie from "lottie-react";
 import { ArrowRight } from "lucide-react";
 import TransitionLink from "@/components/transitions/TransitionLink"
-import globeAnimation from "../globe.json";
+import globeAnimation from "@/lib/globe.json";
 import { reveal } from "@/lib/animations";
 
 
-export default function GlobalPresence() {
+export default function GlobalSection() {
 
   const globeRef = useRef(null);
   const globeTitleRef = useRef(null);

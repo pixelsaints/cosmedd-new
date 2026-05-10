@@ -1,9 +1,9 @@
 "use client"
 
-import Cta from "@/components/layout/Cta";
+import Cta from "@/components/sections/CtaSection";
 import PageHeader from "@/components/layout/PageHeader";
 import Counter from "@/components/ui/counter";
-import WhyCosmedd from "../frontPage/components/WhyCosmedd";
+import WhyCosmedd from "../../components/sections/WhyUsSection";
 
 
 export default function About() {
