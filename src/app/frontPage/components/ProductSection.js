@@ -97,7 +97,7 @@ const ProductSection = () => {
         <div className="section-wrap overflow-clip px-4" ref={productsRef}>
           <div ref={productsTitleRef} className="title-section flex flex-col items-start justify-start lg:w-[60%] ml-auto mb-12">
             <div className="sub-title">Our Product Portfolio</div>
-            <h2 className="mt-6 mb-6 text-white">Global Healthcare Solutions Across Diverse Segments</h2>
+            <h2 className="mt-6 mb-6 text-black">Global Healthcare Solutions Across Diverse Segments</h2>
 
             <div className="btn-wrap">
               <TransitionLink href="/products" className="btn btn-link-white">

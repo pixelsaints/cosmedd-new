@@ -22,7 +22,7 @@ export default function About() {
             <div className="images-left relative">
 
             </div>
-            <div className="sec-title">
+            <div className="sec-title flex flex-col items-center lg:w-[50%] text-center">
               <div className="sub-title mb-6">CosMedd Story</div>
               <h2>Our Journey In Global Healthcare</h2>
               <p></p>
@@ -56,8 +56,22 @@ export default function About() {
         </div>
       </section>
 
-      <section className="py-28">
-        <img className="w-full" src="/temp/values.png" alt="" />
+      <section className="py-28 bg-pri-50">
+        {/* <img className="w-full" src="/temp/values.png" alt="" /> */}
+        <div className="section-wrap">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+            <div className="sec-title">
+              <div className="sub-title mb-6">Our Values</div>
+              <h2 className="text-black">Core principles that drive us</h2>
+            </div>
+            <div className="value">
+
+            </div>
+
+            <div className="value">
+            </div>
+          </div>
+        </div>
       </section>
 
       <div className="why-cosmedd">

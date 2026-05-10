@@ -1,13 +1,13 @@
 // Slide Content
 export const slides = [
   {
-    title: "Better Health for Everyday Living",
-    desc: "Helping people live healthier lives with safe, simple, and effective healthcare products for everyday use worldwide.",
+    title: "Precision Healthcare Delivered with Care",
+    desc: "Trusted pharmaceutical solutions through quality partnerships, delivering reliable healthcare products to evolving markets.",
     primary: "Our Products",
     secondary: "Contact Us",
     primaryUrl: "/about",
     secondaryUrl: "/contact",
-    image: "/images/better-health.webp",
+    image: "/images/slide-1.webp",
   },
   {
     title: "Expanding Global Presence In Healthcare",
