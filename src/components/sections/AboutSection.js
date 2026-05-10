@@ -2,15 +2,12 @@
 
 import { useRef, useLayoutEffect } from "react";
 import gsap from "gsap";
+import SplitType from "split-type";
+import { reveal } from "@/lib/animations";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import Counter from "@/components/ui/counter";
 import { ArrowRight } from "lucide-react";
 import TransitionLink from "@/components/transitions/TransitionLink";
-import SplitType from "split-type";
-import {
-  reveal
-
-} from "@/lib/animations";
 
 gsap.registerPlugin(ScrollTrigger);
 

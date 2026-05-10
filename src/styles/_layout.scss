@@ -136,7 +136,7 @@ body{
       backdrop-filter: blur(10px);
 
       span{
-        font-size: 14px;
+        font-size: 16px;
       }
     }
   }
@@ -623,5 +623,13 @@ body{
 
   @include lg {
     min-height: 88vh;
+  }
+}
+
+.qc-certificates{
+  mask-image: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgb(0, 0, 0) 5%, rgb(0, 0, 0) 95%, rgba(0, 0, 0, 0) 100%);
+
+  .swiper-wrapper{
+    transition-timing-function: linear !important;
   }
 }
