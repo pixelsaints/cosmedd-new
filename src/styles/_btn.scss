@@ -82,19 +82,21 @@
 
   &-black-outline{
     background: transparent;
-    border: none;
+    // border: solid 1px $black;
     padding: 0;
+    border-radius: 0;
+    color: $pri;
     
     span{
-      color: $black-700;
+      color: $pri;
     }
 
     &:hover{
       background: transparent;
-      color: $pri;
+      color: $black;
 
       span::after{
-        color: $pri;
+        color: $black;
       }
     }
   }

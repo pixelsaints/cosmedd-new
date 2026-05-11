@@ -1,8 +1,7 @@
 export const reveal = {
   y: 40,
-  rotate: 6,
   filter: "blur(8px)",
-  opacity: 0,
+  autoAlpha: 0,
   duration: 0.7,
   ease: "expo.out",
 };

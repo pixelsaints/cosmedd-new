@@ -18,15 +18,14 @@ const ProductSection = () => {
   const productsBlockRef = useRef(null);
 
   useLayoutEffect(() => {
-    let productTitle;
 
     const ctx = gsap.context(() => {
 
       if (!productsTitleRef.current) return;
 
-      // Split title
-      productTitle = new SplitType(
-        productsTitleRef.current.querySelector("h2"), { types: "words", }
+      const productTitle = new SplitType(
+        productsTitleRef.current.querySelector("h2"),
+        { types: "words" }
       );
 
       // Fade title while cards scroll
@@ -53,22 +52,20 @@ const ProductSection = () => {
       introTL
         .from(productsTitleRef.current.querySelector(".sub-title"), {
           ...reveal,
-          stagger: 0.06,
         })
         .from(productTitle.words, {
           ...reveal,
           stagger: 0.06,
-        }, "-=0.6")
+        }, "-=0.4")
         .from(productsTitleRef.current.querySelector(".btn-wrap"), {
           ...reveal,
-          stagger: 0.06,
-        }, "-=0.6");
-
-      const cards = productsBlockRef.current.querySelectorAll(".product-card");
-      if (!cards?.length) return;
+        }, "-=0.4");
 
       // Cards
-      cards.forEach((item, i) => {
+      const cards =
+        productsBlockRef.current.querySelectorAll(".product-card");
+
+      cards.forEach((item) => {
         gsap.from(item, {
           ...fadeUp,
           scrollTrigger: {
@@ -80,15 +77,13 @@ const ProductSection = () => {
         });
       });
 
-      ScrollTrigger.refresh();
-
     }, productsRef);
 
     return () => {
+      productsTitleRef?.revert();
       ctx.revert();
-      productTitle?.revert();
-      ScrollTrigger.refresh();
     };
+
   }, []);
 
   return (

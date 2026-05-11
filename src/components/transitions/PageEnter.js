@@ -3,6 +3,9 @@
 import { useEffect } from "react";
 import { usePathname } from "next/navigation";
 import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 export default function PageEnter() {
   const pathname = usePathname();
@@ -24,6 +27,22 @@ export default function PageEnter() {
       }
     );
   }, [pathname]);
+
+  useEffect(() => {
+    const handleVisibility = () => {
+      if (!document.hidden) {
+        ScrollTrigger.refresh();
+      }
+    };
+
+    document.addEventListener("visibilitychange", handleVisibility);
+
+    return () =>
+      document.removeEventListener(
+        "visibilitychange",
+        handleVisibility
+      );
+  }, []);
 
   return null;
 }

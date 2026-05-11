@@ -47,7 +47,7 @@ const AboutSection = () => {
 
       const subTitle = textRef.current.querySelector(".sub-title");
       const leadText = new SplitType(textRef.current.querySelector("p.lead"), { types: ["lines"] });
-      const des = textRef.current.querySelectorAll("p.desc");
+      const des = new SplitType(textRef.current.querySelector("p.desc"), { types: ["lines"] });
       const btnAbout = textRef.current.querySelector(".btn-wrap");
 
 
@@ -71,7 +71,7 @@ const AboutSection = () => {
           ...reveal,
           stagger: 0.1,
         }, "-=0.4")
-        .from(des, {
+        .from(des.lines, {
           ...reveal,
           stagger: 0.1,
         }, "-=0.4")
@@ -145,7 +145,7 @@ const AboutSection = () => {
 
               <p className="mb-4 lead">We build intuitive, scalable healthcare experiences that connect patients, providers, and systems seamlessly.</p>
 
-              <p className="mb-6 desc">Established in 2015, Cosmedd Healthcare is an export-oriented company based in India. We specialize in sourcing and manufacturing healthcare and wellness products for clients across Southeast Asia and the CIS region, including Russia.</p>
+              <p className="mb-6 desc">Established in 2015, COSMEDD HEALTHCARE is an export-oriented company based out of India. It is managed by highly qualified and focused professionals with decades of experience in Pharmaceutical industry. We intend to provide quality products at affordable cost. We source and manufacture Pharmaceuticals, Nutraceuticals, Healthcare and Wellness products for our client base in Southeast Asia, Middle east Asia, Africa and CIS region manufacturing companies in India, EUROPE and USA.</p>
 
               <div className="btn-wrap">
                 <TransitionLink href="/about" className="btn btn-link btn-small">
@@ -160,22 +160,22 @@ const AboutSection = () => {
         <div ref={counterRef} className="grid lg:grid-cols-3 gap-6 stat-wrapper mt-24 items-center">
           <div className="mb-8 lg:mb-0">
             <div className="sub-title mb-3">Cosmedd by the numbers</div>
-            <h3 className="-mb-1 font-medium">The Cosmedd Impact In Numbers</h3>
+            <h3 className="-mb-1 font-medium text-black">The Cosmedd Impact In Numbers</h3>
           </div>
           <Counter
-            value="15"
+            value="10"
             suffix="+"
             title="Years of pharma expertise"
           />
           <Counter
-            value="24"
+            value="15"
             suffix="+"
             title="Countries Served Globally"
           />
           <Counter
             value="98"
             suffix="%"
-            title="Projects delivered on schedule"
+            title="On Time Delivery"
           />
           <Counter
             value="100"

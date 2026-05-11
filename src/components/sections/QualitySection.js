@@ -28,7 +28,7 @@ export default function QualitySection() {
 
 
       // Text animation
-      const titleAnimate = new SplitType(".title-section h2", {
+      const titleAnimate = new SplitType(qaSectionTitle.current.querySelector(".title-section h2"), {
         types: ["words", "chars"],
       });
       const leadText = new SplitType(qaSectionTitle.current.querySelector("p"), {
@@ -93,17 +93,11 @@ export default function QualitySection() {
     <div ref={qcSection} className="section-wrap">
       <div className="flex flex-col lg:flex-row items-center">
         <div ref={qaSectionTitle} className="title-section w-1/2 pr-8">
-          <div className="sub-title mb-4">Quality Compliance</div>
+          <div className="sub-title mb-4">Quality Standards</div>
 
-          <h2 className="mb-8 text-black">
-            Internationally Compliant Quality Standards
-          </h2>
+          <h2 className="mb-6 text-black">Internationally Compliant Quality Standards</h2>
 
-          <p className="mb-6">
-            Our Quality Management System ensures strict adherence to
-            international regulatory requirements through rigorous quality
-            assurance, control checks, and continuous improvement.
-          </p>
+          <p className="mb-6">At Cosmedd Healthcare, we ensure that all our products and services meet international regulatory standards and customer expectations. Our robust Quality Management System (QMS) comprises Error Free Checks, Strict Quality Control, Quality Assurance and constant improvement with the changing market conditions.</p>
 
           <div className="btn-wrap">
             <TransitionLink className="btn" href="/quality-compliance">

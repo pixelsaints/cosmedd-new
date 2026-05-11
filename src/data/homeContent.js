@@ -43,7 +43,7 @@ export const whyCosmeddData = {
     {
       number: "01",
       title: "Global sourcing network",
-      desc: "Trusted manufacturing partnerships across India, Europe, and USA ensure reliable healthcare product sourcing.",
+      desc: "Trusted manufacturing partnerships across India, Europe, and USA ensure reliable product sourcing.",
       icon: "/icons/global-sourcing-network.svg",
     },
     {
@@ -70,7 +70,7 @@ export const whyCosmeddData = {
     {
       number: "04",
       title: "Reliable delivery systems",
-      desc: "Efficient logistics and streamlined supply chains ensure timely international product delivery.",
+      desc: "Efficient logistics and streamlined supply chains ensure timely  product delivery.",
       icon: "/icons/reliable-delivery-systems.svg",
     },
     {
@@ -126,56 +126,66 @@ export const productData = [
   {
     number: "1",
     title: "Pharmaceutical Generics",
-    desc: "Reliable pharmaceutical formulations for chronic, acute, and specialized therapeutic healthcare needs globally.",
+    desc: "Comprehensive pharmaceutical solutions spanning generics, chronic care, acute therapies, antibiotics, oncology, and wellness.",
     icon: "/images/pharmaceutical-generics.webp",
+    url: "/products/pharmaceutical-generics"
   },
   {
     number: "2",
-    title: "APIs & Excipients",
-    desc: "High-quality active ingredients and excipients sourced for dependable pharmaceutical manufacturing applications.",
-    icon: "/images/apis-excipients.webp",
+    title: "Herbals And Nutraceuticals",
+    desc: "Herbal and nutraceutical solutions supporting prevention, chronic wellness, immunity, recovery, and holistic healthcare.",
+    // icon: "/images/apis-excipients.webp",
+    icon: "/images/herbal-natural-medicines.webp",
+    url: "/products/herbals-nutraceuticals"
   },
   {
     number: "3",
     title: "Herbal & Natural Medicines",
     desc: "Natural healthcare solutions supporting preventive wellness and effective therapeutic care.",
     icon: "/images/herbal-natural-medicines.webp",
+    url: "/products/pharmaceutical-generics"
   },
   {
     number: "4",
     title: "Nutraceuticals & Probiotics",
     desc: "Science-driven nutritional supplements promoting immunity, gut health, and overall wellness.",
     icon: "/images/nutraceuticals-probiotics.webp",
+    url: "/products/pharmaceutical-generics"
   },
   {
     number: "5",
     title: "Cosmeceuticals",
     desc: "Innovative skincare and beauty formulations combining cosmetic excellence with therapeutic benefits.",
     icon: "/images/cosmeceuticals.webp",
+    url: "/products/pharmaceutical-generics"
   },
   {
     number: "6",
     title: "Men's & Women's Care",
     desc: "Specialized healthcare products addressing gender-specific wellness and personal care needs.",
     icon: "/images/mens-womens-care.webp",
+    url: "/products/pharmaceutical-generics"
   },
   {
     number: "7",
     title: "Medical Devices",
     desc: "Essential medical equipment and consumables supporting clinical and healthcare operations",
     icon: "/images/medical-devices.webp",
+    url: "/products/pharmaceutical-generics"
   },
   {
     number: "8",
     title: "Essential Oils",
     desc: "Pure botanical extracts serving wellness, food, fragrance, and therapeutic industries.",
     icon: "/images/essential-oils.webp",
+    url: "/products/pharmaceutical-generics"
   },
   {
     number: "9",
     title: "Veterinary Solutions",
     desc: "Comprehensive animal healthcare products for nutrition, wellness, and treatment support.",
     icon: "/images/veterinary-solutions.webp",
+    url: "/products/pharmaceutical-generics"
   },
 
 

@@ -13,18 +13,18 @@ export default function Footer() {
             </TransitionLink>
           </div>
           <div className="desc ml-auto lg:w-[50%] mt-8 lg:mt-0">
-            <div className="">Cosmedd Healthcare delivers pharmaceutical formulations, nutraceuticals, APIs, medical devices, and wellness export solutions worldwide.</div>
+            <div className="text-[16px] leading-7 text-white/70">Cosmedd Healthcare delivers pharmaceutical formulations, nutraceuticals, APIs, medical devices, and wellness export solutions worldwide.</div>
           </div>
         </div>
 
         {/* 2. Core Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 mt-6 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 mt-6 gap-24">
           <div className="footer__col">
             <h4>Company</h4>
             <ul className="flex flex-col divide-y divide-white/10 gap-3">
               <li><TransitionLink href="/">Home</TransitionLink></li>
-              <li><TransitionLink href="/about">About Cosmedd</TransitionLink></li>
-              <li><TransitionLink href="/quality-compliance">Quality & Compliance</TransitionLink></li>
+              <li><TransitionLink href="/about">About Us</TransitionLink></li>
+              <li><TransitionLink href="/quality">Quality</TransitionLink></li>
               <li><TransitionLink href="/why-choose-us">Why Choose Us</TransitionLink></li>
               <li><TransitionLink href="/global-presence">Global Presence</TransitionLink></li>
             </ul>
@@ -33,21 +33,11 @@ export default function Footer() {
           <div className="footer__col">
             <h4>Products</h4>
             <ul className="flex flex-col divide-y divide-white/10 gap-3">
-              <li><TransitionLink href="/products">Pharmaceutical Generics</TransitionLink></li>
-              <li><TransitionLink href="/products">APIs & Excipients</TransitionLink></li>
-              <li><TransitionLink href="/products">Herbal & Natural Medicines</TransitionLink></li>
+              <li><TransitionLink href="/products/pharmaceutical-generics">Pharmaceutical Generics</TransitionLink></li>
+              <li><TransitionLink href="/products/chronic-therapy">Chronic Therapy</TransitionLink></li>
+              <li><TransitionLink href="/products/actute-therapy">Actute Therapy</TransitionLink></li>
               <li><TransitionLink href="/products">Nutraceuticals & Probiotics</TransitionLink></li>
               <li><TransitionLink href="/products">View All Products</TransitionLink></li>
-            </ul>
-          </div>
-
-          <div className="footer__col">
-            <h4>Lets Connect</h4>
-            <ul className="flex flex-col divide-y divide-white/10 gap-3">
-              <li><a href="#" target="_blank">Facebook</a></li>
-              <li><a href="#" target="_blank">X (Twitter)</a></li>
-              <li><a href="#" target="_blank">LinkedIn</a></li>
-              <li><a href="#" target="_blank">Instagram</a></li>
             </ul>
           </div>
 

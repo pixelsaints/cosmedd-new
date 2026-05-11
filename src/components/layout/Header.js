@@ -20,7 +20,7 @@ export default function Header() {
     { name: "Home", href: "/" },
     { name: "About Us", href: "/about" },
     { name: "Products", href: "/products" },
-    { name: "Quality & Compliance", href: "/quality-compliance" },
+    { name: "Quality", href: "/quality" },
     { name: "Why Choose Us", href: "/why-choose-us" },
     { name: "Global Presence", href: "/global-presence" },
   ];

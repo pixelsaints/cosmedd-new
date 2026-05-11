@@ -633,3 +633,8 @@ body{
     transition-timing-function: linear !important;
   }
 }
+
+.word {
+  display: inline-block;
+  will-change: transform, opacity, filter;
+}

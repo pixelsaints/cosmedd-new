@@ -16,20 +16,17 @@ export default function FrontPage() {
       <section className="my-20 lg:my-32">
         <AboutSection />
       </section>
-      {/* <section className="bg-pri-50 py-20 lg:py-32">
+      <section className="bg-pri-50 py-20 lg:py-32">
         <ProductSection />
       </section>
       <section className="why-cosmedd">
         <WhyUsSection />
-      </section> */}
+      </section>
       <section className="quality-section bg-slate-50 py-20 lg:py-32">
         <QualitySection />
       </section>
       <section className="global-presence py-20 lg:py-32 bg-white">
         <GlobalSection />
-      </section>
-      <section className="ind-served py-20 lg:py-32 bg-pri-50">
-        <IndustriesSection />
       </section>
       <section>
         <CtaSection />
