@@ -3,7 +3,6 @@ import AboutSection from "@/components/sections/AboutSection";
 import ProductSection from "@/components/sections/ProductSection";
 import WhyUsSection from "@/components/sections/WhyUsSection";
 import GlobalSection from "@/components/sections/GlobalSection";
-import IndustriesSection from "@/components/sections/IndustriesSection";
 import CtaSection from "@/components/sections/CtaSection";
 import QualitySection from "@/components/sections/QualitySection";
 

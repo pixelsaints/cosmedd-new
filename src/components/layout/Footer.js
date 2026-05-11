@@ -34,10 +34,10 @@ export default function Footer() {
             <h4>Products</h4>
             <ul className="flex flex-col divide-y divide-white/10 gap-3">
               <li><TransitionLink href="/products/pharmaceutical-generics">Pharmaceutical Generics</TransitionLink></li>
-              <li><TransitionLink href="/products/chronic-therapy">Chronic Therapy</TransitionLink></li>
-              <li><TransitionLink href="/products/actute-therapy">Actute Therapy</TransitionLink></li>
-              <li><TransitionLink href="/products">Nutraceuticals & Probiotics</TransitionLink></li>
-              <li><TransitionLink href="/products">View All Products</TransitionLink></li>
+              <li><TransitionLink href="/products/herbal-natural-medicines">Herbal & Natural Medicines</TransitionLink></li>
+              <li><TransitionLink href="/products/active-pharma-ingredients">Active Pharma Ingredients</TransitionLink></li>
+              <li><TransitionLink href="/products/consumer-healthcare">Consumer Healthcare</TransitionLink></li>
+              <li><TransitionLink href="/products/veterinary-solutions">Veterinary Solutions</TransitionLink></li>
             </ul>
           </div>
 

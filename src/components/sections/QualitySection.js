@@ -5,22 +5,81 @@ import gsap from "gsap";
 import SplitType from "split-type";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay } from "swiper/modules";
+import { Autoplay, FreeMode } from "swiper/modules";
 import { ArrowRight } from "lucide-react";
 import { reveal } from "@/lib/animations";
 import TransitionLink from "../transitions/TransitionLink";
-import CertCard from "@/components/ui/CertCard";
+import { topCerts, bottomCerts } from "@/data/homeContent";
 
 import "swiper/css";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const topCerts = ["EU-GMP", "WHO-GMP", "USFDA", "PIC/S", "ISO 9001"];
-const bottomCerts = ["ISO 14001", "ISO 22000", "FSSAI", "HALAL", "HACCP"];
+const swiperConfigRtl = {
+  modules: [Autoplay, FreeMode],
+  loop: true,
+  allowTouchMove: false,
+  speed: 5000,
+
+  autoplay: {
+    delay: 0,
+    disableOnInteraction: false,
+    pauseOnMouseEnter: true,
+  },
+
+  breakpoints: {
+    320: {
+      slidesPerView: 2,
+      spaceBetween: 16,
+    },
+
+    768: {
+      slidesPerView: 3.5,
+      spaceBetween: 20,
+    },
+
+    1200: {
+      slidesPerView: 4,
+      spaceBetween: 24,
+    },
+  },
+};
+
+const swiperConfigLtr = {
+  modules: [Autoplay, FreeMode],
+  loop: true,
+  allowTouchMove: false,
+  speed: 5000,
+
+  autoplay: {
+    delay: 0,
+    disableOnInteraction: false,
+    pauseOnMouseEnter: true,
+    reverseDirection: true,
+  },
+
+  breakpoints: {
+    320: {
+      slidesPerView: 2,
+      spaceBetween: 16,
+    },
+
+    768: {
+      slidesPerView: 3.5,
+      spaceBetween: 20,
+    },
+
+    1200: {
+      slidesPerView: 4,
+      spaceBetween: 24,
+    },
+  },
+};
 
 export default function QualitySection() {
   const qcSection = useRef(null);
   const qaSectionTitle = useRef(null);
+  const qcSectionImg = useRef(null);
   const qaSectionCards = useRef(null);
 
   useLayoutEffect(() => {
@@ -37,6 +96,7 @@ export default function QualitySection() {
 
       const subTitle = qaSectionTitle.current.querySelector(".sub-title");
       const btnAbout = qaSectionTitle.current.querySelector(".btn-wrap");
+      const qcImage = qcSectionImg.current.querySelector("img");
 
 
       const tlText = gsap.timeline({
@@ -64,12 +124,21 @@ export default function QualitySection() {
           stagger: 0.1,
         }, "-=0.4");
 
+      gsap.from(qcImage, {
+        ...reveal,
+        scrollTrigger: {
+          trigger: qcSectionImg.current,
+          start: "top 75%",
+          toggleActions: "play none none reverse",
+        },
+      })
+
 
       // Stat Cards
 
-      const startCards = qaSectionCards.current.querySelectorAll(".qc-certificates > div");
+      const certCards = qaSectionCards.current.querySelectorAll(".qc-certificates > div");
 
-      startCards.forEach((item, i) => {
+      certCards.forEach((item, i) => {
         gsap.from(item, {
           scale: 1.3,
           delay: i * 0.5,
@@ -107,10 +176,10 @@ export default function QualitySection() {
           </div>
         </div>
 
-        <div className="w-1/2 pl-8">
+        <div ref={qcSectionImg} className="w-1/2 pl-8">
           <img
             className="rounded-lg w-full object-cover h-[26em]"
-            src="/images/cosmedd-in-numbers.webp"
+            src="/images/quality-standards.webp"
             alt="Cosmedd Quality"
           />
         </div>
@@ -118,60 +187,25 @@ export default function QualitySection() {
 
       <div ref={qaSectionCards} className="qc-certificates relative mt-20 overflow-hidden" >
 
-        <div>
-          <Swiper
-            modules={[Autoplay]}
-            loop
-            allowTouchMove={false}
-            speed={5000}
-            autoplay={{
-              delay: 0,
-              disableOnInteraction: false,
-              pauseOnMouseEnter: true
-            }}
-            breakpoints={{
-              320: { slidesPerView: 2, spaceBetween: 16 },
-              768: { slidesPerView: 3.5, spaceBetween: 20 },
-              1200: { slidesPerView: 5, spaceBetween: 24 },
-            }}
-            className="mb-6"
-          >
-            {[...topCerts, ...topCerts].map((cert, i) => (
+        <div className="mb-6">
+          <Swiper {...swiperConfigRtl}>
+            {topCerts.map((item, i) => (
               <SwiperSlide key={i}>
-                <div className="flex h-24 w-56 items-center justify-center rounded border border-slate-200 bg-white">
-                  <span className="text-lg font-semibold tracking-wide text-slate-900">
-                    {cert}
-                  </span>
+                <div className="flex flex-col w-full py-6 items-center justify-center rounded border border-slate-200 bg-white h-30">
+                  <img src={item.img} alt={item.title} />
+                  {/* <span className="text-[14px] mt-3 font-semibold tracking-wide text-slate-900">{item.title}</span> */}
                 </div>
               </SwiperSlide>
             ))}
           </Swiper>
         </div>
         <div>
-          <Swiper
-            modules={[Autoplay]}
-            loop
-            // dir="rtl"
-            allowTouchMove={false}
-            speed={5000}
-            autoplay={{
-              delay: 0,
-              disableOnInteraction: false,
-              reverseDirection: true,
-              pauseOnMouseEnter: true
-            }}
-            breakpoints={{
-              320: { slidesPerView: 2, spaceBetween: 16 },
-              768: { slidesPerView: 3.5, spaceBetween: 20 },
-              1200: { slidesPerView: 5, spaceBetween: 24 },
-            }}
-          >
-            {[...bottomCerts, ...bottomCerts].map((cert, i) => (
+          <Swiper {...swiperConfigLtr}>
+            {bottomCerts.map((item, i) => (
               <SwiperSlide key={i}>
-                <div className="flex h-24 w-56 items-center justify-center rounded border border-slate-200 bg-white">
-                  <span className="text-lg font-semibold tracking-wide text-slate-900">
-                    {cert}
-                  </span>
+                <div className="flex flex-col w-full py-6 items-center justify-center rounded border border-slate-200 bg-white h-30">
+                  <img src={item.img} alt={item.title} />
+                  {/* <span className="text-[14px] mt-3 font-semibold tracking-wide text-slate-900">{item.title}</span> */}
                 </div>
               </SwiperSlide>
             ))}

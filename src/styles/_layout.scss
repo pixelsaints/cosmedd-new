@@ -291,57 +291,77 @@ body{
     margin-left: auto;
     margin-right: auto;
     position: relative;
+
+    .swiper {
+      padding-bottom: 40px;
+
+      &-slide{
+        height: auto;
+      }
+  
+      &-pagination {
+        position: relative;
+      }
+    }
+  
+    .why-pagination {
+      display: flex;
+      height: 4px;
+      width: 100%;
+      overflow: hidden;
+      position: relative;
+      background: $pri-100;
+      border-radius: 10px;
+    }
+  
+    .swiper-pagination-progressbar-fill {
+      background: $pri-600;
+      border-radius: 10px;
+    }
+  
+    .btns-wrap {
+      margin-left: 24px;
+  
+      button {
+        background: $white;
+        padding: 6px;
+        border-radius: 24px;
+        cursor: pointer;
+        color: $black;
+        box-shadow: 0 8px 16px -12px rgba($black, 0.2);
+      }
+    }
+  }
+
+  .product-card {
+    background: $white;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 8px 16px -12px rgba($black, 0.2);
+    transition: top 0.4s ease;
+    position: relative;
+
+    img {
+      height: 140px;
+      width: 100%;
+      object-fit: cover;
+      object-position: bottom;
+      transition: all 0.4s ease;
+
+      @include lg {
+        height: 200px;
+      }
+    }
+
+    &-content {
+      padding: 24px;
+    }
   }
 
   .product-cards {
     margin-top: 40px;
     position: relative;
     z-index: 10;
-
-    &:nth-child(3) {
-      @include lg {
-        margin-top: 80px;
-      }
-    }
-
-    &:nth-child(2) {
-
-      @include lg {
-        margin-top: 0px;
-      }
-    }
-
-    &:nth-child(1) {
-
-      @include lg {
-        margin-top: -160px;
-      }
-    }
-
-    .product-card {
-      background: $white;
-      overflow: hidden;
-      border-radius: 8px;
-      box-shadow: 0 8px 16px -12px rgba($black, 0.2);
-      transition: top 0.4s ease;
-      position: relative;
-
-      img {
-        height: 140px;
-        width: 100%;
-        object-fit: cover;
-        object-position: bottom;
-        transition: all 0.4s ease;
-
-        @include lg {
-          height: 200px;
-        }
-      }
-
-      &-content {
-        padding: 24px;
-      }
-    }
   }
 }
 

@@ -126,69 +126,38 @@ export const productData = [
   {
     number: "1",
     title: "Pharmaceutical Generics",
-    desc: "Comprehensive pharmaceutical solutions spanning generics, chronic care, acute therapies, antibiotics, oncology, and wellness.",
+    desc: "Reliable pharmaceutical formulations for chronic, acute, and specialized therapeutic healthcare needs globally.",
     icon: "/images/pharmaceutical-generics.webp",
     url: "/products/pharmaceutical-generics"
   },
   {
     number: "2",
-    title: "Herbals And Nutraceuticals",
-    desc: "Herbal and nutraceutical solutions supporting prevention, chronic wellness, immunity, recovery, and holistic healthcare.",
-    // icon: "/images/apis-excipients.webp",
+    title: "Herbal & Natural Medicines",
+    desc: "Herbal nutraceutical solutions supporting prevention, immunity, recovery, chronic wellness, and holistic healthcare.",
     icon: "/images/herbal-natural-medicines.webp",
-    url: "/products/herbals-nutraceuticals"
+    url: "/products/herbal-natural-medicines"
   },
   {
     number: "3",
-    title: "Herbal & Natural Medicines",
-    desc: "Natural healthcare solutions supporting preventive wellness and effective therapeutic care.",
-    icon: "/images/herbal-natural-medicines.webp",
-    url: "/products/pharmaceutical-generics"
+    title: "Active Pharma Ingredients",
+    desc: "Advanced APIs, excipients, and pellet technologies enabling innovative controlled pharmaceutical formulations.",
+    icon: "/images/apis-excipients.webp",
+    url: "/products/active-pharma-ingredients"
   },
   {
     number: "4",
-    title: "Nutraceuticals & Probiotics",
-    desc: "Science-driven nutritional supplements promoting immunity, gut health, and overall wellness.",
-    icon: "/images/nutraceuticals-probiotics.webp",
-    url: "/products/pharmaceutical-generics"
+    title: "Consumer Healthcare",
+    desc: "Cosmeceutical and consumer healthcare solutions enhancing wellness, beauty, confidence, and everyday personal care.",
+    icon: "/images/cosmeceuticals.webp",
+    url: "/products/consumer-healthcare"
   },
   {
     number: "5",
-    title: "Cosmeceuticals",
-    desc: "Innovative skincare and beauty formulations combining cosmetic excellence with therapeutic benefits.",
-    icon: "/images/cosmeceuticals.webp",
-    url: "/products/pharmaceutical-generics"
-  },
-  {
-    number: "6",
-    title: "Men's & Women's Care",
-    desc: "Specialized healthcare products addressing gender-specific wellness and personal care needs.",
-    icon: "/images/mens-womens-care.webp",
-    url: "/products/pharmaceutical-generics"
-  },
-  {
-    number: "7",
-    title: "Medical Devices",
-    desc: "Essential medical equipment and consumables supporting clinical and healthcare operations",
-    icon: "/images/medical-devices.webp",
-    url: "/products/pharmaceutical-generics"
-  },
-  {
-    number: "8",
-    title: "Essential Oils",
-    desc: "Pure botanical extracts serving wellness, food, fragrance, and therapeutic industries.",
-    icon: "/images/essential-oils.webp",
-    url: "/products/pharmaceutical-generics"
-  },
-  {
-    number: "9",
     title: "Veterinary Solutions",
     desc: "Comprehensive animal healthcare products for nutrition, wellness, and treatment support.",
     icon: "/images/veterinary-solutions.webp",
-    url: "/products/pharmaceutical-generics"
+    url: "/products/veterinary-solutions"
   },
-
-
 ]
 
 export const indData = [
@@ -236,3 +205,41 @@ export const indData = [
   }
 ]
 
+
+export const topCerts = [
+  {
+    title: "EU-GMP",
+    img: "/certifications/eu-gmp.webp"
+  }, {
+    title: "PIC/s",
+    img: "/certifications/pics.webp"
+  }
+  , {
+    title: "WHO-GMP",
+    img: "/certifications/who-gmp.webp"
+  }, {
+    title: "USFDA",
+    img: "/certifications/fda.webp"
+  }, {
+    title: "FSSAI",
+    img: "/certifications/fssai.webp"
+  }
+]
+export const bottomCerts = [
+  {
+    title: "ISO 9001:2015",
+    img: "/certifications/iso-2015.webp"
+  }, {
+    title: "ISO 14001:2015",
+    img: "/certifications/iso-2015.webp"
+  }, {
+    title: "ISO 22000",
+    img: "/certifications/iso-22000.webp"
+  }, {
+    title: "HALAL",
+    img: "/certifications/halal.webp"
+  }, {
+    title: "HACCP",
+    img: "/certifications/haccp.webp"
+  }
+];
