@@ -68,8 +68,8 @@ export default function Cta() {
               onClick={openDrawer}
               className="btn btn-outline"
             >
-              <span data-title="Request Catalog">
-                Request Catalog
+              <span data-title="Enquire Now">
+                Enquire Now
               </span>
             </button>
           </div>

@@ -73,7 +73,7 @@ export default function CatalogDrawer() {
 
       <div ref={drawerRef} className="drawer">
         <div className="drawer-top flex flex-row justify-between">
-          <h3>Request Product Catalog</h3>
+          <h3>Send Quick Enquiry</h3>
           <button className=" cursor-pointer " onClick={closeDrawer}>
             <X />
           </button>

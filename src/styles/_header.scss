@@ -33,12 +33,11 @@
 
     @include lg {
       display: flex;
-      padding-left: 48px;
+      padding-left: 3.8vw;
     }
 
     ul.menu {
       display: flex;
-      margin-right: 32px;
 
       li {
         padding: 0 16px;
