@@ -73,35 +73,37 @@ export default function PageHeader({
   return (
     <section
       ref={headerRef}
-      className="page-header relative overflow-hidden"
+      className="relative overflow-hidden"
       style={{
         backgroundImage: `url(${bgImage})`,
         backgroundSize: "cover",
         backgroundPosition: "center",
       }}
     >
-      <div className="page-header-overlay"></div>
+      <div className="page-header">
+        <div className="page-header-overlay"></div>
 
-      <div className="section-wrap relative z-10 px-6">
-        <div className="md:max-w-[80%] lg:max-w-[60%]">
+        <div className="section-wrap relative z-10 px-6">
+          <div className="md:max-w-[80%] lg:max-w-[60%]">
 
-          <div className="breadcrumbs flex items-center gap-2 mb-6 text-sm text-white/70">
-            <TransitionLink href="/">
-              Home
-            </TransitionLink>
+            <div className="breadcrumbs flex items-center gap-2 mb-6 text-sm text-white/70">
+              <TransitionLink href="/">
+                Home
+              </TransitionLink>
 
-            <ChevronRight size={14} />
+              <ChevronRight size={14} />
 
-            <span className="text-white">{currentPage}</span>
+              <span className="text-white">{currentPage}</span>
+            </div>
+
+            <h1 className="text-white mb-5">
+              {title}
+            </h1>
+
+            <p className="lead text-white/80">
+              {description}
+            </p>
           </div>
-
-          <h1 className="text-white mb-5">
-            {title}
-          </h1>
-
-          <p className="lead text-white/80">
-            {description}
-          </p>
         </div>
       </div>
     </section>

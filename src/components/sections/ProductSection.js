@@ -25,7 +25,7 @@ const ProductSection = () => {
   const swiperConfig = {
     modules: [Navigation, Pagination],
     spaceBetween: 20,
-    slidesPerView: 1.2,
+    slidesPerView: 1.1,
     loop: true,
     parallax: true,
 

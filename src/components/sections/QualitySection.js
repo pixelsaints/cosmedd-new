@@ -29,7 +29,7 @@ const swiperConfigRtl = {
 
   breakpoints: {
     320: {
-      slidesPerView: 2,
+      slidesPerView: 3,
       spaceBetween: 16,
     },
 
@@ -60,7 +60,7 @@ const swiperConfigLtr = {
 
   breakpoints: {
     320: {
-      slidesPerView: 2,
+      slidesPerView: 3,
       spaceBetween: 16,
     },
 
@@ -160,8 +160,8 @@ export default function QualitySection() {
 
   return (
     <div ref={qcSection} className="section-wrap">
-      <div className="flex flex-col lg:flex-row items-center">
-        <div ref={qaSectionTitle} className="title-section w-1/2 pr-8">
+      <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-0">
+        <div ref={qaSectionTitle} className="title-section lg:w-1/2 lg:pr-8 order-2 lg:order-1">
           <div className="sub-title mb-4">Quality Standards</div>
 
           <h2 className="mb-6 text-black">Internationally Compliant Quality Standards</h2>
@@ -176,7 +176,7 @@ export default function QualitySection() {
           </div>
         </div>
 
-        <div ref={qcSectionImg} className="w-1/2 pl-8">
+        <div ref={qcSectionImg} className="lg:w-1/2 lg:pl-8 order-1 lg:order-2">
           <img
             className="rounded-lg w-full object-cover h-[26em]"
             src="/images/quality-standards.webp"

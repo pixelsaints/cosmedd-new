@@ -102,6 +102,7 @@ body{
       margin-bottom: 16px;
       overflow: hidden;
       font-size: 40px;
+      line-height: 1.1;
 
       @include md{
         font-size: 64px;
@@ -110,12 +111,6 @@ body{
       @include lg{
         font-size: 80px;
         margin-bottom: 24px;
-        line-height: 1.2;
-      }
-      
-
-      div{
-        line-height: 1;
       }
     }
 
@@ -209,12 +204,10 @@ body{
 .stat-wrapper{
 
   .stat{
-    padding: 40px 0;
+    padding: 40px 16px;
     background: $black-100;
-
-    &:last-child{
-      border-right: none;
-    }
+    border-radius: 8px;
+    overflow: hidden;
 
     .digit {
       height: 1em;
@@ -250,7 +243,14 @@ body{
       color: $black-700;
       font-weight: 600;
       text-transform: uppercase;
+      text-align: center;
     }
+  }
+
+  div:last-child {
+    border-right: none;
+    border-radius: 8px;
+    overflow: hidden;
   }
 
 }
@@ -325,7 +325,7 @@ body{
       button {
         background: $white;
         padding: 6px;
-        border-radius: 24px;
+        border-radius: 8px;
         cursor: pointer;
         color: $black;
         box-shadow: 0 8px 16px -12px rgba($black, 0.2);
@@ -340,9 +340,10 @@ body{
     box-shadow: 0 8px 16px -12px rgba($black, 0.2);
     transition: top 0.4s ease;
     position: relative;
+    height: 100%;
 
     img {
-      height: 140px;
+      height: 200px;
       width: 100%;
       object-fit: cover;
       object-position: bottom;
@@ -596,7 +597,7 @@ body{
       
       button{
         padding: 6px;
-        border-radius: 24px;
+        border-radius: 8px;
         cursor: pointer;
         color: $pri-400;
 
@@ -636,9 +637,7 @@ body{
   .page-header-overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(180deg,
-        rgba(0, 0, 0, 0.25),
-        rgba(0, 0, 0, 0.7));
+    background: rgba( $black, 0.7 );
   }
 
   @include lg {
@@ -657,4 +656,48 @@ body{
 .word {
   display: inline-block;
   will-change: transform, opacity, filter;
+}
+
+.hover-image{
+  position: relative;
+  width: 90px;
+  height: 90px;
+
+  img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    transition: all 0.4s ease;
+
+    &:first-child{
+      width: 80px;
+      z-index: 2;
+    }
+
+    &:last-child{
+      opacity: 0;
+      transform: scale(1.2) translate( -4px, -4px);
+      z-index: 1;
+    }
+  }
+}
+
+.value{
+
+  &:hover .hover-image{
+
+    img{
+
+      &:first-child{
+        opacity: 0;
+      }
+
+      &:last-child{
+        opacity: 1;
+      }
+    }
+    
+  }
 }

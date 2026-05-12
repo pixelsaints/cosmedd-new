@@ -84,7 +84,7 @@ export default function Header() {
       <header id="site-header">
         <div className="container-fluid mx-auto flex justify-between items-center header">
 
-          <div className="logo w-[9em]">
+          <div className="logo lg:w-[9em]">
             <TransitionLink href="/">
               <img
                 src="/images/logo.svg"
@@ -122,7 +122,7 @@ export default function Header() {
           </nav>
 
           {/* CTA */}
-          <div className="cta-btn w-[9em]">
+          <div className="cta-btn lg:w-[9em] hidden lg:flex ">
             <TransitionLink href="/contact" className="btn btn-small">
               <span data-title="Contact Us">Contact Us</span>
             </TransitionLink>

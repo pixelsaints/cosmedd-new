@@ -71,9 +71,8 @@ const AboutSection = () => {
           ...reveal,
           stagger: 0.1,
         }, "-=0.4")
-        .from(des.lines, {
+        .from(textRef.current.querySelector("p.desc"), {
           ...reveal,
-          stagger: 0.1,
         }, "-=0.4")
         .from(btnAbout, {
           ...reveal,
@@ -165,12 +164,12 @@ const AboutSection = () => {
           <Counter
             value="10"
             suffix="+"
-            title="Years of pharma expertise"
+            title="Years of expertise"
           />
           <Counter
             value="15"
             suffix="+"
-            title="Countries Served Globally"
+            title="Countries Served"
           />
           <Counter
             value="98"
@@ -180,7 +179,7 @@ const AboutSection = () => {
           <Counter
             value="100"
             suffix="%"
-            title="Regulatory-compliant integrations"
+            title="Compliance Ready"
           />
           <div>
             <img src="/images/cosmedd-in-numbers.webp" alt="The Cosmedd Impact" className="h-[11em] w-full object-cover" />
