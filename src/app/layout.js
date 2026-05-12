@@ -3,7 +3,7 @@ import "@/styles/globals.css";
 import "@/styles/style.scss";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
-import PageMask from "@/components/transitions/PageMask";
+import Script from "next/script";
 import PageEnter from "@/components/transitions/PageEnter";
 import CatalogDrawer from "@/components/ui/CatalogDrawer";
 import { DrawerProvider } from "@/context/DrawerContext";
@@ -52,6 +52,15 @@ export default function RootLayout({ children }) {
       data-scroll-behavior="smooth"
     >
       <body className="font-sans">
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-THLKDPJLTV"></script>
+        <Script src="https://www.googletagmanager.com/gtag/js?id=G-THLKDPJLTV" strategy="afterInteractive" />
+        <Script id="google-analytics" strategy="afterInteractive">
+
+          {`window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-THLKDPJLTV');`}
+        </Script>
         <DrawerProvider>
           <PageEnter />
           <Header />
