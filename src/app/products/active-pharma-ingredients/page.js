@@ -1,7 +1,18 @@
+import PageHeader from "@/components/layout/PageHeader";
+
 export default function ActivePharmaIngredients() {
   return (
     <>
-      <div className="h-screen bg-amber-50 flex items-center justify-center">Active Pharma Ingredients</div>
+      <PageHeader
+        title="APIs & Excipients"
+        description="Delivering high-quality pharmaceutical, nutraceutical, and healthcare solutions through trusted sourcing partnerships tailored to evolving global market needs."
+        bgImage="/images/quality-slide.webp"
+        breadcrumbs={[
+          { label: "Home", href: "/" },
+          { label: "Products", href: "/products" },
+          { label: "APIs & Excipients" }
+        ]}
+      />
     </>
   )
 }

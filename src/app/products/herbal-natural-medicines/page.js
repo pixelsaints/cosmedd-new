@@ -1,9 +1,18 @@
+import PageHeader from "@/components/layout/PageHeader";
+
 export default function HerbalNatural() {
   return (
     <>
-      <div className="h-screen bg-amber-50 flex items-center justify-center">
-        Herbal & Natural Medicines
-      </div>
+      <PageHeader
+        title="Herbal & Natural Medicines"
+        description="Delivering high-quality pharmaceutical, nutraceutical, and healthcare solutions through trusted sourcing partnerships tailored to evolving global market needs."
+        bgImage="/images/quality-slide.webp"
+        breadcrumbs={[
+          { label: "Home", href: "/" },
+          { label: "Products", href: "/products" },
+          { label: "Herbal & Natural Medicines" }
+        ]}
+      />
     </>
   )
 }

@@ -15,7 +15,10 @@ export default function About() {
         title="Driven By Care, Defined by Reliability"
         description="Since 2015, Cosmedd Healthcare has been delivering trusted pharmaceutical and wellness sourcing solutions across international markets through quality, reliability, and lasting partnerships."
         bgImage="/images/worldwide-expansion.webp"
-        currentPage="About"
+        breadcrumbs={[
+          { label: "Home", href: "/" },
+          { label: "About" }
+        ]}
       />
 
       <section className="about-intro my-24 lg:my-32">

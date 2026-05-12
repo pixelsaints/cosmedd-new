@@ -11,7 +11,8 @@ export default function PageHeader({
   title,
   description,
   bgImage,
-  currentPage,
+  // currentPage,
+  breadcrumbs = [],
 }) {
   const headerRef = useRef(null);
 
@@ -87,13 +88,18 @@ export default function PageHeader({
           <div className="md:max-w-[80%] lg:max-w-[60%]">
 
             <div className="breadcrumbs flex items-center gap-2 mb-6 text-sm text-white/70">
-              <TransitionLink href="/">
-                Home
-              </TransitionLink>
-
-              <ChevronRight size={14} />
-
-              <span className="text-white">{currentPage}</span>
+              {breadcrumbs.map((crumb, index) => (
+                <div key={index} className="flex items-center gap-2">
+                  {crumb.href ? (
+                    <span className="flex items-center">
+                      <TransitionLink href={crumb.href} className="text-white mr-2">{crumb.label}</TransitionLink>
+                      <ChevronRight size={16} />
+                    </span>
+                  ) : (
+                    <span className="text-white/70">{crumb.label}</span>
+                  )}
+                </div>
+              ))}
             </div>
 
             <h1 className="text-white mb-5">

@@ -1,7 +1,18 @@
+import PageHeader from "@/components/layout/PageHeader"
+
 export default function ConsumerHealthcare() {
   return (
     <>
-      <div className="h-screen bg-amber-50 flex items-center justify-center">Consumer Healthcare</div>
+      <PageHeader
+        title="Consumer Healthcare"
+        description="Delivering high-quality pharmaceutical, nutraceutical, and healthcare solutions through trusted sourcing partnerships tailored to evolving global market needs."
+        bgImage="/images/quality-slide.webp"
+        breadcrumbs={[
+          { label: "Home", href: "/" },
+          { label: "Products", href: "/products" },
+          { label: "Consumer Healthcare" }
+        ]}
+      />
     </>
   )
 }
