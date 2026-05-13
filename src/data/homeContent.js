@@ -5,7 +5,7 @@ export const slides = [
     desc: "Trusted pharmaceutical solutions through quality partnerships, delivering reliable healthcare products to evolving markets.",
     primary: "Our Products",
     secondary: "Contact Us",
-    primaryUrl: "/about",
+    primaryUrl: "/products",
     secondaryUrl: "/contact",
     image: "/images/slide-1.webp",
   },
@@ -14,7 +14,7 @@ export const slides = [
     desc: "Serving clients across Asia and CIS regions while growing into new markets with strong local partnerships worldwide.",
     primary: "About Us",
     secondary: "Contact Us",
-    primaryUrl: "/quality-compliance",
+    primaryUrl: "/about",
     secondaryUrl: "/contact",
     image: "/images/worldwide-expansion.webp",
   },
@@ -121,44 +121,100 @@ export const whyCosmeddData = {
   ],
 };
 
-
 export const productData = [
   {
-    number: "1",
-    title: "Pharmaceutical Generics",
-    desc: "Reliable pharmaceutical formulations for chronic, acute, and specialized therapeutic healthcare needs globally.",
-    icon: "/images/pharmaceutical-generics.webp",
-    url: "/products/pharmaceutical-generics"
+    number: "01",
+    title: "Pharmaceuticals",
+    desc: "Comprehensive pharmaceutical formulations developed to address acute, chronic, and specialty therapeutic needs, delivering dependable treatment solutions through trusted manufacturing partnerships and stringent quality-driven sourcing processes.",
+    highlights: [
+      "Pharma Generics",
+      "Chronic Therapy",
+      "Acute Therapy",
+      "Antibiotics & Oncology",
+    ],
+    image: "/images/products/pharma.webp",
+    link: "/products/pharmaceuticals",
   },
   {
-    number: "2",
-    title: "Herbal & Natural Medicines",
-    desc: "Herbal nutraceutical solutions supporting prevention, immunity, recovery, chronic wellness, and holistic healthcare.",
-    icon: "/images/herbal-natural-medicines.webp",
-    url: "/products/herbal-natural-medicines"
+    number: "02",
+    title: "Herbals & Nutraceuticals",
+    desc: "Science-backed herbal and nutraceutical formulations designed to support preventive wellness, chronic health management, and nutritional balance through carefully sourced ingredients and innovative healthcare solutions.",
+    highlights: [
+      "Chronic Therapy",
+      "Preventive Care",
+      "Immunity Support",
+      "Dietary Supplements",
+    ],
+    image: "/images/products/nutraceuticals.webp",
+    link: "/products/herbal-natural-medicines",
   },
   {
-    number: "3",
-    title: "Active Pharma Ingredients",
-    desc: "Advanced APIs, excipients, and pellet technologies enabling innovative controlled pharmaceutical formulations.",
-    icon: "/images/apis-excipients.webp",
-    url: "/products/active-pharma-ingredients"
+    number: "03",
+    title: "Active Pharma Ingredients & Excipients",
+    desc: "Reliable sourcing of active pharmaceutical ingredients, excipients, and advanced drug delivery systems engineered to meet diverse manufacturing requirements with consistency, regulatory compliance, and technical precision.",
+    highlights: [
+      "Pellets",
+      "Controlled Release Systems",
+      "Functional Excipients",
+      "Organic Substances",
+      "Multiple Grades",
+    ],
+    image: "/images/products/apis-excipients.webp",
+    link: "/products/active-pharma-ingredients",
   },
   {
-    number: "4",
-    title: "Consumer Healthcare",
-    desc: "Cosmeceutical and consumer healthcare solutions enhancing wellness, beauty, confidence, and everyday personal care.",
-    icon: "/images/cosmeceuticals.webp",
-    url: "/products/consumer-healthcare"
+    number: "04",
+    title: "Cosmeceuticals & Consumer Healthcare Products",
+    desc: "Innovative personal care and consumer healthcare solutions developed to address evolving wellness demands through high-quality formulations spanning skincare, medicated cosmetics, and specialized health-focused applications.",
+    highlights: [
+      "Skin & Hair Care",
+      "Body care",
+      "Beauty Products",
+      "Medicated Cosmetics",
+    ],
+    image: "/images/products/cosmeceuticals.webp",
+    link: "/products/consumer-healthcare",
   },
   {
-    number: "5",
-    title: "Veterinary Solutions",
-    desc: "Comprehensive animal healthcare products for nutrition, wellness, and treatment support.",
-    icon: "/images/veterinary-solutions.webp",
-    url: "/products/veterinary-solutions"
+    number: "05",
+    title: "Women's Healthcare",
+    desc: "Specialized women's healthcare solutions formulated to support intimate wellness, skin restoration, and essential personal care needs through safe, effective, and quality-assured formulations.",
+    highlights: [
+      "Intimate Wash",
+      "Scar/Stretch Mark Removals",
+      "Cracked Heels And More",
+      "Feminine Hygiene Solutions",
+      "Postpartum Care Products"
+    ],
+    image: "/images/products/womens-healthcare.webp",
+    link: "/products/womens-healthcare",
   },
-]
+  {
+    number: "06",
+    title: "Men's Healthcare",
+    desc: "Targeted men's healthcare formulations designed to support vitality, performance, reproductive wellness, and overall wellbeing through safe, effective, and carefully sourced therapeutic solutions.",
+    highlights: [
+      "Aphrodisiacs",
+      "Erectile Dysfunction",
+      "Sperm Enhancement",
+      "Libido & Stamina Boosters And More",
+    ],
+    image: "/images/products/mens-healthcare.webp",
+    link: "/products/mens-healthcare",
+  },
+  {
+    number: "07",
+    title: "Veterinary Feed Supplements & Medicines",
+    desc: "Specialized veterinary supplements and medicines formulated to support animal health, nutrition, and performance through effective feed solutions, therapeutic formulations, and trusted healthcare manufacturing partnerships.",
+    highlights: [
+      "Herbal/Natural Feed Supplements",
+      "Vitamin & Mineral Supplements",
+      "Herbal & Veterinary Medicines",
+    ],
+    image: "/images/products/veterinary.webp",
+    link: "/products/veterinary-solutions",
+  },
+];
 
 export const indData = [
   {
@@ -205,7 +261,6 @@ export const indData = [
   }
 ]
 
-
 export const topCerts = [
   {
     title: "EU-GMP",
@@ -225,6 +280,7 @@ export const topCerts = [
     img: "/certifications/fssai.webp"
   }
 ]
+
 export const bottomCerts = [
   {
     title: "ISO 9001:2015",

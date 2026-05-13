@@ -97,7 +97,7 @@ const WhyUsSection = () => {
             <div className="sub-title mb-6">Why Choose Us</div>
 
             <h2 className="mb-8 text-white">
-              We lead & inspire in modern healthcare fields
+              We lead & inspire in modern healthcare
             </h2>
 
             <img

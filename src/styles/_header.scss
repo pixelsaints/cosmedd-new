@@ -36,11 +36,47 @@
       padding-left: 3.8vw;
     }
 
-    ul.menu {
+    & > ul.menu {
       display: flex;
+      position: relative;
 
-      li {
+      & > li {
         padding: 0 16px;
+        position: relative;
+      }
+
+      li.has-sub:hover .sub-menu {
+        pointer-events: auto;
+        visibility: visible;
+        opacity: 1;
+        transform: scaleY(1);
+      }
+
+      .sub-menu{
+        position: absolute;
+        background: $white;
+        padding: 32px 24px 16px;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        top: 24px;
+        left: -24px;
+        min-width: 260px;
+        box-shadow: 0 10px 15px -10px $black;
+        border-bottom-left-radius: 8px;
+        border-bottom-right-radius: 8px;
+        transition: all 0.45s ease;
+        pointer-events: none;
+        opacity: 0;
+        visibility: hidden;
+        transform: scaleY(0);
+        transform-origin: top center;
+        z-index: 3;
+
+        li{
+          position: relative;
+          padding: 4px 0;
+        }
       }
     }
 
@@ -60,6 +96,7 @@
         color: rgba($black, 1);
         font-weight: 400;
         letter-spacing: -0.01em;
+        z-index: 4;
     
         &:after {
           content: attr(data-title);
@@ -71,7 +108,6 @@
           height: 100%;
           transform: rotateX(-90deg);
           transform-origin: 50% 0;
-          text-align: center;
           transition: all 0.5s ease;
           opacity: 0;
         }
@@ -154,7 +190,7 @@
   p.title {
     color: rgba($black, 1);
     transform: rotate(180deg);
-    bottom: 40%;
+    bottom: 44%;
   }
 
   ul.social {
@@ -208,7 +244,7 @@
         }
 
         svg{
-          fill: $pri-400;
+          fill: $pri-600;
           width: 24px;
           height: 24px;
         }
@@ -217,7 +253,7 @@
   }
 
   .contact-info {
-    top: 10%;
+    bottom: 40px;
     color: $black-900;
     letter-spacing: 4px;
     display: flex;
@@ -227,13 +263,15 @@
 
     .divider{
       width: 2px;
-      height: 24px;
-      background: $black-500;
+      height: 40px;
+      background: $pri-200;;
       display: block;
     }
 
     a{
       transition: all 0.5s ease;
+      font-weight: bold;
+      color: $pri-600;
 
       &:hover{
         color: $pri-600;

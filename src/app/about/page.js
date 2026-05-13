@@ -7,6 +7,7 @@ import Counter from "@/components/ui/counter";
 import WhyCosmedd from "../../components/sections/WhyUsSection";
 import ValuesCard from './components/ValuesCard';
 import QualitySection from "@/components/sections/QualitySection";
+import GlobalSection from "@/components/sections/GlobalSection";
 
 export default function About() {
   return (
@@ -137,13 +138,17 @@ export default function About() {
         </div>
       </section>
 
+      <div className="quality py-28">
+        <QualitySection />
+      </div>
+
       <div className="why-cosmedd">
         <WhyCosmedd />
       </div>
 
-      <div className="quality py-28">
-        <QualitySection />
-      </div>
+      <section className="global-presence py-20 lg:py-32 bg-white">
+        <GlobalSection />
+      </section>
 
       <Cta />
     </>

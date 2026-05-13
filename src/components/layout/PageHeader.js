@@ -102,7 +102,7 @@ export default function PageHeader({
               ))}
             </div>
 
-            <h1 className="text-white mb-5">
+            <h1 className="text-white mb-5 whitespace-pre-line">
               {title}
             </h1>
 

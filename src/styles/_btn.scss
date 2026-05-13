@@ -47,6 +47,11 @@
     }
   }
 
+  svg {
+    transition: all 0.5s ease;
+    will-change: transform;
+  }
+
   &:hover{
     background: $pri-700;
 
@@ -58,6 +63,10 @@
     span:after {
       color: rgba(#fff, 1);
       opacity: 1;
+    }
+
+    svg{
+      transform: rotate(-45deg);
     }
   }
 

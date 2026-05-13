@@ -17,12 +17,52 @@ export default function Header() {
   const [menuActive, setMenuActive] = useState(false);
 
   const nav = [
-    { name: "Home", href: "/" },
-    { name: "About Us", href: "/about" },
-    { name: "Products", href: "/products" },
-    { name: "Quality", href: "/quality" },
-    { name: "Why Choose Us", href: "/why-choose-us" },
-    { name: "Global Presence", href: "/global-presence" },
+    {
+      name: "Home",
+      href: "/"
+    },
+    {
+      name: "About Us",
+      href: "/about"
+    },
+    {
+      name: "Products",
+      href: "/products",
+      submenu: [
+        {
+          name: "Pharmaceutical",
+          href: "/products/pharmaceuticals",
+        },
+        {
+          name: "Herbal & Natural Medicines",
+          href: "/products/herbal-natural-medicines",
+        },
+        {
+          name: "Active Pharma Ingredients & Excipients",
+          href: "/products/active-pharma-ingredients",
+        },
+        {
+          name: "Cosmeceuticals & Consumer Healthcare",
+          href: "/products/consumer-healthcare",
+        },
+        {
+          name: "Veterinary Feed Supplements & Medicines",
+          href: "/products/veterinary-solutions",
+        },
+      ],
+    },
+    {
+      name: "Quality",
+      href: "/quality"
+    },
+    {
+      name: "Why Choose Us",
+      href: "/why-choose-us"
+    },
+    {
+      name: "Global Presence",
+      href: "/global-presence"
+    }
   ];
 
   useLayoutEffect(() => {
@@ -97,7 +137,7 @@ export default function Header() {
           <nav className="menu-wrapper flex items-center ">
             <ul className="menu flex flex-row">
               {nav.map((item) => (
-                <li key={item.href}>
+                <li key={item.href} className={item.submenu ? "has-sub" : ""}>
                   <TransitionLink
                     href={item.href}
                     className="menu-link"
@@ -106,16 +146,23 @@ export default function Header() {
                       gsap.set(menuRef.current, { x: "100%" });
                     }}
                   >
-                    <span
-                      data-title={item.name}
-                      className={`${pathname === item.href
-                        ? "text-white"
-                        : "text-white/60 hover:text-white"
-                        }`}
-                    >
+                    <span data-title={item.name}>
                       {item.name}
                     </span>
                   </TransitionLink>
+                  {item.submenu && (
+                    <ul className="sub-menu">
+                      {item.submenu.map((sub) => (
+                        <li key={sub.name}>
+                          <TransitionLink href={sub.href} className="menu-link">
+                            <span data-title={sub.name} className="">
+                              {sub.name}
+                            </span>
+                          </TransitionLink>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
                 </li>
               ))}
             </ul>
@@ -170,13 +217,6 @@ export default function Header() {
               <a href="tel:+918049529579">+91 80 4952 9579</a>
             </span>
           </div>
-
-          <div className="back_to_top">
-            <a href="#top">
-              Back to top
-              <span className="line"></span>
-            </a>
-          </div>
         </div>
       </div>
 
@@ -186,13 +226,7 @@ export default function Header() {
             {nav.map((item) => (
               <li key={item.href}>
                 <TransitionLink href={item.href} className="menu-link">
-                  <span
-                    data-title={item.name}
-                    className={`${pathname === item.href
-                      ? "text-white"
-                      : "text-white/60 hover:text-white"
-                      }`}
-                  >
+                  <span data-title={item.name}>
                     {item.name}
                   </span>
                 </TransitionLink>

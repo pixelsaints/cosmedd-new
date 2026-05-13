@@ -20,6 +20,19 @@ export default function Footer() {
         {/* 2. Core Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 mt-6 gap-24">
           <div className="footer__col">
+            <h4>Products</h4>
+            <ul className="flex flex-col divide-y divide-white/10 gap-3">
+              <li><TransitionLink href="/products/pharmaceuticals">Pharmaceutical</TransitionLink></li>
+              <li><TransitionLink href="/products/herbal-natural-medicines">Herbal & Natural Medicines</TransitionLink></li>
+              <li><TransitionLink href="/products/active-pharma-ingredients">Active Pharma Ingredients & Excipients</TransitionLink></li>
+              <li><TransitionLink href="/products/consumer-healthcare">Cosmeceuticals & Consumer Healthcare</TransitionLink></li>
+              <li><TransitionLink href="/products/womens-healthcare">Women's Healthcare</TransitionLink></li>
+              <li><TransitionLink href="/products/mens-healthcare">Men's Healthcare</TransitionLink></li>
+              <li><TransitionLink href="/products/veterinary-solutions">Veterinary Feed Supplements & Medicines</TransitionLink></li>
+            </ul>
+          </div>
+
+          <div className="footer__col">
             <h4>Company</h4>
             <ul className="flex flex-col divide-y divide-white/10 gap-3">
               <li><TransitionLink href="/">Home</TransitionLink></li>
@@ -27,17 +40,7 @@ export default function Footer() {
               <li><TransitionLink href="/quality">Quality</TransitionLink></li>
               <li><TransitionLink href="/why-choose-us">Why Choose Us</TransitionLink></li>
               <li><TransitionLink href="/global-presence">Global Presence</TransitionLink></li>
-            </ul>
-          </div>
-
-          <div className="footer__col">
-            <h4>Products</h4>
-            <ul className="flex flex-col divide-y divide-white/10 gap-3">
-              <li><TransitionLink href="/products/pharmaceutical-generics">Pharmaceutical Generics</TransitionLink></li>
-              <li><TransitionLink href="/products/herbal-natural-medicines">Herbal & Natural Medicines</TransitionLink></li>
-              <li><TransitionLink href="/products/active-pharma-ingredients">Active Pharma Ingredients</TransitionLink></li>
-              <li><TransitionLink href="/products/consumer-healthcare">Consumer Healthcare</TransitionLink></li>
-              <li><TransitionLink href="/products/veterinary-solutions">Veterinary Solutions</TransitionLink></li>
+              <li><TransitionLink href="/contact">Contact Us</TransitionLink></li>
             </ul>
           </div>
 

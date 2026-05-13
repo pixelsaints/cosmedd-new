@@ -7,7 +7,10 @@ import TransitionLink from "@/components/transitions/TransitionLink"
 import { reveal } from "@/lib/animations";
 import { useDrawer } from "@/context/DrawerContext";
 
-export default function Cta() {
+export default function Cta({
+  ctaTitle = "Build Your Healthcare Supply Network",
+  ctaSubtitle = "Partner with Cosmedd for trusted sourcing, quality healthcare products, and scalable global supply solutions."
+}) {
 
   const { openDrawer } = useDrawer();
   const ctaRef = useRef(null);
@@ -15,12 +18,12 @@ export default function Cta() {
   useLayoutEffect(() => {
     if (!ctaRef.current) return;
 
-    const ctaTitle = new SplitType(
+    ctaTitle = new SplitType(
       ctaRef.current.querySelector("h2"),
       { types: "words" }
     );
 
-    const ctaDescription = new SplitType(
+    ctaSubtitle = new SplitType(
       ctaRef.current.querySelector("p"),
       { types: "lines" }
     );
@@ -39,7 +42,7 @@ export default function Cta() {
       ...reveal,
       stagger: 0.08,
     })
-      .from(ctaDescription.lines, {
+      .from(ctaSubtitle.lines, {
         ...reveal,
         stagger: 0.08,
       }, "-=0.4")
@@ -58,7 +61,7 @@ export default function Cta() {
           <p className="lead text-white/70">Partner with Cosmedd for trusted sourcing, quality healthcare products, and scalable global supply solutions.</p>
 
           <div className="buttons mt-8 flex flex-col lg:flex-row items-center justify-center gap-3 lg:gap-4 w-full mx-auto">
-            <TransitionLink href="/products" className="btn btn-primary">
+            <TransitionLink href="/contact" className="btn btn-primary">
               <span data-title="Become A Partner">
                 Become A Partner
               </span>
