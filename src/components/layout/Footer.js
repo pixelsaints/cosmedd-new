@@ -1,4 +1,5 @@
 import TransitionLink from "@/components/transitions/TransitionLink";
+import { nav } from "@/data/menu";
 
 export default function Footer() {
   return (
@@ -22,25 +23,30 @@ export default function Footer() {
           <div className="footer__col">
             <h4>Products</h4>
             <ul className="flex flex-col divide-y divide-white/10 gap-3">
-              <li><TransitionLink href="/products/pharmaceuticals">Pharmaceutical</TransitionLink></li>
-              <li><TransitionLink href="/products/herbal-natural-medicines">Herbal & Natural Medicines</TransitionLink></li>
-              <li><TransitionLink href="/products/active-pharma-ingredients">Active Pharma Ingredients & Excipients</TransitionLink></li>
-              <li><TransitionLink href="/products/consumer-healthcare">Cosmeceuticals & Consumer Healthcare</TransitionLink></li>
-              <li><TransitionLink href="/products/womens-healthcare">Women's Healthcare</TransitionLink></li>
-              <li><TransitionLink href="/products/mens-healthcare">Men's Healthcare</TransitionLink></li>
-              <li><TransitionLink href="/products/veterinary-solutions">Veterinary Feed Supplements & Medicines</TransitionLink></li>
+              {nav
+                .find((item) => item.name === "Products")?.submenu?.map((sub) => (
+                  <li key={sub.name}>
+                    <TransitionLink href={sub.href} className="menu-link">
+                      <span data-title={sub.name}>
+                        {sub.name}
+                      </span>
+                    </TransitionLink>
+                  </li>
+                ))
+              }
             </ul>
           </div>
 
           <div className="footer__col">
             <h4>Company</h4>
             <ul className="flex flex-col divide-y divide-white/10 gap-3">
-              <li><TransitionLink href="/">Home</TransitionLink></li>
-              <li><TransitionLink href="/about">About Us</TransitionLink></li>
-              <li><TransitionLink href="/quality">Quality</TransitionLink></li>
-              <li><TransitionLink href="/why-choose-us">Why Choose Us</TransitionLink></li>
-              <li><TransitionLink href="/global-presence">Global Presence</TransitionLink></li>
-              <li><TransitionLink href="/contact">Contact Us</TransitionLink></li>
+              {nav.map((item) => (
+                <li key={item.href}>
+                  <TransitionLink href={item.href}>
+                    {item.name}
+                  </TransitionLink>
+                </li>
+              ))}
             </ul>
           </div>
 

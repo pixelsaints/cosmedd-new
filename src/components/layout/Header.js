@@ -4,6 +4,7 @@ import { useState, useRef, useLayoutEffect, useEffect } from "react";
 import gsap from "gsap";
 import { useDrawer } from "@/context/DrawerContext";
 import TransitionLink from "@/components/transitions/TransitionLink";
+import { nav } from "@/data/menu";
 
 export default function Header() {
 
@@ -15,55 +16,6 @@ export default function Header() {
   const menuTL = useRef(null);
 
   const [menuActive, setMenuActive] = useState(false);
-
-  const nav = [
-    {
-      name: "Home",
-      href: "/"
-    },
-    {
-      name: "About Us",
-      href: "/about"
-    },
-    {
-      name: "Products",
-      href: "/products",
-      submenu: [
-        {
-          name: "Pharmaceutical",
-          href: "/products/pharmaceuticals",
-        },
-        {
-          name: "Herbal & Natural Medicines",
-          href: "/products/herbal-natural-medicines",
-        },
-        {
-          name: "Active Pharma Ingredients & Excipients",
-          href: "/products/active-pharma-ingredients",
-        },
-        {
-          name: "Cosmeceuticals & Consumer Healthcare",
-          href: "/products/consumer-healthcare",
-        },
-        {
-          name: "Veterinary Feed Supplements & Medicines",
-          href: "/products/veterinary-solutions",
-        },
-      ],
-    },
-    {
-      name: "Quality",
-      href: "/quality"
-    },
-    {
-      name: "Why Choose Us",
-      href: "/why-choose-us"
-    },
-    {
-      name: "Global Presence",
-      href: "/global-presence"
-    }
-  ];
 
   useLayoutEffect(() => {
     if (!menuRef.current) return;

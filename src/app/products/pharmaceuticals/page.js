@@ -6,16 +6,17 @@ import { Navigation, Pagination } from "swiper/modules";
 
 import PageHeader from "@/components/layout/PageHeader";
 import Cta from "@/components/sections/CtaSection";
+import ProductSingle from "@/components/sections/ProductSingle";
 import TransitionLink from "@/components/transitions/TransitionLink";
 import { whyCosmeddData } from "@/data/homeContent";
 import { pharmaTabs } from "@/data/pharmaceuticals";
 
-
-
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import TabsSection from "@/components/layout/TabsSection";
+
+// import TabsSection from "@/components/layout/TabsSection";
+// import { pharmaTabs } from "@/data/pharmaceuticals";
 
 export default function Pharmaceutical() {
 
@@ -56,8 +57,8 @@ export default function Pharmaceutical() {
   return (
     <>
       <PageHeader
-        title="Innovative Global Pharmaceutical Care"
-        description="Comprehensive pharmaceutical formulations addressing acute, chronic, and specialty therapeutic needs through quality-assured sourcing and trusted manufacturing partnerships."
+        title="Innovative Global Pharmaceuticals Care"
+        description="Comprehensive pharmaceuticals formulations addressing acute, chronic, and specialty therapeutic needs through quality-assured sourcing and trusted manufacturing partnerships."
         bgImage="/images/pharma-lab.webp"
         breadcrumbs={[
           { label: "Home", href: "/" },
@@ -66,143 +67,8 @@ export default function Pharmaceutical() {
         ]}
       />
       <section className="my-24 lg:my-32">
-        {/* <TabsSection tabs={pharmaTabs} /> */}
-
         <div className="section-wrap">
-          <div className="flex flex-row items-start gap-16 border-b border-slate-200 pb-16 mb-16">
-            <div className="lg:w-1/3 sticky top-24">
-              <h4 className="text-black font-semibold mb-3">Pharma Generics</h4>
-              <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Omnis eaque, a, suscipit beatae perspiciatis aut odio numquam quibusdam nulla accusantium magni voluptatibus sunt debitis. Sequi fugit corrupti impedit earum debitis.</p>
-            </div>
-            <div className="lg:w-2/3">
-              <div className="grid grid-cols-2 gap-8">
-                <div className="prod-card">
-                  <img src="/images/products/antibiotics.webp" alt="" />
-                  <div className="prod-card-content">
-                    <h4 className="mb-4">Anti-Infective Formulations </h4>
-                    <p className="line-clamp-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus accusantium harum cupiditate, sunt distinctio natus odit sequi quisquam nam repellendus tempore obcaecati, adipisci laudantium recusandae quaerat laboriosam eum suscipit minus.</p>
-
-                    <div className="sub-heading text-black font-bold my-6">What we offer</div>
-
-                    <ul className="pills">
-                      <li className="pill">Cefixime</li>
-                      <li className="pill">Amoxicillin</li>
-                      <li className="pill">Azithromycin</li>
-                      <li className="pill">Cefpodoxime</li>
-                      <li className="pill">Ciprofloxacin</li>
-                    </ul>
-                  </div>
-                </div>
-                <div className="prod-card">
-                  <img src="/images/products/oncology.webp" alt="" />
-                  <div className="prod-card-content">
-                    <h4 className="mb-4">Oncology & Pain Management</h4>
-                    <p className="line-clamp-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus accusantium harum cupiditate, sunt distinctio natus odit sequi quisquam nam repellendus tempore obcaecati, adipisci laudantium recusandae quaerat laboriosam eum suscipit minus.</p>
-
-                    <div className="sub-heading text-black font-bold my-6">What we offer</div>
-
-                    <ul className="pills">
-                      <li className="pill">Methotrexate</li>
-                      <li className="pill">Capecitabine</li>
-                      <li className="pill">Diclofenac</li>
-                      <li className="pill">Etoricoxib</li>
-                      <li className="pill">Celecoxib</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="flex flex-row items-start gap-16 border-b border-slate-200 pb-16 mb-16">
-            <div className="lg:w-1/3 sticky top-24">
-              <h4 className="text-black font-semibold mb-3">Chronic Therapy</h4>
-              <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Omnis eaque, a, suscipit beatae perspiciatis aut odio numquam quibusdam nulla accusantium magni voluptatibus sunt debitis. Sequi fugit corrupti impedit earum debitis.</p>
-            </div>
-            <div className="lg:w-2/3">
-              <div className="grid grid-cols-1 gap-6">
-                <div className="prod-card">
-                  <img src="/images/products/cholesterol.webp" alt="" />
-                  <div className="prod-card-content">
-                    <h4 className="mb-4">Cardiometabolic Care Solutions</h4>
-                    <p className="line-clamp-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus accusantium harum cupiditate, sunt distinctio natus odit sequi quisquam nam repellendus tempore obcaecati, adipisci laudantium recusandae quaerat laboriosam eum suscipit minus.</p>
-
-                    <div className="sub-heading text-black font-bold my-6">What we offer</div>
-
-                    <ul className="pills">
-                      <li className="pill">Cefixime</li>
-                      <li className="pill">Amoxicillin</li>
-                      <li className="pill">Azithromycin</li>
-                      <li className="pill">Cefpodoxime</li>
-                      <li className="pill">Ciprofloxacin</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="flex flex-row items-start gap-16 border-b border-slate-200 pb-16 mb-16">
-            <div className="lg:w-1/3 sticky top-24">
-              <h4 className="text-black font-semibold mb-3">Actute Therapy</h4>
-              <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Omnis eaque, a, suscipit beatae perspiciatis aut odio numquam quibusdam nulla accusantium magni voluptatibus sunt debitis. Sequi fugit corrupti impedit earum debitis.</p>
-            </div>
-            <div className="lg:w-2/3">
-              <div className="grid grid-cols-2 gap-8">
-                <div className="prod-card">
-                  <img src="/images/products/cholesterol.webp" alt="" />
-                  <div className="prod-card-content">
-                    <h4 className="mb-4">Acute Care Treatments</h4>
-                    <p className="line-clamp-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus accusantium harum cupiditate, sunt distinctio natus odit sequi quisquam nam repellendus tempore obcaecati, adipisci laudantium recusandae quaerat laboriosam eum suscipit minus.</p>
-
-                    <div className="sub-heading text-black font-bold my-6">What we offer</div>
-
-                    <ul className="pills">
-                      <li className="pill">Cefixime</li>
-                      <li className="pill">Amoxicillin</li>
-                      <li className="pill">Azithromycin</li>
-                      <li className="pill">Cefpodoxime</li>
-                      <li className="pill">Ciprofloxacin</li>
-                    </ul>
-                  </div>
-                </div>
-                <div className="prod-card">
-                  <img src="/images/products/cholesterol.webp" alt="" />
-                  <div className="prod-card-content">
-                    <h4 className="mb-4">Bronchitis</h4>
-                    <p className="line-clamp-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus accusantium harum cupiditate, sunt distinctio natus odit sequi quisquam nam repellendus tempore obcaecati, adipisci laudantium recusandae quaerat laboriosam eum suscipit minus.</p>
-
-                    <div className="sub-heading text-black font-bold my-6">What we offer</div>
-
-                    <ul className="pills">
-                      <li className="pill">Cefixime</li>
-                      <li className="pill">Amoxicillin</li>
-                      <li className="pill">Azithromycin</li>
-                      <li className="pill">Cefpodoxime</li>
-                      <li className="pill">Ciprofloxacin</li>
-                    </ul>
-                  </div>
-                </div>
-                <div className="prod-card">
-                  <img src="/images/products/cholesterol.webp" alt="" />
-                  <div className="prod-card-content">
-                    <h4 className="mb-4">Gastroenteritis</h4>
-                    <p className="line-clamp-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus accusantium harum cupiditate, sunt distinctio natus odit sequi quisquam nam repellendus tempore obcaecati, adipisci laudantium recusandae quaerat laboriosam eum suscipit minus.</p>
-
-                    <div className="sub-heading text-black font-bold my-6">What we offer</div>
-
-                    <ul className="pills">
-                      <li className="pill">Cefixime</li>
-                      <li className="pill">Amoxicillin</li>
-                      <li className="pill">Azithromycin</li>
-                      <li className="pill">Cefpodoxime</li>
-                      <li className="pill">Ciprofloxacin</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+          <ProductSingle data={pharmaTabs} />
         </div>
       </section >
 

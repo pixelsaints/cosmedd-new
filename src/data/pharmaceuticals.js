@@ -2,18 +2,36 @@ export const pharmaTabs = [
   {
     id: "pharma-generics",
     label: "Pharma Generics",
+    description:
+      "A broad range of pharmaceutical generics covering antibiotics, oncology products, NSAIDs, and other essential therapeutic requirements.",
     products: [
       {
         title: "Range of Antibiotics",
         description:
-          "Broad-spectrum antibiotic formulations including penicillins, cephalosporins, and advanced therapeutic solutions.",
-        image: "/images/cosmedd-in-numbers.webp",
+          "Antibiotic formulations across penicillins, cephalosporins, and other commonly required anti-infective categories.",
+        image: "/images/products/antibiotics.webp",
+        subHeading: "Core Generics",
+        items: [
+          "Penicillins",
+          "Cephalosporins",
+          "Anti-Infectives",
+          "Broad-Spectrum Antibiotics",
+          "More..."
+        ],
       },
       {
         title: "Oncology, NSAIDs And More",
         description:
-          "Specialized pharmaceutical solutions supporting pain management, oncology care, and critical therapeutic applications.",
-        image: "/images/cosmedd-in-numbers.webp",
+          "Generic pharmaceutical products supporting oncology care, pain management, anti-inflammatory needs, and other therapeutic areas.",
+        image: "/images/products/oncology.webp",
+        subHeading: "Core Generics",
+        items: [
+          "Oncology Products",
+          "NSAIDs",
+          "Pain Management",
+          "Anti-Inflammatory Products",
+          "More..."
+        ],
       },
     ],
   },
@@ -21,12 +39,22 @@ export const pharmaTabs = [
   {
     id: "chronic-therapy",
     label: "Chronic Therapy",
+    description:
+      "Chronic therapy formulations supporting long-term management of diabetes, cholesterol control, and other ongoing healthcare needs.",
     products: [
       {
         title: "Diabetes, Cholesterol Control And More",
         description:
-          "Reliable chronic care formulations designed for long-term therapeutic management and improved patient outcomes.",
-        image: "/images/cosmedd-in-numbers.webp",
+          "Chronic care pharmaceutical products designed to support diabetes management, lipid control, cardiovascular wellness, and long-term therapy requirements.",
+        image: "/images/products/cholesterol.webp",
+        subHeading: "Therapy Focus",
+        items: [
+          "Diabetes",
+          "Cholesterol Control",
+          "Cardiovascular Care",
+          "Long-Term Therapy",
+          "More..."
+        ]
       },
     ],
   },
@@ -34,24 +62,50 @@ export const pharmaTabs = [
   {
     id: "acute-therapy",
     label: "Acute Therapy",
+    description:
+      "Acute therapy products for allergic conditions, respiratory concerns, bronchitis, gastroenteritis, and other short-term treatment needs.",
     products: [
       {
         title: "Allergic Conditions",
         description:
-          "Targeted formulations for rapid allergy symptom management and respiratory relief.",
-        image: "/images/cosmedd-in-numbers.webp",
+          "Acute care products supporting cough, common cold, asthma, and allergy-related respiratory conditions.",
+        image: "/images/products/allergic-conditions.webp",
+        subHeading: "Therapy Focus",
+        items: [
+          "Cough",
+          "Common Cold",
+          "Asthma",
+          "Allergic Conditions",
+          "More..."
+        ]
       },
       {
-        title: "Cough, Common Cold & Asthma",
+        title: "Bronchitis",
         description:
-          "Effective acute respiratory care solutions supporting faster recovery and symptom control.",
-        image: "/images/cosmedd-in-numbers.webp",
+          "Bronchitis treatment products supporting respiratory comfort, airway care, cough relief, and short-term recovery needs.",
+        image: "/images/products/bronchitis.webp",
+        subHeading: "Therapy Focus",
+        items: [
+          "Bronchitis",
+          "Respiratory Care",
+          "Cough Relief",
+          "Airway Support",
+          "More..."
+        ]
       },
       {
-        title: "Bronchitis, Gastroenteritis And More",
+        title: "Gastroenteritis And More",
         description:
-          "Comprehensive acute care formulations addressing respiratory and gastrointestinal therapeutic needs.",
-        image: "/images/cosmedd-in-numbers.webp",
+          "Gastrointestinal products supporting gastroenteritis, stomach infections, digestive discomfort, diarrhea care, and related acute needs.",
+        image: "/images/products/gastroenteritis.webp",
+        subHeading: "Therapy Focus",
+        items: [
+          "Gastroenteritis",
+          "Digestive Care",
+          "Diarrhea Care",
+          "Stomach Infection Support",
+          "More..."
+        ]
       },
     ],
   },

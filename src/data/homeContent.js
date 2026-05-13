@@ -150,7 +150,7 @@ export const productData = [
   },
   {
     number: "03",
-    title: "Active Pharma Ingredients & Excipients",
+    title: "API's & Excipients",
     desc: "Reliable sourcing of active pharmaceutical ingredients, excipients, and advanced drug delivery systems engineered to meet diverse manufacturing requirements with consistency, regulatory compliance, and technical precision.",
     highlights: [
       "Pellets",
@@ -164,7 +164,7 @@ export const productData = [
   },
   {
     number: "04",
-    title: "Cosmeceuticals & Consumer Healthcare Products",
+    title: "Consumer Healthcare",
     desc: "Innovative personal care and consumer healthcare solutions developed to address evolving wellness demands through high-quality formulations spanning skincare, medicated cosmetics, and specialized health-focused applications.",
     highlights: [
       "Skin & Hair Care",
@@ -204,7 +204,7 @@ export const productData = [
   },
   {
     number: "07",
-    title: "Veterinary Feed Supplements & Medicines",
+    title: "Veterinary Feeds & Medicines",
     desc: "Specialized veterinary supplements and medicines formulated to support animal health, nutrition, and performance through effective feed solutions, therapeutic formulations, and trusted healthcare manufacturing partnerships.",
     highlights: [
       "Herbal/Natural Feed Supplements",

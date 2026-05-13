@@ -708,8 +708,8 @@ body{
   flex-direction: row;
   align-items: center;
   gap: 12px;
-  font-size: 18px;
-  color: $pri-600;
+  font-size: 16px;
+  color: $black-600;
 
   &::before{
     content:"";
@@ -848,11 +848,35 @@ body{
 
   .pill {
     border-radius: 24px;
-    background: $black-200;
-    padding: 6px 16px;
-    font-weight: 600;
-    font-size: 14px;
+    background: $black-100;
+    padding: 4px 12px;
+    font-weight: 500;
+    font-size: 13px;
   }
+}
+
+.product-list{
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 32px;
+  margin-bottom: 40px;
+  padding-bottom: 40px;
+  border-bottom: solid 1px $black-200;
+
+  @include lg{
+    gap: 64px;
+    flex-direction: row;
+    margin-bottom: 80px;
+    padding-bottom: 80px;
+  }
+
+  &:last-child, &:only-child{
+    border-bottom: none;
+    padding-bottom: 0;
+    margin-bottom: 0;
+  }
+  
 }
 
 .prod-card{
@@ -862,10 +886,11 @@ body{
   
   img{
     width: 100%;
-    height: 260px;
+    height: 200px;
     object-fit: cover;
-    object-position: center center;
+    object-position: center;
     margin-bottom: 8px;
+    display: none;
   }
   
   &-content{
