@@ -1,5 +1,7 @@
 import PageHeader from "@/components/layout/PageHeader";
+import Cta from "@/components/sections/CtaSection";
 import ProductSingle from "@/components/sections/ProductSingle";
+import WhyUsAlt from "@/components/sections/WhyUsAlt";
 import { apiData } from "@/data/apiData";
 
 export default function ActivePharmaIngredients() {
@@ -20,6 +22,13 @@ export default function ActivePharmaIngredients() {
           <ProductSingle data={apiData} />
         </div>
       </section>
+
+      <section className="bg-slate-100 py-24 lg:py-32">
+        <WhyUsAlt />
+      </section>
+
+      <Cta />
+
     </>
   )
 }

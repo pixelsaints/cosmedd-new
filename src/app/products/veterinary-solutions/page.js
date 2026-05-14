@@ -1,5 +1,7 @@
 import PageHeader from "@/components/layout/PageHeader";
+import Cta from "@/components/sections/CtaSection";
 import ProductSingle from "@/components/sections/ProductSingle";
+import WhyUsAlt from "@/components/sections/WhyUsAlt";
 import { veterinaryData } from "@/data/veterinary";
 
 export default function VeterinarySolutions() {
@@ -20,6 +22,12 @@ export default function VeterinarySolutions() {
           <ProductSingle data={veterinaryData} />
         </div>
       </section>
+
+      <section className="bg-slate-100 py-24 lg:py-32">
+        <WhyUsAlt />
+      </section>
+
+      <Cta />
     </>
   )
 }

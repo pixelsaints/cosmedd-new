@@ -287,7 +287,7 @@ export const bottomCerts = [
     img: "/certifications/iso-2015.webp"
   }, {
     title: "ISO 14001:2015",
-    img: "/certifications/iso-2015.webp"
+    img: "/certifications/iso-14001-2015.webp"
   }, {
     title: "ISO 22000",
     img: "/certifications/iso-22000.webp"

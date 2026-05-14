@@ -8,14 +8,14 @@ export default function ProductSingle({ data }) {
           id={tab.id}
           className="product-list pb-16 mb-16"
         >
-          <div className="lg:w-1/3 sticky top-24">
+          <div className="lg:w-1/3 lg:sticky lg:top-24">
             <h4 className="text-black font-semibold mb-3">{tab.label}</h4>
             <p>{tab.description}</p>
           </div>
 
           <div className="lg:w-2/3">
             <div
-              className={`grid gap-8 ${tab.products.length > 1 ? "grid-cols-2" : "grid-cols-1"
+              className={`grid gap-8 ${tab.products.length > 1 ? "grid-cols-1 lg:grid-cols-2" : "grid-cols-1"
                 }`}
             >
               {tab.products.map((product) => (

@@ -106,7 +106,7 @@ export default function PageHeader({
               {title}
             </h1>
 
-            <p className="lead text-white/80">
+            <p className="lead text-white/80 mb-8">
               {description}
             </p>
           </div>

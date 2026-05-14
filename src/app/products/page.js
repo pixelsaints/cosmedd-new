@@ -18,8 +18,8 @@ export default function Products() {
         ]}
       />
       <section className="title-intro py-20 lg:py-28">
-        <div className="section-wrap text-center">
-          <div className="w-[80%] flex mx-auto">
+        <div className="section-wrap text-center px-4 lg:px-0">
+          <div className="lg:w-[80%] flex mx-auto">
             <h4 className="text-black">From regulated pharmaceuticals to wellness and veterinary solutions, our product portfolio is designed to support diverse healthcare requirements across international markets.</h4>
           </div>
         </div>

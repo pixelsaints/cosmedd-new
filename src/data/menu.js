@@ -28,12 +28,12 @@ export const nav = [
         href: "/products/active-pharma-ingredients",
       },
       {
-        name: "Women's Care",
-        href: "/products/womens-care"
+        name: "Women's Healthare",
+        href: "/products/womens-healthcare"
       },
       {
-        name: "Men's Care",
-        href: "/products/mens-care"
+        name: "Men's Healthare",
+        href: "/products/mens-healthcare"
       },
       {
         name: "Veterinary Feeds & Medicines",

@@ -19,7 +19,7 @@ export default function Footer() {
         </div>
 
         {/* 2. Core Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 mt-6 gap-24">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 mt-6 gap-12 lg:gap-24">
           <div className="footer__col">
             <h4>Products</h4>
             <ul className="flex flex-col divide-y divide-white/10 gap-3">

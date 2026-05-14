@@ -1,5 +1,7 @@
 import PageHeader from "@/components/layout/PageHeader";
+import Cta from "@/components/sections/CtaSection";
 import ProductSingle from "@/components/sections/ProductSingle";
+import WhyUsAlt from "@/components/sections/WhyUsAlt";
 import { herbalsTabs } from "@/data/herbals";
 
 export default function HerbalNatural() {
@@ -20,6 +22,12 @@ export default function HerbalNatural() {
           <ProductSingle data={herbalsTabs} />
         </div>
       </section >
+
+      <section className="bg-slate-100 py-24 lg:py-32">
+        <WhyUsAlt />
+      </section>
+
+      <Cta />
     </>
   )
 }

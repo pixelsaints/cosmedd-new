@@ -1,6 +1,9 @@
 import PageHeader from "@/components/layout/PageHeader";
+import Cta from "@/components/sections/CtaSection";
 import ProductSingle from "@/components/sections/ProductSingle";
+import WhyUsAlt from "@/components/sections/WhyUsAlt";
 import { consumerHealthcareData } from "@/data/consumerHealthcare";
+
 
 export default function ConsumerHealthcare() {
   return (
@@ -20,6 +23,12 @@ export default function ConsumerHealthcare() {
           <ProductSingle data={consumerHealthcareData} />
         </div>
       </section>
+
+      <section className="bg-slate-100 py-24 lg:py-32">
+        <WhyUsAlt />
+      </section>
+
+      <Cta />
     </>
   )
 }
