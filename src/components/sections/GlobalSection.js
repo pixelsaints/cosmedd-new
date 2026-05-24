@@ -1,5 +1,6 @@
 "use client";
 
+import { usePathname } from "next/navigation";
 import { useRef, useLayoutEffect } from "react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
@@ -16,6 +17,8 @@ export default function GlobalSection() {
   const globeRef = useRef(null);
   const globeTitleRef = useRef(null);
   const globeContentRef = useRef(null);
+
+  const pathname = usePathname();
 
   useLayoutEffect(() => {
 
@@ -188,12 +191,17 @@ export default function GlobalSection() {
         <h2 className="mt-6 mb-3 text-black text-center lg:w-[80%]">Expanding Healthcare Access Across Global Markets</h2>
         <p className="text-black/70 lead text-center mb-6 lg:w-[70%]">Delivering trusted healthcare and wellness solutions across Southeast Asia, CIS regions, and emerging international markets.</p>
 
-        <div className="btn-wrap">
-          <TransitionLink href="/global-presence" className="btn btn-link-white">
-            <span data-title="Learn More">Learn More</span>
-            <ArrowRight size={20} absoluteStrokeWidth />
-          </TransitionLink>
-        </div>
+        {pathname !== "/global-presence" && (
+          <div className="btn-wrap">
+            <TransitionLink
+              href="/global-presence"
+              className="btn btn-link-white"
+            >
+              <span data-title="Learn More">Learn More</span>
+              <ArrowRight size={20} absoluteStrokeWidth />
+            </TransitionLink>
+          </div>
+        )}
       </div>
       <div ref={globeContentRef}>
         <div className="hidden lg:flex flex-row gap-8 items-center mt-[4em]" >

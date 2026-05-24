@@ -1,5 +1,6 @@
 "use client";
 
+import { usePathname } from "next/navigation";
 import { useRef, useLayoutEffect } from "react";
 import gsap from "gsap";
 import SplitType from "split-type";
@@ -81,6 +82,8 @@ export default function QualitySection() {
   const qaSectionTitle = useRef(null);
   const qcSectionImg = useRef(null);
   const qaSectionCards = useRef(null);
+
+  const pathname = usePathname();
 
   useLayoutEffect(() => {
     const ctx = gsap.context(() => {
@@ -169,10 +172,12 @@ export default function QualitySection() {
           <p className="mb-6">At Cosmedd Healthcare, we ensure that all our products and services meet international regulatory standards and customer expectations. Our robust Quality Management System (QMS) comprises Error Free Checks, Strict Quality Control, Quality Assurance and constant improvement with the changing market conditions.</p>
 
           <div className="btn-wrap">
-            <TransitionLink className="btn" href="/quality-compliance">
-              <span data-title="Learn More">Learn More</span>
-              <ArrowRight size={20} absoluteStrokeWidth />
-            </TransitionLink>
+            {pathname !== "/global-presence" && (
+              <TransitionLink className="btn" href="/quality-compliance">
+                <span data-title="Learn More">Learn More</span>
+                <ArrowRight size={20} absoluteStrokeWidth />
+              </TransitionLink>
+            )}
           </div>
         </div>
 

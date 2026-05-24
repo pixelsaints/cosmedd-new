@@ -45,10 +45,10 @@ export const nav = [
     name: "Quality",
     href: "/quality"
   },
-  {
-    name: "Why Choose Us",
-    href: "/why-choose-us"
-  },
+  // {
+  //   name: "Why Choose Us",
+  //   href: "/why-choose-us"
+  // },
   {
     name: "Global Presence",
     href: "/global-presence"

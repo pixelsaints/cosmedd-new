@@ -5,7 +5,6 @@ export default function Footer() {
   return (
     <>
       <footer className="footer">
-
         {/* 1. Brand Statement */}
         <div className="footer__top w-full flex flex-col lg:flex-row lg:items-center lg:justify-between">
           <div className="logo">
@@ -19,10 +18,23 @@ export default function Footer() {
         </div>
 
         {/* 2. Core Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 mt-6 gap-12 lg:gap-24">
-          <div className="footer__col">
-            <h4>Products</h4>
+        <div className="flex flex-col lg:flex-row mt-6 gap-16">
+          <div className="footer__col lg:w-[30%]">
+            <h4>Company</h4>
             <ul className="flex flex-col divide-y divide-white/10 gap-3">
+              {nav.map((item) => (
+                <li key={item.href}>
+                  <TransitionLink href={item.href}>
+                    {item.name}
+                  </TransitionLink>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="footer__col lg:w-[50%]">
+            <h4>Products</h4>
+            <ul className="grid grid-cols-1 lg:grid-cols-2 divide-y divide-white/10 gap-3">
               {nav
                 .find((item) => item.name === "Products")?.submenu?.map((sub) => (
                   <li key={sub.name}>
@@ -37,20 +49,7 @@ export default function Footer() {
             </ul>
           </div>
 
-          <div className="footer__col">
-            <h4>Company</h4>
-            <ul className="flex flex-col divide-y divide-white/10 gap-3">
-              {nav.map((item) => (
-                <li key={item.href}>
-                  <TransitionLink href={item.href}>
-                    {item.name}
-                  </TransitionLink>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div className="footer__col">
+          <div className="footer__col lg:w-[30%]">
             <h4>Contact</h4>
             <div className="flex flex-col divide-y divide-white/10 gap-3">
               <a href="mailto:info@cosmedd.com" className="text-white/70 hover:text-white transition pb-2">info@cosmedd.com</a>

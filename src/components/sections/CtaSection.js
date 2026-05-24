@@ -15,66 +15,66 @@ export default function Cta({
   const { openDrawer } = useDrawer();
   const ctaRef = useRef(null);
 
-  // useLayoutEffect(() => {
-  //   if (!ctaRef.current) return;
+  useLayoutEffect(() => {
+    if (!ctaRef.current) return;
 
-  //   const ctx = gsap.context(() => {
-  //     const ctaTitle = new SplitType(
-  //       ctaRef.current.querySelector("h2"),
-  //       { types: "words" }
-  //     );
+    const ctx = gsap.context(() => {
+      const ctaTitle = new SplitType(
+        ctaRef.current.querySelector("h2"),
+        { types: "words" }
+      );
 
-  //     const ctaSubtitle = new SplitType(
-  //       ctaRef.current.querySelector("p"),
-  //       { types: "lines" }
-  //     );
+      const ctaSubtitle = new SplitType(
+        ctaRef.current.querySelector("p"),
+        { types: "lines" }
+      );
 
-  //     const ctaButtons = ctaRef.current.querySelector(".buttons");
+      const ctaButtons = ctaRef.current.querySelector(".buttons");
 
-  //     gsap.set(ctaButtons, {
-  //       autoAlpha: 0,
-  //       y: 40,
-  //     });
+      gsap.set(ctaButtons, {
+        autoAlpha: 0,
+        y: 40,
+      });
 
-  //     const tl = gsap.timeline({
-  //       scrollTrigger: {
-  //         trigger: ctaRef.current,
-  //         start: "top 80%",
-  //         toggleActions: "play none none reverse",
-  //       },
-  //     });
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: ctaRef.current,
+          start: "top 80%",
+          toggleActions: "play none none reverse",
+        },
+      });
 
-  //     tl.from(ctaTitle.words, {
-  //       ...reveal,
-  //       stagger: 0.08,
-  //     })
-  //       .from(
-  //         ctaSubtitle.lines,
-  //         {
-  //           ...reveal,
-  //           stagger: 0.08,
-  //         },
-  //         "-=0.4"
-  //       )
-  //       .to(
-  //         ctaButtons,
-  //         {
-  //           autoAlpha: 1,
-  //           y: 0,
-  //           duration: 1,
-  //           ease: "power3.out",
-  //         },
-  //         "-=0.6"
-  //       );
+      tl.from(ctaTitle.words, {
+        ...reveal,
+        stagger: 0.08,
+      })
+        .from(
+          ctaSubtitle.lines,
+          {
+            ...reveal,
+            stagger: 0.08,
+          },
+          "-=0.4"
+        )
+        .to(
+          ctaButtons,
+          {
+            autoAlpha: 1,
+            y: 0,
+            duration: 1,
+            ease: "power3.out",
+          },
+          "-=0.6"
+        );
 
-  //     return () => {
-  //       ctaTitle.revert();
-  //       ctaSubtitle.revert();
-  //     };
-  //   }, ctaRef);
+      return () => {
+        ctaTitle.revert();
+        ctaSubtitle.revert();
+      };
+    }, ctaRef);
 
-  //   return () => ctx.revert();
-  // }, []);
+    return () => ctx.revert();
+  }, []);
 
   return (
     <>
