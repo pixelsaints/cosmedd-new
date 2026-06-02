@@ -56,6 +56,7 @@ export default function Header() {
   }, []);
 
   useEffect(() => {
+
     if (!menuTL.current) return;
 
     if (menuActive) {
@@ -80,7 +81,7 @@ export default function Header() {
             <TransitionLink href="/">
               <img
                 src="/images/logo.svg"
-                alt="COSMEDD - Healthcare LLP"
+                alt="Real Impact"
               />
             </TransitionLink>
           </div>
@@ -89,10 +90,16 @@ export default function Header() {
           <nav className="menu-wrapper flex items-center ">
             <ul className="menu flex flex-row">
               {nav.map((item) => (
-                <li key={item.href} className={item.submenu ? "has-sub" : ""}>
+                <li
+                  key={item.href}
+                  className={`
+                    ${item.submenu ? "has-sub" : ""}
+                    ${pathname === item.href ? "active" : ""}
+                  `}
+                >
                   <TransitionLink
                     href={item.href}
-                    className="menu-link"
+                    className={`menu-link ${setMenuActive ? "active" : ""}`}
                     onClick={() => {
                       setMenuActive(false);
                       gsap.set(menuRef.current, { x: "100%" });
