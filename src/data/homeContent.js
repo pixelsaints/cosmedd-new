@@ -34,7 +34,7 @@ export const slides = [
     secondary: "Start Partnership",
     primaryUrl: "/about",
     secondaryUrl: "/contact",
-    image: "/images/sourcing-solutions.jpg",
+    image: "/images/sourcing-solutions.webp",
   },
 ];
 
