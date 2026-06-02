@@ -173,7 +173,7 @@ export default function QualitySection() {
 
           <div className="btn-wrap">
             {pathname !== "/global-presence" && (
-              <TransitionLink className="btn" href="/quality-compliance">
+              <TransitionLink className="btn" href="/quality">
                 <span data-title="Learn More">Learn More</span>
                 <ArrowRight size={20} absoluteStrokeWidth />
               </TransitionLink>
