@@ -113,23 +113,10 @@ export default function GlobalPresence() {
           </div>
         </div>
       </section>
-
-      <section className="my-24 lg:my-32">
-        <div className="section-wrap">
-          Partnership Philosophy
-        </div>
-      </section>
-
       <Cta />
     </>
   )
 }
 
 
-// Regional Coverage
-// ↓
-// Export Capability
-// ↓
-// Partnership Philosophy
-// ↓
-// CTA
+// re_hqBNxS4n_CLppFThiFgaQDq4wceU4YQGB

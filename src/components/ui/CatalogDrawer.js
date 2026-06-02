@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { X } from "lucide-react";
 import { useDrawer } from "@/context/DrawerContext";
@@ -11,6 +11,50 @@ export default function CatalogDrawer() {
   const drawerRef = useRef(null);
   const overlayRef = useRef(null);
   const tl = useRef(null);
+  const [status, setStatus] = useState("idle");
+  const [message, setMessage] = useState("");
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    setStatus("submitting");
+    setMessage("");
+
+    const form = event.currentTarget;
+    const formData = new FormData(form);
+
+    const payload = {
+      source: "Catalog Drawer",
+      name: formData.get("name"),
+      company: formData.get("company"),
+      country: formData.get("country"),
+      email: formData.get("email"),
+      productInterest: formData.get("productInterest"),
+      message: formData.get("message"),
+    };
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(payload),
+      });
+
+      const result = await response.json();
+
+      if (!response.ok) {
+        throw new Error(result.error || "Unable to submit your request.");
+      }
+
+      form.reset();
+      setStatus("success");
+      setMessage("Thank you. Your enquiry has been sent.");
+    } catch (error) {
+      setStatus("error");
+      setMessage(error.message);
+    }
+  };
 
   useEffect(() => {
     gsap.set(drawerRef.current, {
@@ -79,14 +123,14 @@ export default function CatalogDrawer() {
           </button>
         </div>
         <div className="drawer-content">
-          <form className="flex flex-col gap-4">
-            <input placeholder="Full Name" className="input" />
-            <input placeholder="Company Name" className="input" />
-            <input placeholder="Country" className="input" />
-            <input placeholder="Business Email" className="input" />
+          <form className="flex flex-col gap-4" onSubmit={handleSubmit}>
+            <input name="name" placeholder="Full Name" className="input" required />
+            <input name="company" placeholder="Company Name" className="input" />
+            <input name="country" placeholder="Country" className="input" />
+            <input name="email" type="email" placeholder="Business Email" className="input" required />
 
-            <select className="input">
-              <option>Product Interest</option>
+            <select name="productInterest" className="input" defaultValue="">
+              <option value="" disabled>Product Interest</option>
               <option>Pharma Generics</option>
               <option>APIs & Excipients</option>
               <option>Nutraceuticals</option>
@@ -95,11 +139,17 @@ export default function CatalogDrawer() {
               <option>Other</option>
             </select>
 
-            <textarea placeholder="Requirement Details" rows="5" className="input" />
+            <textarea name="message" placeholder="Requirement Details" rows="5" className="input" required />
 
-            <button type="submit" className="btn btn-primary mt-4">
-              <span data-title="Submit Request">
-                Submit Request
+            {message && (
+              <p className={`text-sm leading-6 ${status === "error" ? "text-red-600" : "text-emerald-700"}`}>
+                {message}
+              </p>
+            )}
+
+            <button type="submit" className="btn btn-primary mt-4" disabled={status === "submitting"}>
+              <span data-title={status === "submitting" ? "Sending..." : "Submit Request"}>
+                {status === "submitting" ? "Sending..." : "Submit Request"}
               </span>
             </button>
           </form>

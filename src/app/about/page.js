@@ -70,7 +70,7 @@ export default function About() {
           <img src="/images/cosmedd-principles.webp" alt="" className=" object-cover object-center h-[40em] w-full" />
           <div className="absolute w-full h-full top-0 left-0 bg-black/70"></div>
         </div>
-        <div className="section-wrap mt-[-22em] px-4 lg:px-0 relative">
+        <div className="section-wrap mt-[-32em] lg:mt-[-22em] px-4 lg:px-0 relative">
           <div className="sec-title flex flex-col lg:flex-row items-end justify-between mb-16">
             <div className="lg:w-[40%] mb-6 lg:mb-0">
               <div className="sub-title mb-4">Core Priniciples</div>
@@ -89,20 +89,16 @@ export default function About() {
               gifSrc="/icons/goal.gif"
             >
               <ul className="flex flex-col gap-3">
-                <li className="flex flex-row items-start lg:items-center gap-2">
-                  <BadgeCheck className="text-pri-400 translate-y-1 w-6" size={18} absoluteStrokeWidth />
+                <li className="flex font-bold">
                   Health And Wellness For All
                 </li>
-                <li className="flex flex-row items-start lg:items-center gap-2">
-                  <BadgeCheck className="text-pri-400 translate-y-1 w-6" size={18} absoluteStrokeWidth />
+                <li className="flex font-bold">
                   Quality Products At Affordable Prices
                 </li>
-                <li className="flex flex-row items-start lg:items-center gap-2">
-                  <BadgeCheck className="text-pri-400 translate-y-1 w-6" size={18} absoluteStrokeWidth />
+                <li className="flex font-bold">
                   Serving Diverse Healthcare Markets Globally
                 </li>
-                <li className="flex flex-row items-start lg:items-center gap-2">
-                  <BadgeCheck className="text-pri-400 translate-y-1 w-6" size={18} absoluteStrokeWidth />
+                <li className="flex font-bold">
                   Building Trusted Partnerships That Last
                 </li>
               </ul>
@@ -116,20 +112,16 @@ export default function About() {
               gifSrc="/icons/test-tube.gif"
             >
               <ul className="flex flex-col gap-3">
-                <li className="flex flex-row items-center gap-2">
-                  <BadgeCheck className="text-pri-400" size={18} absoluteStrokeWidth />
+                <li className="flex font-bold">
                   Delivering Care Through Trusted Solutions
                 </li>
-                <li className="flex flex-row items-center gap-2">
-                  <BadgeCheck className="text-pri-400" size={18} absoluteStrokeWidth />
+                <li className="flex font-bold">
                   Advancing Health Through Innovation
                 </li>
-                <li className="flex flex-row items-center gap-2">
-                  <BadgeCheck className="text-pri-400" size={18} absoluteStrokeWidth />
+                <li className="flex font-bold">
                   Supporting Better Health Outcomes
                 </li>
-                <li className="flex flex-row items-center gap-2">
-                  <BadgeCheck className="text-pri-400" size={18} absoluteStrokeWidth />
+                <li className="flex font-bold">
                   Creating Lasting Healthcare Impact
                 </li>
               </ul>
