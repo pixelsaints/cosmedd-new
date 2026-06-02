@@ -82,9 +82,11 @@ export default function Contact() {
               </div>
 
               <div className="rounded-lg border border-slate-200 p-5">
-                <div className="font-semibold text-black mb-1">Email Delivery</div>
+                <div className="font-semibold text-black mb-1">Location</div>
                 <p className="text-black/70">
-                  Enquiries from this page are sent to pixelsaints@gmail.com.
+                  No. 84, 3rd Floor, <br />
+                  Vishwa Parva Mansion 21st Main,  <br />
+                  Banashankari II Stage Bangalore - 560070 INDIA
                 </p>
               </div>
             </div>
