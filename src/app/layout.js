@@ -44,6 +44,16 @@ export const metadata = {
   },
 };
 
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "Cosmedd Healthcare",
+  url: "https://cosmedd.com",
+  logo: "https://cosmedd.com/logo.png",
+  description: "Global healthcare sourcing and export partner for pharmaceutical, nutraceutical, wellness, and healthcare products.",
+  foundingDate: "2015",
+};
+
 export default function RootLayout({ children }) {
   return (
     <html
@@ -52,8 +62,7 @@ export default function RootLayout({ children }) {
       data-scroll-behavior="smooth"
     >
       <body className="font-sans">
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-THLKDPJLTV"></script>
-        <Script src="https://www.googletagmanager.com/gtag/js?id=G-THLKDPJLTV" strategy="afterInteractive" />
+        <Script src="https://www.googletagmanager.com/gtag/js?id=G-9926QR033Q" strategy="afterInteractive" />
         <Script id="google-analytics" strategy="afterInteractive">
 
           {`window.dataLayer = window.dataLayer || [];
@@ -61,6 +70,12 @@ export default function RootLayout({ children }) {
           gtag('js', new Date());
           gtag('config', 'G-9926QR033Q');`}
         </Script>
+        <Script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(organizationSchema),
+          }}
+        />
         <DrawerProvider>
           <PageEnter />
           <Header />
