@@ -139,19 +139,18 @@ export default function QualitySection() {
 
       // Stat Cards
 
-      const certCards = qaSectionCards.current.querySelectorAll(".qc-certificates > div");
+      const certCards = qaSectionCards.current.querySelector(".qc-certificates > div");
 
-      certCards.forEach((item, i) => {
-        gsap.from(item, {
-          scale: 1.3,
-          delay: i * 0.5,
-          scrollTrigger: {
-            trigger: item,
-            start: "top 85%",
-            toggleActions: "play none none reverse",
-            invalidateOnRefresh: true,
-          },
-        });
+      gsap.from(certCards, {
+        y: 100,
+        opacity: 0,
+        // delay: i * 0.5,
+        scrollTrigger: {
+          trigger: certCards,
+          start: "top 85%",
+          toggleActions: "play none none reverse",
+          invalidateOnRefresh: true,
+        },
       });
 
       ScrollTrigger.refresh();
@@ -191,30 +190,31 @@ export default function QualitySection() {
       </div>
 
       <div ref={qaSectionCards} className="qc-certificates relative mt-20 overflow-hidden" >
-
-        <div className="mb-6">
-          <Swiper {...swiperConfigRtl}>
-            {topCerts.map((item, i) => (
-              <SwiperSlide key={i}>
-                <div className="flex flex-col w-full py-6 items-center justify-center rounded border border-slate-200 bg-white h-30">
-                  <img src={item.img} alt={item.title} />
-                  {/* <span className="text-[14px] mt-3 font-semibold tracking-wide text-slate-900">{item.title}</span> */}
-                </div>
-              </SwiperSlide>
-            ))}
-          </Swiper>
-        </div>
         <div>
-          <Swiper {...swiperConfigLtr}>
-            {bottomCerts.map((item, i) => (
-              <SwiperSlide key={i}>
-                <div className="flex flex-col w-full py-6 items-center justify-center rounded border border-slate-200 bg-white h-30">
-                  <img src={item.img} alt={item.title} />
-                  {/* <span className="text-[14px] mt-3 font-semibold tracking-wide text-slate-900">{item.title}</span> */}
-                </div>
-              </SwiperSlide>
-            ))}
-          </Swiper>
+          <div className="mb-6">
+            <Swiper {...swiperConfigRtl}>
+              {topCerts.map((item, i) => (
+                <SwiperSlide key={i}>
+                  <div className="flex flex-col w-full py-6 items-center justify-center rounded border border-slate-200 bg-white h-30">
+                    <img src={item.img} alt={item.title} />
+                    {/* <span className="text-[14px] mt-3 font-semibold tracking-wide text-slate-900">{item.title}</span> */}
+                  </div>
+                </SwiperSlide>
+              ))}
+            </Swiper>
+          </div>
+          <div>
+            <Swiper {...swiperConfigLtr}>
+              {bottomCerts.map((item, i) => (
+                <SwiperSlide key={i}>
+                  <div className="flex flex-col w-full py-6 items-center justify-center rounded border border-slate-200 bg-white h-30">
+                    <img src={item.img} alt={item.title} />
+                    {/* <span className="text-[14px] mt-3 font-semibold tracking-wide text-slate-900">{item.title}</span> */}
+                  </div>
+                </SwiperSlide>
+              ))}
+            </Swiper>
+          </div>
         </div>
       </div>
     </div>

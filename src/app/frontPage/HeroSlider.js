@@ -175,7 +175,7 @@ export default function HeroSlider() {
               <div className="bg absolute inset-0 bg-cover bg-center scale-105" style={{ backgroundImage: `url(${slide.image})` }}>
               </div>
 
-              <div className="relative content">
+              <div className="relative content text-center lg:text-left">
                 <h1 className="heading lg:w-[95%]">
                   {slide.title}
                 </h1>
@@ -184,14 +184,14 @@ export default function HeroSlider() {
                   {slide.desc}
                 </p>
 
-                <div className="buttons mt-8 flex gap-3 lg:gap-4 w-full">
-                  <TransitionLink href={slide.primaryUrl} className="btn btn-primary">
+                <div className="buttons mt-8 flex flex-col items-center lg:flex-row gap-3 lg:gap-4 w-full">
+                  <TransitionLink href={slide.primaryUrl} className="btn btn-primary min-w-[12em] lg:min-w-0 text-center justify-center">
                     <span data-title={slide.primary}>
                       {slide.primary}
                     </span>
                   </TransitionLink>
 
-                  <TransitionLink href={slide.secondaryUrl} className="btn btn-outline">
+                  <TransitionLink href={slide.secondaryUrl} className="btn btn-outline min-w-[12em] lg:min-w-0 text-center justify-center">
                     <span data-title={slide.secondary}>
                       {slide.secondary}
                     </span>

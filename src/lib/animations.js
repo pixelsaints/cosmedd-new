@@ -19,3 +19,10 @@ export const scaleIn = {
   duration: 0.8,
   ease: "expo.out",
 };
+
+export const rotateUp = {
+  rotationX: 15,
+  opacity: 0,
+  transformOrigin: "center bottom",
+  ease: "back.out(1)",
+}

@@ -89,10 +89,13 @@ body{
     text-align: left;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
+
+
 
     @include lg {
       max-width: 900px;
+      align-items: flex-start;
     }
 
     h1{
@@ -101,8 +104,9 @@ body{
       letter-spacing: -0.03em;
       margin-bottom: 16px;
       overflow: hidden;
-      font-size: 40px;
+      font-size: 32px;
       line-height: 1.1;
+      text-align: center;
 
       @include md{
         font-size: 64px;
@@ -111,6 +115,7 @@ body{
       @include lg{
         font-size: 80px;
         margin-bottom: 24px;
+        text-align: left;
       }
     }
 
@@ -119,9 +124,11 @@ body{
       line-height: 1.5;
       color: $black-100;
       max-width: 760px;
+      text-align: center;
 
       @include lg{
         font-size: 22px;
+        text-align: left;
       }
     }
 

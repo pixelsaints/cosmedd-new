@@ -16,7 +16,7 @@ const dmSans = Onest({
 });
 
 export const metadata = {
-  metadataBase: new URL("https://cosmedd.netlify.app/"),
+  metadataBase: new URL("https://cosmedd.com/"),
 
   title: "Cosmedd Healthcare | Global Pharmaceutical & Wellness Export Solutions",
   description: "Cosmedd Healthcare is a global export-oriented company delivering pharmaceutical formulations, nutraceuticals, APIs, medical devices, and wellness solutions worldwide.",
@@ -24,7 +24,7 @@ export const metadata = {
   openGraph: {
     title: "Cosmedd Healthcare | Global Healthcare Export Solutions",
     description: "Trusted sourcing and export of pharmaceutical, nutraceutical, wellness, and healthcare products across global markets.",
-    url: "https://cosmedd.netlify.app/",
+    url: "https://cosmedd.com/",
     siteName: "Cosmedd",
     images: [
       {
@@ -59,7 +59,7 @@ export default function RootLayout({ children }) {
           {`window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
-          gtag('config', 'G-THLKDPJLTV');`}
+          gtag('config', 'G-9926QR033Q');`}
         </Script>
         <DrawerProvider>
           <PageEnter />
