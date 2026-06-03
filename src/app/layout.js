@@ -53,7 +53,7 @@ const organizationSchema = {
   "@type": "Organization",
   name: "Cosmedd Healthcare",
   url: "https://cosmedd.com",
-  logo: "https://cosmedd.com/logo.png",
+  logo: "https://cosmedd.com/logo.svg",
   description: "Global healthcare sourcing and export partner for pharmaceutical, nutraceutical, wellness, and healthcare products.",
   foundingDate: "2015",
 };
