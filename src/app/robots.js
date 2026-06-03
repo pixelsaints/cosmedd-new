@@ -1,9 +1,11 @@
 export default function robots() {
   return {
-    rules: {
-      userAgent: "*",
-      allow: "/",
-      // disallow: "/",
-    },
+    rules: [
+      {
+        userAgent: "*",
+        allow: "/",
+      },
+    ],
+    sitemap: "https://cosmedd.com/sitemap.xml",
   };
 }
