@@ -42,6 +42,10 @@ export const metadata = {
     description: "Trusted sourcing and export of pharmaceutical, nutraceutical, wellness, and healthcare products across global markets.",
     images: ["/images/ogg-image.png"],
   },
+
+  alternates: {
+    canonical: "https://cosmedd.com/",
+  },
 };
 
 const organizationSchema = {
