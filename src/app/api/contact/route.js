@@ -45,6 +45,51 @@ export async function POST(request) {
   const phone = data.phone?.trim();
   const productInterest = data.productInterest?.trim();
   const message = data.message?.trim();
+  const recaptchaToken = data.recaptchaToken?.trim();
+
+  if (!recaptchaToken) {
+    return NextResponse.json(
+      { error: "Captcha token is missing. Please complete the captcha." },
+      { status: 400 }
+    );
+  }
+
+  const recaptchaSecret = process.env.RECAPTCHA_SECRET_KEY;
+  if (!recaptchaSecret) {
+    return NextResponse.json(
+      { error: "Captcha service is not configured." },
+      { status: 500 }
+    );
+  }
+
+  const verificationResponse = await fetch(
+    "https://www.google.com/recaptcha/api/siteverify",
+    {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/x-www-form-urlencoded",
+      },
+      body: new URLSearchParams({
+        secret: recaptchaSecret,
+        response: recaptchaToken,
+      }),
+    }
+  );
+
+  const verification = await verificationResponse.json();
+  const score = typeof verification.score === "number" ? verification.score : 1;
+  const action = verification.action;
+
+  if (
+    !verification.success ||
+    (verification.score !== undefined && score < 0.5) ||
+    (action && action !== "contact_form")
+  ) {
+    return NextResponse.json(
+      { error: "Captcha verification failed. Please try again." },
+      { status: 400 }
+    );
+  }
 
   if (!name || !email || !message) {
     return NextResponse.json(

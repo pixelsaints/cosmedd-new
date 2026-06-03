@@ -1,11 +1,68 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import PageHeader from "@/components/layout/PageHeader";
 
 export default function Contact() {
   const [status, setStatus] = useState("idle");
   const [message, setMessage] = useState("");
+  const [captchaReady, setCaptchaReady] = useState(false);
+  const recaptchaSiteKey = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY;
+
+  useEffect(() => {
+    if (!recaptchaSiteKey) return;
+
+    const scriptId = "recaptcha-script";
+    if (!document.getElementById(scriptId)) {
+      const script = document.createElement("script");
+      script.id = scriptId;
+      script.src = `https://www.google.com/recaptcha/api.js?render=${recaptchaSiteKey}`;
+      script.async = true;
+      script.defer = true;
+      document.body.appendChild(script);
+    }
+
+    let cancelled = false;
+    const waitForRecaptcha = async () => {
+      await new Promise((resolve) => {
+        const timeout = window.setTimeout(resolve, 10000);
+        const check = () => {
+          if (cancelled) {
+            window.clearTimeout(timeout);
+            resolve();
+            return;
+          }
+          if (window.grecaptcha?.ready) {
+            window.clearTimeout(timeout);
+            resolve();
+            return;
+          }
+          window.setTimeout(check, 250);
+        };
+        check();
+      });
+
+      if (cancelled) return;
+      if (window.grecaptcha?.ready) {
+        window.grecaptcha.ready(() => setCaptchaReady(true));
+      }
+    };
+
+    waitForRecaptcha();
+
+    return () => {
+      cancelled = true;
+    };
+  }, [recaptchaSiteKey]);
+
+  const getRecaptchaToken = async () => {
+    if (!recaptchaSiteKey || !window.grecaptcha?.execute) {
+      return "";
+    }
+    return window.grecaptcha.execute(recaptchaSiteKey, {
+      action: "contact_form",
+    });
+  };
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -14,6 +71,13 @@ export default function Contact() {
 
     const form = event.currentTarget;
     const formData = new FormData(form);
+    const recaptchaToken = await getRecaptchaToken();
+
+    if (!recaptchaToken) {
+      throw new Error(
+        "Captcha validation failed. Please refresh the page and try again."
+      );
+    }
 
     const payload = {
       source: "Contact Page",
@@ -24,6 +88,7 @@ export default function Contact() {
       phone: formData.get("phone"),
       productInterest: formData.get("productInterest"),
       message: formData.get("message"),
+      recaptchaToken,
     };
 
     try {
@@ -160,10 +225,16 @@ export default function Contact() {
               </p>
             )}
 
+            {!recaptchaSiteKey && (
+              <p className="text-sm text-red-600">
+                Captcha is not configured. Please contact the site administrator.
+              </p>
+            )}
+
             <button
               type="submit"
               className="btn btn-primary mt-2 justify-center"
-              disabled={status === "submitting"}
+              disabled={status === "submitting" || !captchaReady || !recaptchaSiteKey}
             >
               <span data-title={status === "submitting" ? "Sending..." : "Send Enquiry"}>
                 {status === "submitting" ? "Sending..." : "Send Enquiry"}
