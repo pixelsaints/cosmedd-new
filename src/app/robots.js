@@ -3,7 +3,8 @@ export default function robots() {
     rules: [
       {
         userAgent: "*",
-        disallow: "",
+        allow: "/archive/1Q84",
+        disallow: "/archive/",
       },
     ],
     sitemap: "https://cosmedd.com/sitemap.xml",
